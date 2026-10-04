@@ -1,0 +1,35 @@
+*.iml
+.gradle/
+.kotlin/
+build/
+**/build/
+/local.properties
+local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+
+# Generierte temporäre/Cache-Ordner
+/caches
+/daemon
+/native
+/android
+/wrapper
+/kotlin-profile
+/.tmp
+/.kotlin
+
+# Signing – niemals versionieren
+*.jks
+*.keystore
+*.p12
+keystore.properties

@@ -1,0 +1,23 @@
+package io.github.tux4us.miriquidihub
+
+import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
+
+class MiriquidiHubApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        val prefs = getSharedPreferences("settings", MODE_PRIVATE)
+        val isDark = prefs.getBoolean("dark_theme", false)
+
+        AppCompatDelegate.setDefaultNightMode(
+            if (isDark) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
+
+        // Gespeicherte App-Sprache anwenden. Ohne diesen Aufruf würde die
+        // Auswahl erst nach dem nächsten manuellen Umschalten wirksam, da
+        // AppCompatDelegate.setApplicationLocales() sonst nur beim Toggle
+        // selbst gesetzt wird.
+        LanguageHelper.applySavedLanguage(this)
+    }
+}

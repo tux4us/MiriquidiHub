@@ -4,7 +4,7 @@ Eine native Android-App mit praktischen Diagnose- und Hilfswerkzeugen für Andro
 
 ![Android](https://img.shields.io/badge/Android-24%2B-green.svg)
 ![Kotlin](https://img.shields.io/badge/Kotlin-100%25-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![License](https://img.shields.io/badge/License-Read--Only-lightgrey.svg)
 
 ## 📋 Über die App
 
@@ -137,17 +137,13 @@ Die Diagnose zeigt Verbindungsstatus und Konfiguration und prüft die Erreichbar
 
 ## 🤝 Beitragen
 
-Beiträge sind willkommen! Bitte beachte:
-
-1. Forke das Repository
-2. Erstelle einen Feature-Branch (`git checkout -b feature/AmazingFeature`)
-3. Committe deine Änderungen (`git commit -m 'Add some AmazingFeature'`)
-4. Pushe zum Branch (`git push origin feature/AmazingFeature`)
-5. Öffne einen Pull Request
+Der Quellcode ist einsehbar, aber nicht zur Weiterverwendung freigegeben (siehe Lizenz). Fehlerberichte und Verbesserungsvorschläge sind über [Issues](https://github.com/tux4us/MiriquidiHub/issues) willkommen. Code-Beiträge (Pull Requests) bitte vorher in einem Issue abstimmen.
 
 ## 📝 Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz - siehe [LICENSE](LICENSE) Datei für Details.
+Dieses Projekt steht unter der **MiriquidiHub Read-Only License**: Der Quellcode darf eingesehen werden, die offiziellen Releases dürfen privat genutzt werden. Kopieren, Verändern, Weitergeben und kommerzielle Nutzung sind nicht gestattet. Details: [LICENSE](LICENSE).
+
+Verwendete Bibliotheken von Dritten stehen unter ihren eigenen Lizenzen.
 
 ## 🙏 Danksagungen
 

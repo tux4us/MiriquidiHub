@@ -4,7 +4,7 @@ Eine native Android-App mit praktischen Diagnose- und Hilfswerkzeugen für Andro
 
 ![Android](https://img.shields.io/badge/Android-24%2B-green.svg)
 ![Kotlin](https://img.shields.io/badge/Kotlin-100%25-purple.svg)
-![License](https://img.shields.io/badge/License-Read--Only-lightgrey.svg)
+![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 
 ## 📋 Über die App
 
@@ -137,11 +137,11 @@ Die Diagnose zeigt Verbindungsstatus und Konfiguration und prüft die Erreichbar
 
 ## 🤝 Beitragen
 
-Der Quellcode ist einsehbar, aber nicht zur Weiterverwendung freigegeben (siehe Lizenz). Fehlerberichte und Verbesserungsvorschläge sind über [Issues](https://github.com/tux4us/MiriquidiHub/issues) willkommen. Code-Beiträge (Pull Requests) bitte vorher in einem Issue abstimmen.
+Der Quellcode steht unter der GNU General Public License v3.0 (siehe Lizenz). Fehlerberichte und Verbesserungsvorschläge sind über [Issues](https://github.com/tux4us/MiriquidiHub/issues) willkommen. Code-Beiträge (Pull Requests) bitte vorher in einem Issue abstimmen. Eingereichte Beiträge werden unter derselben Lizenz (GPL-3.0) veröffentlicht.
 
 ## 📝 Lizenz
 
-Dieses Projekt steht unter der **MiriquidiHub Read-Only License**: Der Quellcode darf eingesehen werden, die offiziellen Releases dürfen privat genutzt werden. Kopieren, Verändern, Weitergeben und kommerzielle Nutzung sind nicht gestattet. Details: [LICENSE](LICENSE).
+Dieses Projekt steht unter der **GNU General Public License v3.0** (GPL-3.0). Der Quellcode darf unter den Bedingungen der GPL-3.0 verwendet, verändert und weitergegeben werden; abgeleitete Werke müssen ebenfalls unter der GPL-3.0 mit Quellcode veröffentlicht werden. Der Lizenztext steht in [LICENSE](LICENSE).
 
 Verwendete Bibliotheken von Dritten stehen unter ihren eigenen Lizenzen.
 

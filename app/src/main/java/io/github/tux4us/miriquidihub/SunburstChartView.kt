@@ -218,11 +218,8 @@ class SunburstChartView @JvmOverloads constructor(
             typedValue.type <= android.util.TypedValue.TYPE_LAST_COLOR_INT) {
             typedValue.data
         } else {
-            // Fallback, falls windowBackground ein Drawable statt Farbe ist
-            val nightModeFlags = context.resources.configuration.uiMode and
-                android.content.res.Configuration.UI_MODE_NIGHT_MASK
-            if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES) Color.parseColor("#121212")
-            else Color.WHITE
+            // windowBackground ist ein Drawable (Verlauf): dunkle Glas-Farbe als Mittelpunkt
+            Color.parseColor("#0B130C")
         }
     }
 }

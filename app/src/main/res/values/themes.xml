@@ -1,26 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.MiriquidiHub" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Hell-Theme (Light) -->
-        <item name="colorPrimary">#0F460D</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorPrimaryContainer">#B8F2AE</item>
-        <item name="colorOnPrimaryContainer">#022100</item>
-        <item name="colorSecondary">#53634F</item>
-        <item name="colorOnSecondary">#FFFFFF</item>
-        <item name="colorSurface">#F7FBF1</item>
-        <item name="colorOnSurface">#191D17</item>
-        <item name="colorOutline">#72796F</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Dark / Glass: Die App verwendet ausschließlich dieses dunkle Theme. -->
+    <style name="Theme.MiriquidiHub" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@color/on_accent</item>
+        <item name="colorPrimaryContainer">#2B5E2A</item>
+        <item name="colorOnPrimaryContainer">#D4F5D0</item>
+        <item name="colorSecondary">#BACCB3</item>
+        <item name="colorOnSecondary">#0F1A0E</item>
+        <item name="colorSecondaryContainer">#33FFFFFF</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+        <item name="colorSurface">#0B130C</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">#1F2A20</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/text_hint</item>
+        <item name="colorOutlineVariant">@color/glass_stroke</item>
 
-        <item name="android:statusBarColor">@color/brand_primary</item>
+        <!-- Hintergrund und System-Leisten -->
+        <item name="android:windowBackground">@drawable/bg_app_gradient</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowBackground">?attr/colorSurface</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
 
-        <!-- Toolbar Icon Fix -->
+        <!-- Glass-Styles für Standard-Komponenten -->
+        <item name="materialCardViewStyle">@style/Widget.MiriquidiHub.GlassCard</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MiriquidiHub.Button.GlassOutlined</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.MiriquidiHub.GlassDialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MiriquidiHub.GlassDialog</item>
+
+        <!-- Toolbar -->
         <item name="colorControlNormal">#FFFFFF</item>
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="appBarLayoutStyle">@style/Widget.MiriquidiHub.AppBarLayout</item>
+        <item name="popupMenuStyle">@style/Widget.MiriquidiHub.PopupMenu</item>
     </style>
 
     <style name="Theme.MiriquidiHub.Translucent" parent="Theme.MiriquidiHub">
@@ -30,5 +47,70 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- Glas-Karte: halbtransparente Fläche, feine helle Kontur, keine Schatten -->
+    <style name="Widget.MiriquidiHub.GlassCard" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/glass_fill</item>
+        <item name="strokeColor">@color/glass_stroke</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="rippleColor">@color/glass_fill_pressed</item>
+    </style>
+
+    <!-- Glas-Buttons -->
+    <style name="Widget.MiriquidiHub.Button.Glass" parent="Widget.Material3.Button.TonalButton">
+        <item name="backgroundTint">@color/glass_fill_strong</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="iconTint">@color/text_primary</item>
+        <item name="strokeColor">@color/glass_stroke</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">@color/glass_fill_pressed</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.MiriquidiHub.Button.GlassOutlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/glass_fill</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="iconTint">@color/text_primary</item>
+        <item name="strokeColor">@color/glass_stroke_strong</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">@color/glass_fill_pressed</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <!-- Eingabefelder -->
+    <style name="Widget.MiriquidiHub.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/glass_fill</item>
+        <item name="boxStrokeColor">@color/glass_stroke_strong</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+    </style>
+
+    <!-- Dialoge: nahezu deckende dunkle Glasfläche mit Kontur -->
+    <style name="ThemeOverlay.MiriquidiHub.GlassDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">#FF141E15</item>
+        <item name="colorSurfaceContainerHigh">#FF141E15</item>
+        <item name="dialogCornerRadius">24dp</item>
+        <item name="android:windowBackground">@drawable/bg_glass_dialog</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.Material3.Button.TextButton.Dialog</item>
+    </style>
+
+    <style name="Widget.MiriquidiHub.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">@drawable/bg_glass_bar</item>
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="liftOnScroll">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.MiriquidiHub.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_glass_dialog</item>
     </style>
 </resources>

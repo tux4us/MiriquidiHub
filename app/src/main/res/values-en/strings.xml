@@ -36,7 +36,6 @@
     <string name="menu_search">Search</string>
     <string name="menu_refresh">Refresh</string>
     <string name="menu_report">Device Report</string>
-    <string name="menu_theme_toggle">Switch Theme</string>
     <string name="menu_language_toggle">Switch Language</string>
     <string name="menu_appinfo">App Info</string>
 

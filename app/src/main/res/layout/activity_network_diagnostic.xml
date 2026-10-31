@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brand_primary"
+        android:background="@drawable/bg_glass_bar"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
@@ -38,8 +38,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="20dp"
+>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,7 +92,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCopy"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -101,7 +101,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnShare"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,8 +115,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:visibility="gone"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
+                app:cardCornerRadius="20dp"
+>
 
                 <LinearLayout
                     android:layout_width="match_parent"

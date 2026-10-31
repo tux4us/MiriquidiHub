@@ -63,10 +63,6 @@ class ReportHistoryActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
-            R.id.action_theme -> {
-                toggleTheme()
-                true
-            }
             R.id.action_lang_de -> {
                 LanguageHelper.setLanguage(this, LanguageHelper.LANG_DE)
                 true
@@ -83,16 +79,6 @@ class ReportHistoryActivity : AppCompatActivity() {
         }
     }
 
-    private fun toggleTheme() {
-        val prefs = getSharedPreferences("settings", MODE_PRIVATE)
-        val currentDark = prefs.getBoolean("dark_theme", false)
-        prefs.edit().putBoolean("dark_theme", !currentDark).apply()
-        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(
-            if (!currentDark) androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
-            else androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
-        )
-        recreate()
-    }
 
     override fun onSupportNavigateUp(): Boolean {
         finish()

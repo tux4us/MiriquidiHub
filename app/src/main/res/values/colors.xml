@@ -4,6 +4,32 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_primary">#0F460D</color>
     <color name="white_or_black_text">?android:attr/textColorPrimary</color>
+
+    <!-- Dark / Glass: Hintergrund -->
+    <color name="bg_dark_top">#FF0A150B</color>
+    <color name="bg_dark_mid">#FF060B10</color>
+    <color name="bg_dark_bottom">#FF03060A</color>
+    <color name="bg_glow_green">#552E7D32</color>
+    <color name="bg_glow_teal">#4426A69A</color>
+    <color name="bg_glow_none">#00000000</color>
+
+    <!-- Dark / Glass: Glasflächen (Weiß mit Transparenz) -->
+    <color name="glass_fill">#1AFFFFFF</color>
+    <color name="glass_fill_strong">#29FFFFFF</color>
+    <color name="glass_fill_pressed">#38FFFFFF</color>
+    <color name="glass_stroke">#33FFFFFF</color>
+    <color name="glass_stroke_strong">#4DFFFFFF</color>
+    <color name="glass_accent_fill">#3369C46A</color>
+    <color name="glass_accent_stroke">#8081C784</color>
+    <color name="glass_dialog_fill">#F2101A12</color>
+
+    <!-- Akzent und Text -->
+    <color name="accent">#8FD98A</color>
+    <color name="on_accent">#062005</color>
+    <color name="text_primary">#FFECF3E8</color>
+    <color name="text_secondary">#FFB9C6B4</color>
+    <color name="text_hint">#FF8A9A86</color>
+
     <!-- Status-Farben der Netzwerk-Diagnose -->
     <color name="diag_ok">#43A047</color>
     <color name="diag_warn">#F9A825</color>

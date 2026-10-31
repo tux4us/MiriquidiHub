@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_bar"
+        android:background="@color/gl_bar"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
@@ -23,9 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:tabIndicatorColor="@color/accent"
-            app:tabSelectedTextColor="@color/accent"
-            app:tabTextColor="@color/text_secondary">
+            app:tabIndicatorColor="@color/rd_overlay_accent"
+            app:tabSelectedTextColor="@color/rd_overlay_accent"
+            app:tabTextColor="@color/rd_text_secondary">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -58,11 +58,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.google.android.material.card.MaterialCardView
+                <io.github.tux4us.miriquidihub.GlassCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="20dp"
+                    app:cardCornerRadius="16dp"
 >
 
                     <LinearLayout
@@ -95,9 +95,9 @@
                             android:textColor="?attr/colorPrimary"
                             tools:text="Speicher / Android / data" />
 
-                        <com.google.android.material.button.MaterialButton
+                        <io.github.tux4us.miriquidihub.GlassButton
                             android:id="@+id/btnUpOneLevel"
-                            style="@style/Widget.MiriquidiHub.Button.Glass"
+                            style="@style/Widget.App.Button"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
@@ -106,7 +106,7 @@
                             app:icon="@android:drawable/arrow_up_float"
                             app:iconGravity="textStart" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </io.github.tux4us.miriquidihub.GlassCardView>
 
                 <io.github.tux4us.miriquidihub.SunburstChartView
                     android:id="@+id/sunburstChart"
@@ -120,9 +120,9 @@
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false" />
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnRescan"
-                    style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
+                    style="@style/Widget.App.Button.Outlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -138,11 +138,11 @@
                 android:visibility="gone">
 
                 <!-- Eigener MiriquidiHub-Cache: direkt löschbar -->
-                <com.google.android.material.card.MaterialCardView
+                <io.github.tux4us.miriquidihub.GlassCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="20dp"
+                    app:cardCornerRadius="16dp"
 >
 
                     <LinearLayout
@@ -165,15 +165,15 @@
                             android:textAppearance="?attr/textAppearanceBodyMedium"
                             tools:text="Aktuell belegt: 8.4 MB" />
 
-                        <com.google.android.material.button.MaterialButton
+                        <io.github.tux4us.miriquidihub.GlassButton
                             android:id="@+id/btnClearOwnCache"
-                            style="@style/Widget.MiriquidiHub.Button.Glass"
+                            style="@style/Widget.App.Button"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
                             android:text="@string/btn_clear_own_cache" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </io.github.tux4us.miriquidihub.GlassCardView>
 
                 <!-- Hinweis: Nutzungszugriff fehlt -->
                 <LinearLayout
@@ -208,7 +208,7 @@
                         android:textAlignment="center"
                         android:textAppearance="?attr/textAppearanceBodyMedium" />
 
-                    <com.google.android.material.button.MaterialButton
+                    <io.github.tux4us.miriquidihub.GlassButton
                         android:id="@+id/btnGrantUsageAccess"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -302,7 +302,7 @@
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textAlignment="center" />
 
-        <com.google.android.material.button.MaterialButton
+        <io.github.tux4us.miriquidihub.GlassButton
             android:id="@+id/btnGrantPermission"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

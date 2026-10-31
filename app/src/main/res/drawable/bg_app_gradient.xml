@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Dark-Hintergrund mit weichen Farbflächen, die den Glas-Effekt der Karten tragen -->
+<!-- Verlaufshintergrund der gesamten App: dunkle Basis mit drei weichen Farbflächen
+     (Grün oben rechts, Türkis unten links, Blau links Mitte), die durch die Glasflächen scheinen. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
             <gradient
-                android:type="linear"
                 android:angle="270"
-                android:startColor="@color/bg_dark_top"
-                android:centerColor="@color/bg_dark_mid"
-                android:endColor="@color/bg_dark_bottom" />
+                android:startColor="@color/gl_bg_top"
+                android:centerColor="@color/gl_bg_mid"
+                android:endColor="@color/gl_bg_bottom" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:type="radial"
-                android:centerX="0.15"
-                android:centerY="0.12"
+                android:centerX="0.92"
+                android:centerY="0.08"
                 android:gradientRadius="75%p"
-                android:startColor="@color/bg_glow_green"
-                android:endColor="@color/bg_glow_none" />
+                android:startColor="@color/gl_glow_green"
+                android:endColor="@color/gl_glow_clear" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:type="radial"
-                android:centerX="0.9"
-                android:centerY="0.85"
-                android:gradientRadius="70%p"
-                android:startColor="@color/bg_glow_teal"
-                android:endColor="@color/bg_glow_none" />
+                android:centerX="0.05"
+                android:centerY="0.95"
+                android:gradientRadius="85%p"
+                android:startColor="@color/gl_glow_teal"
+                android:endColor="@color/gl_glow_clear" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="0.0"
+                android:centerY="0.45"
+                android:gradientRadius="60%p"
+                android:startColor="@color/gl_glow_blue"
+                android:endColor="@color/gl_glow_clear" />
         </shape>
     </item>
 </layer-list>

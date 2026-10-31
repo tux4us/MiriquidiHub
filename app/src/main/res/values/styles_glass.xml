@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GLAS-STYLES: Buttons, Karten, Eingabefelder, Leisten, Chips. Tokens: colors_glass.xml.
+         Rollen: Primary (Hauptaktion), Success, Warning, Danger, Info; ohne Rolle neutral. -->
+
+    <!-- Buttons: neutrales Glas mit Rand in der Rollenfarbe (1,5 dp), heller Text -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textColor">@color/gl_btn_text_on_glass</item>
+        <item name="iconTint">@color/gl_btn_text_on_glass</item>
+        <item name="backgroundTint">@color/gl_btn_fill_neutral</item>
+        <item name="strokeColor">@color/gl_btn_stroke_neutral</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="rippleColor">@color/gl_neutral_ripple</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@animator/glass_press</item>
+    </style>
+
+    <style name="Widget.App.Button.Primary">
+        <item name="backgroundTint">@color/gl_btn_fill_primary</item>
+        <item name="strokeColor">@color/gl_btn_stroke_primary</item>
+        <item name="rippleColor">@color/gl_primary_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Success">
+        <item name="backgroundTint">@color/gl_btn_fill_success</item>
+        <item name="strokeColor">@color/gl_btn_stroke_success</item>
+        <item name="rippleColor">@color/gl_success_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Warning">
+        <item name="backgroundTint">@color/gl_btn_fill_warning</item>
+        <item name="strokeColor">@color/gl_btn_stroke_warning</item>
+        <item name="rippleColor">@color/gl_warning_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Danger">
+        <item name="backgroundTint">@color/gl_btn_fill_danger</item>
+        <item name="strokeColor">@color/gl_btn_stroke_danger</item>
+        <item name="rippleColor">@color/gl_danger_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Info">
+        <item name="backgroundTint">@color/gl_btn_fill_info</item>
+        <item name="strokeColor">@color/gl_btn_stroke_info</item>
+        <item name="rippleColor">@color/gl_info_ripple</item>
+    </style>
+
+    <!-- Outlined: nur Rand, Textfarbe = Rollenfarbe (neutral: Standardtext) -->
+    <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textColor">@color/gl_btn_text_on_glass</item>
+        <item name="iconTint">@color/gl_btn_text_on_glass</item>
+        <item name="backgroundTint">@color/gl_fill_subtle</item>
+        <item name="strokeColor">@color/gl_btn_stroke_neutral_strong</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="rippleColor">@color/gl_neutral_ripple</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:stateListAnimator">@animator/glass_press</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Primary">
+        <item name="android:textColor">@color/gl_btn_text_primary</item>
+        <item name="iconTint">@color/gl_btn_text_primary</item>
+        <item name="strokeColor">@color/gl_btn_stroke_primary</item>
+        <item name="rippleColor">@color/gl_primary_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Success">
+        <item name="android:textColor">@color/gl_btn_text_success</item>
+        <item name="iconTint">@color/gl_btn_text_success</item>
+        <item name="strokeColor">@color/gl_btn_stroke_success</item>
+        <item name="rippleColor">@color/gl_success_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Warning">
+        <item name="android:textColor">@color/gl_btn_text_warning</item>
+        <item name="iconTint">@color/gl_btn_text_warning</item>
+        <item name="strokeColor">@color/gl_btn_stroke_warning</item>
+        <item name="rippleColor">@color/gl_warning_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Danger">
+        <item name="android:textColor">@color/gl_btn_text_danger</item>
+        <item name="iconTint">@color/gl_btn_text_danger</item>
+        <item name="strokeColor">@color/gl_btn_stroke_danger</item>
+        <item name="rippleColor">@color/gl_danger_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Info">
+        <item name="android:textColor">@color/gl_btn_text_info</item>
+        <item name="iconTint">@color/gl_btn_text_info</item>
+        <item name="strokeColor">@color/gl_btn_stroke_info</item>
+        <item name="rippleColor">@color/gl_info_ripple</item>
+    </style>
+
+    <!-- Text: kein Hintergrund, Textfarbe = Rollenfarbe (Standard: Akzent) -->
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/gl_btn_text_primary</item>
+        <item name="iconTint">@color/gl_btn_text_primary</item>
+        <item name="rippleColor">@color/gl_primary_ripple</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.App.Button.Text.Success">
+        <item name="android:textColor">@color/gl_btn_text_success</item>
+        <item name="iconTint">@color/gl_btn_text_success</item>
+        <item name="rippleColor">@color/gl_success_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Text.Warning">
+        <item name="android:textColor">@color/gl_btn_text_warning</item>
+        <item name="iconTint">@color/gl_btn_text_warning</item>
+        <item name="rippleColor">@color/gl_warning_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Text.Danger">
+        <item name="android:textColor">@color/gl_btn_text_danger</item>
+        <item name="iconTint">@color/gl_btn_text_danger</item>
+        <item name="rippleColor">@color/gl_danger_ripple</item>
+    </style>
+
+    <style name="Widget.App.Button.Text.Info">
+        <item name="android:textColor">@color/gl_btn_text_info</item>
+        <item name="iconTint">@color/gl_btn_text_info</item>
+        <item name="rippleColor">@color/gl_info_ripple</item>
+    </style>
+
+    <!-- Karten: transparente Glasfläche, feiner Rand, keine Elevation (ein Schatten würde durchscheinen) -->
+    <style name="Widget.App.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/gl_fill</item>
+        <item name="cardElevation">6dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="android:stateListAnimator">@animator/glass_press</item>
+        <item name="strokeColor">@color/gl_stroke</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">@color/gl_ripple</item>
+    </style>
+
+    <!-- Karte in Karte: dezenter, damit sich die Transparenzen nicht aufaddieren -->
+    <style name="Widget.App.Card.Inner">
+        <item name="cardBackgroundColor">@color/gl_fill_subtle</item>
+        <item name="strokeColor">@color/gl_stroke_subtle</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardCornerRadius">12dp</item>
+    </style>
+
+    <!-- Leiste: Glas-Leiste über die volle Breite inklusive Statusleiste -->
+    <style name="Widget.App.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">@color/gl_bar</item>
+        <item name="android:elevation">0dp</item>
+        <item name="elevation">0dp</item>
+        <item name="liftOnScroll">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Eingabefelder: Rahmen dauerhaft sichtbar, fokussiert im Akzent -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_stroke_color</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxBackgroundColor">@color/gl_fill_subtle</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="hintTextColor">@color/rd_overlay_accent</item>
+        <item name="android:textColorHint">?attr/colorOnSurface</item>
+        <item name="cursorColor">@color/rd_overlay_accent</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/gl_fill</item>
+        <item name="chipStrokeColor">@color/gl_stroke</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="rippleColor">@color/gl_ripple</item>
+    </style>
+</resources>

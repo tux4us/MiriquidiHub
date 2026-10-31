@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_bar"
+        android:background="@color/gl_bar"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
@@ -33,11 +33,11 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
 >
 
                 <LinearLayout
@@ -60,7 +60,7 @@
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="?attr/colorPrimary" />
 
-                        <com.google.android.material.button.MaterialButton
+                        <io.github.tux4us.miriquidihub.GlassButton
                             android:id="@+id/btnCopySpecs"
                             style="@style/Widget.Material3.Button.IconButton"
                             android:layout_width="wrap_content"
@@ -79,13 +79,13 @@
                         android:fontFamily="monospace"
                         tools:text="Specs load here..."/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
 >
 
                 <LinearLayout
@@ -115,14 +115,14 @@
                         android:textAppearance="?attr/textAppearanceBodySmall"
                         tools:text="RAM: 4GB / 6GB (66%)"/>
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/note_title_hint"
                 android:layout_marginBottom="12dp"
-                style="@style/Widget.MiriquidiHub.TextInputLayout">
+                style="@style/Widget.App.TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNoteTitle"
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/note_content_hint"
                 android:layout_marginBottom="16dp"
-                style="@style/Widget.MiriquidiHub.TextInputLayout">
+                style="@style/Widget.App.TextInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNoteContent"
@@ -147,11 +147,11 @@
                     android:inputType="textMultiLine|textCapSentences"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
 >
 
                 <LinearLayout
@@ -180,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/switch_vpn" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -188,9 +188,9 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="16dp">
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnAddApp"
-                    style="@style/Widget.MiriquidiHub.Button.Glass"
+                    style="@style/Widget.App.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/btn_add_apps"
@@ -212,9 +212,9 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="24dp">
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnAddPhoto"
-                    style="@style/Widget.MiriquidiHub.Button.Glass"
+                    style="@style/Widget.App.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/btn_add_photos"
@@ -230,7 +230,7 @@
                     tools:listitem="@layout/item_selected_image"/>
             </LinearLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnShare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -238,27 +238,27 @@
                 android:layout_marginBottom="8dp"
                 app:icon="@android:drawable/ic_menu_share"/>
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnSavePdf"
-                style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
+                style="@style/Widget.App.Button.Outlined"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_save_pdf"
                 android:layout_marginBottom="16dp"
                 app:icon="@android:drawable/ic_menu_save"/>
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnViewHistory"
-                style="@style/Widget.MiriquidiHub.Button.Glass"
+                style="@style/Widget.App.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_view_history"
                 android:layout_marginBottom="8dp"
                 app:icon="@android:drawable/ic_menu_recent_history" />
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnNewReport"
-                style="@style/Widget.MiriquidiHub.Button.Glass"
+                style="@style/Widget.App.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_new_report"

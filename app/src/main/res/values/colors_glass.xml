@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GLAS-DESIGN — zentrale Tokens (nur Dark). Aufbau und Namen wie in der HundeWildnis-App. -->
+
+    <!-- Verlaufshintergrund -->
+    <color name="gl_bg_top">#0E2018</color>
+    <color name="gl_bg_mid">#0A1315</color>
+    <color name="gl_bg_bottom">#0A1913</color>
+    <color name="gl_glow_green">#6638A169</color>
+    <color name="gl_glow_teal">#5526A69A</color>
+    <color name="gl_glow_blue">#445C7FB0</color>
+    <color name="gl_glow_clear">#00000000</color>
+
+    <!-- Neutrale Glasflächen -->
+    <color name="gl_fill">#8014181F</color>
+    <color name="gl_fill_subtle">#66101419</color>
+    <color name="gl_fill_strong">#2EFFFFFF</color>
+    <color name="gl_fill_disabled">#4D14181F</color>
+    <color name="gl_stroke">#38FFFFFF</color>
+    <color name="gl_stroke_subtle">#1FFFFFFF</color>
+    <color name="gl_stroke_strong">#66FFFFFF</color>
+    <color name="gl_divider">#1AFFFFFF</color>
+    <color name="gl_text_disabled">#5CFFFFFF</color>
+    <color name="gl_ripple">#26FFFFFF</color>
+
+    <!-- Leisten (Toolbar) -->
+    <color name="gl_bar">#B8161A1E</color>
+
+    <!-- Fenster (Dialog, Bottom Sheet) -->
+    <color name="gl_dialog">#FA1A2025</color>
+    <color name="gl_sheet">#FA1A2025</color>
+    <color name="gl_scrim">#99000000</color>
+
+    <!-- Rollenfarben: Text/Icon/Rand, neutrales Glas als Füllung, farbiger Rand (90 %), Druckeffekt -->
+    <color name="gl_primary">#7FCB82</color>
+    <color name="gl_primary_fill">#8014181F</color>
+    <color name="gl_primary_stroke">#E67FCB82</color>
+    <color name="gl_primary_ripple">#3D7FCB82</color>
+    <color name="gl_success">#6FBF73</color>
+    <color name="gl_success_fill">#8014181F</color>
+    <color name="gl_success_stroke">#E66FBF73</color>
+    <color name="gl_success_ripple">#3D6FBF73</color>
+    <color name="gl_warning">#F2B84B</color>
+    <color name="gl_warning_fill">#8014181F</color>
+    <color name="gl_warning_stroke">#E6F2B84B</color>
+    <color name="gl_warning_ripple">#3DF2B84B</color>
+    <color name="gl_danger">#F0786C</color>
+    <color name="gl_danger_fill">#8014181F</color>
+    <color name="gl_danger_stroke">#E6F0786C</color>
+    <color name="gl_danger_ripple">#3DF0786C</color>
+    <color name="gl_info">#64B5F6</color>
+    <color name="gl_info_fill">#8014181F</color>
+    <color name="gl_info_stroke">#E664B5F6</color>
+    <color name="gl_info_ripple">#3D64B5F6</color>
+    <color name="gl_neutral">#FFFFFF</color>
+    <color name="gl_neutral_fill">#8014181F</color>
+    <color name="gl_neutral_stroke">#40FFFFFF</color>
+    <color name="gl_neutral_ripple">#26FFFFFF</color>
+
+    <!-- Gruppenfarben der Startseite: accent (Icon) / stroke (Rand) -->
+    <color name="rd_group1_accent">#7FCB82</color>
+    <color name="rd_group1_stroke">#E67FCB82</color>
+    <color name="rd_group2_accent">#64B5F6</color>
+    <color name="rd_group2_stroke">#E664B5F6</color>
+    <color name="rd_group3_accent">#F2B84B</color>
+    <color name="rd_group3_stroke">#E6F2B84B</color>
+    <color name="rd_group4_accent">#4DB6AC</color>
+    <color name="rd_group4_stroke">#E64DB6AC</color>
+    <color name="rd_group5_accent">#9A8AB0</color>
+    <color name="rd_group5_stroke">#E69A8AB0</color>
+    <color name="rd_group6_accent">#C08A6A</color>
+    <color name="rd_group6_stroke">#E6C08A6A</color>
+    <color name="rd_group7_accent">#F0786C</color>
+    <color name="rd_group7_stroke">#E6F0786C</color>
+</resources>

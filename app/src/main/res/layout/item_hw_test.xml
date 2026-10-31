@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<io.github.tux4us.miriquidihub.GlassCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="16dp"
 >
 
     <LinearLayout
@@ -57,13 +57,13 @@
                 tools:text="Alle 72 Felder erkannt"
                 tools:visibility="visible" />
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnStart"
-                style="@style/Widget.MiriquidiHub.Button.Glass"
+                style="@style/Widget.App.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/hw_start" />
         </LinearLayout>
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</io.github.tux4us.miriquidihub.GlassCardView>

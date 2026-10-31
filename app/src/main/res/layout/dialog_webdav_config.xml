@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/webdav_url_hint"
-        style="@style/Widget.MiriquidiHub.TextInputLayout"
+        style="@style/Widget.App.TextInputLayout"
         android:layout_marginBottom="12dp">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etWebDavUrl"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/webdav_username_hint"
-        style="@style/Widget.MiriquidiHub.TextInputLayout"
+        style="@style/Widget.App.TextInputLayout"
         android:layout_marginBottom="12dp">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etWebDavUser"
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/webdav_password_hint"
-        style="@style/Widget.MiriquidiHub.TextInputLayout"
+        style="@style/Widget.App.TextInputLayout"
         android:layout_marginBottom="24dp"
         app:endIconMode="password_toggle">
         <com.google.android.material.textfield.TextInputEditText
@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/ors_api_key_hint"
-        style="@style/Widget.MiriquidiHub.TextInputLayout"
+        style="@style/Widget.App.TextInputLayout"
         android:layout_marginBottom="16dp"
         app:helperText="Wird für die Routenberechnung benötigt.">
         <com.google.android.material.textfield.TextInputEditText
@@ -75,15 +75,15 @@
             android:inputType="textNoSuggestions" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <io.github.tux4us.miriquidihub.GlassButton
         android:id="@+id/btnTestWebDav"
-        style="@style/Widget.MiriquidiHub.Button.Glass"
+        style="@style/Widget.App.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_test_connection"
         app:icon="@android:drawable/ic_menu_send" />
 
-    <com.google.android.material.button.MaterialButton
+    <io.github.tux4us.miriquidihub.GlassButton
         android:id="@+id/btnClearWebDav"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="match_parent"

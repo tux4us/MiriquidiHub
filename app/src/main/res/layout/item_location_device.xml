@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<io.github.tux4us.miriquidihub.GlassCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="16dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
@@ -93,9 +93,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnItemRoute"
-                style="@style/Widget.MiriquidiHub.Button.Glass"
+                style="@style/Widget.App.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -103,9 +103,9 @@
                 android:text="@string/btn_route_emoji"
                 android:textSize="12sp" />
 
-            <com.google.android.material.button.MaterialButton
+            <io.github.tux4us.miriquidihub.GlassButton
                 android:id="@+id/btnItemShare"
-                style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
+                style="@style/Widget.App.Button.Outlined"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -114,4 +114,4 @@
                 android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</io.github.tux4us.miriquidihub.GlassCardView>

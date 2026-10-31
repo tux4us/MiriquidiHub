@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_bar"
+        android:background="@color/gl_bar"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
@@ -34,11 +34,11 @@
             android:padding="16dp">
 
             <!-- Gesamtergebnis -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
 >
 
                 <LinearLayout
@@ -65,7 +65,7 @@
                         android:text="@string/netdiag_summary_pending"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
                 android:id="@+id/progress"
@@ -82,26 +82,27 @@
                 android:layout_marginBottom="12dp"
                 android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnRun"
+                    style="@style/Widget.App.Button.Success"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1.4"
                     android:text="@string/netdiag_run" />
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnCopy"
-                    style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
+                    style="@style/Widget.App.Button.Outlined"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:text="@string/netdiag_copy" />
 
-                <com.google.android.material.button.MaterialButton
+                <io.github.tux4us.miriquidihub.GlassButton
                     android:id="@+id/btnShare"
-                    style="@style/Widget.MiriquidiHub.Button.GlassOutlined"
+                    style="@style/Widget.App.Button.Outlined"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -109,13 +110,13 @@
             </LinearLayout>
 
             <!-- Hinweis zur optionalen Berechtigung (Mobilfunk-Details) -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/cardPhonePermission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:visibility="gone"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
 >
 
                 <LinearLayout
@@ -137,7 +138,7 @@
                         android:text="@string/netdiag_phone_perm_desc"
                         android:textAppearance="?attr/textAppearanceBodyMedium" />
 
-                    <com.google.android.material.button.MaterialButton
+                    <io.github.tux4us.miriquidihub.GlassButton
                         android:id="@+id/btnGrantPhone"
                         style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="wrap_content"
@@ -145,7 +146,7 @@
                         android:layout_gravity="end"
                         android:text="@string/btn_grant_permission" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- Ergebnisabschnitte (dynamisch) -->
             <LinearLayout

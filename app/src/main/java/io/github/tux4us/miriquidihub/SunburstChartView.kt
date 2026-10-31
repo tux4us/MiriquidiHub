@@ -219,7 +219,7 @@ class SunburstChartView @JvmOverloads constructor(
             typedValue.data
         } else {
             // windowBackground ist ein Drawable (Verlauf): dunkle Glas-Farbe als Mittelpunkt
-            Color.parseColor("#0B130C")
+            Color.parseColor("#0D0F0E")
         }
     }
 }

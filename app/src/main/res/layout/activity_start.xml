@@ -8,7 +8,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_bar"
+        android:background="@color/gl_bar"
         android:fitsSystemWindows="true">
 
         <androidx.appcompat.widget.Toolbar
@@ -44,7 +44,7 @@
                 android:layout_marginBottom="8dp" />
 
             <!-- 1. Support Report -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavReportFull"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -54,16 +54,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group1_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -74,7 +73,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -82,7 +81,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_report"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group1_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -92,7 +91,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_report_support"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -106,10 +105,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 2. Location Sharing -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavLocationShare"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -119,16 +118,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group2_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -139,7 +137,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -147,7 +145,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_location"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group2_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -157,7 +155,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/location_sharing"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -171,10 +169,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 3. Simple Screenshot -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavSimpleScreenshot"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -184,16 +182,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group3_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -204,7 +201,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -212,7 +209,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_simple_screenshot"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group3_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -222,7 +219,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_simple_screenshot"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -236,10 +233,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 4. Long Screenshot -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavScreenshot"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -249,16 +246,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group4_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -269,7 +265,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -277,7 +273,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_long_screenshot"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group4_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -287,7 +283,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_screenshot"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -301,10 +297,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 5. Storage Analysis -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavStorageAnalysis"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -314,16 +310,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group5_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -334,7 +329,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -342,7 +337,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_storage"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group5_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -352,7 +347,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_storage_analysis"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -366,10 +361,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 6. Network Diagnostic -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavNetworkDiagnostic"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -379,16 +374,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group6_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -399,7 +393,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -407,7 +401,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_network"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group6_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -417,7 +411,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_network_diagnostic"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -431,10 +425,10 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
             <!-- 7. Hardware Self-Test -->
-            <com.google.android.material.card.MaterialCardView
+            <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavHardwareTest"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -444,16 +438,15 @@
                 android:minHeight="58dp"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
-                app:rippleColor="@color/glass_fill_pressed"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:strokeWidth="0dp"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group7_stroke"
+                app:strokeWidth="2dp"
 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_button_3d"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:paddingStart="16dp"
@@ -464,7 +457,7 @@
                     <FrameLayout
                         android:layout_width="42dp"
                         android:layout_height="42dp"
-                        android:background="@drawable/bg_icon_badge_3d"
+                        android:background="@drawable/bg_icon_badge_glass"
                         android:padding="8dp">
 
                         <ImageView
@@ -472,7 +465,7 @@
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_hardware"
                             android:importantForAccessibility="no"
-                            app:tint="#FFFFFF" />
+                            app:tint="@color/rd_group7_accent" />
                     </FrameLayout>
 
                     <TextView
@@ -482,7 +475,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/btn_hardware_test"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/rd_text_primary"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -496,7 +489,7 @@
                         android:importantForAccessibility="no"
                         app:tint="#D0FFFFFF" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </io.github.tux4us.miriquidihub.GlassCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

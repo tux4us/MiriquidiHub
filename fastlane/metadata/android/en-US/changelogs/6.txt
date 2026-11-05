@@ -1,0 +1,2 @@
+First release on F-Droid.
+New: privacy improvement (WebDAV credentials are no longer included in backups).

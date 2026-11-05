@@ -511,4 +511,10 @@
     <string name="hw_gps_accuracy_unknown">Genauigkeit unbekannt</string>
     <string name="hw_gps_ok">Fix nach %1$.0f s, %2$s, Satelliten genutzt/sichtbar: %3$d/%4$d</string>
     <string name="hw_gps_timeout">Kein Fix innerhalb von %1$d s (Satelliten sichtbar: %2$d). Test im Freien wiederholen.</string>
+
+    <!-- Activity- und Dienst-Bezeichnungen (Manifest) -->
+    <string name="label_device_report">Geräte-Report</string>
+    <string name="label_report_history">Bericht-Historie</string>
+    <string name="label_storage_analysis">Speicher-Analyse</string>
+    <string name="label_scroll_service">MiriquidiHub Scroll-Dienst</string>
 </resources>

@@ -1,0 +1,1 @@
+Android diagnostic tools: device report, hardware test, network, storage

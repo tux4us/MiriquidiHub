@@ -1,0 +1,26 @@
+MiriquidiHub bundles tools for diagnosing and documenting Android devices. The app requires no Google services and contains no trackers.
+
+Features:
+• Device report: read manufacturer, model, hardware, Android version and build fingerprint, add notes and photos, share as text or export as PDF
+• Hardware self-test: 12 tests (touchscreen, display, speaker, microphone, vibration, sensors, battery, cameras, charging port, GPS and more); results are included in the device report
+• Network diagnostics: connection status, network configuration, Wi-Fi and mobile details, plus DNS, TCP and HTTPS tests with hints on the likely cause of a failure
+• Screenshots: simple screenshot and long screenshot (scrolling capture)
+• Storage usage: analysis of storage usage and app caches
+• Location sharing: share your position via your own WebDAV storage, map display with OpenStreetMap
+
+Privacy:
+• Results are stored locally
+• Microphone input is evaluated in memory only
+• Network tests contact only f-droid.org, github.com, wikipedia.org and mozilla.org
+• SSID, BSSID and your own IP addresses are neither displayed nor shared
+
+Permissions and their purpose:
+• Access to all files and usage statistics: storage and cache analysis
+• List of installed apps: app selection in the device report and cache analysis
+• Accessibility service: automatic scrolling for the long screenshot
+• Display over other apps: screenshot button
+• Location: GPS test and location sharing
+• Microphone: microphone test
+• Phone state (optional): network type and signal strength in network diagnostics
+
+The source code is licensed under the GPL-3.0.

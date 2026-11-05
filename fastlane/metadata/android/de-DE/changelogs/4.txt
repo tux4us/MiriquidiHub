@@ -1,0 +1,2 @@
+Erste Veröffentlichung auf F-Droid.
+Neu: Datenschutz-Verbesserung (WebDAV-Zugangsdaten werden nicht mehr in Backups aufgenommen).

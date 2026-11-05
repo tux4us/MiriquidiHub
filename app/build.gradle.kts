@@ -23,8 +23,8 @@ android {
         applicationId = "io.github.tux4us.miriquidihub"
         minSdk = 24
         targetSdk = 36
-        versionCode = 6
-        versionName = "0.1.5"
+        versionCode = 7
+        versionName = "0.1.6"
     }
 
     signingConfigs {

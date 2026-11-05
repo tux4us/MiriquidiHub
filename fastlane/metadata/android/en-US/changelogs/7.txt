@@ -1,0 +1,1 @@
+Gradle wrapper hardened (distribution checksum, updated wrapper version).

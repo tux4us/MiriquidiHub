@@ -6,12 +6,13 @@ Features:
 • Network diagnostics: connection status, network configuration, Wi-Fi and mobile details, plus DNS, TCP and HTTPS tests with hints on the likely cause of a failure
 • Screenshots: simple screenshot and long screenshot (scrolling capture)
 • Storage usage: analysis of storage usage and app caches
-• Location sharing: share your position via your own WebDAV storage, map display with OpenStreetMap
+• Location sharing: share your position via your own WebDAV storage, map display with OpenStreetMap, optional route calculation via OpenRouteService (own API key required)
 
 Privacy:
 • Results are stored locally
 • Microphone input is evaluated in memory only
 • Network tests contact only f-droid.org, github.com, wikipedia.org and mozilla.org
+• The map loads tiles from OpenStreetMap; route calculation sends start and destination coordinates to api.openrouteservice.org, only if you have entered your own API key
 • SSID, BSSID and your own IP addresses are neither displayed nor shared
 
 Permissions and their purpose:

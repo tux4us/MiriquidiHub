@@ -6,12 +6,13 @@ Funktionen:
 • Netzwerk-Diagnose: Verbindungsstatus, Netzwerkkonfiguration, WLAN- und Mobilfunk-Details sowie DNS-, TCP- und HTTPS-Tests mit Hinweisen zur Fehlerursache
 • Screenshots: einfacher Screenshot und Long Screenshot (Scrollaufnahme)
 • Speicherbelegung: Analyse der Speicherbelegung und der App-Caches
-• Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, Kartendarstellung mit OpenStreetMap
+• Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, Kartendarstellung mit OpenStreetMap, optionale Routenberechnung über OpenRouteService (eigener API-Schlüssel erforderlich)
 
 Datenschutz:
 • Ergebnisse werden lokal gespeichert
 • Mikrofonaufnahmen werden nur im Arbeitsspeicher ausgewertet
 • Netzwerktests kontaktieren ausschließlich f-droid.org, github.com, wikipedia.org und mozilla.org
+• Die Karte lädt Kacheln von OpenStreetMap; die Routenberechnung sendet Start- und Zielkoordinaten an api.openrouteservice.org, nur wenn ein eigener API-Schlüssel eingetragen ist
 • SSID, BSSID und eigene IP-Adressen werden nicht angezeigt oder geteilt
 
 Berechtigungen und ihr Zweck:

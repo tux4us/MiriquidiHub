@@ -14,17 +14,10 @@ import android.media.ImageReader
 import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import android.os.Build
-import android.os.Environment
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.provider.MediaStore
 import android.widget.Toast
-import java.io.File
-import java.io.FileOutputStream
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class SimpleScreenshotService : Service() {
 
@@ -38,15 +31,17 @@ class SimpleScreenshotService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val resultCode = intent?.getIntExtra("resultCode", 0) ?: 0
         val data = intent?.getParcelableExtra<Intent>("data")
+        val delaySeconds = (intent?.getIntExtra("delaySeconds", 0) ?: 0).coerceIn(0, 30)
 
         if (data != null) {
             startForegroundService()
-            setupMediaProjection(resultCode, data)
-            
-            // Verzögerung um sicherzustellen, dass das System den Content gezeichnet hat
-            handler.postDelayed({
-                takeScreenshot()
-            }, 500)
+            // Die Projektion wird erst nach der Wartezeit eingerichtet, damit das Bild
+            // dem Zustand zum Aufnahmezeitpunkt entspricht und nicht einem älteren Frame.
+            countdown(delaySeconds) {
+                setupMediaProjection(resultCode, data)
+                // Verzögerung um sicherzustellen, dass das System den Content gezeichnet hat
+                handler.postDelayed({ takeScreenshot(0) }, 500)
+            }
         } else {
             stopSelf()
         }
@@ -54,8 +49,37 @@ class SimpleScreenshotService : Service() {
         return START_NOT_STICKY
     }
 
+    private fun countdown(remaining: Int, onDone: () -> Unit) {
+        if (remaining <= 0) {
+            onDone()
+            return
+        }
+        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        manager.notify(2001, buildNotification(getString(R.string.screenshot_countdown, remaining)))
+        handler.postDelayed({ countdown(remaining - 1, onDone) }, 1000)
+    }
+
+    private val channelId = "simple_screenshot_service"
+
+    private fun buildNotification(text: String): Notification {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Notification.Builder(this, channelId)
+                .setContentTitle(getString(R.string.screenshot_toolbar_title))
+                .setContentText(text)
+                .setSmallIcon(android.R.drawable.ic_menu_camera)
+                .setOnlyAlertOnce(true)
+                .build()
+        } else {
+            @Suppress("DEPRECATION")
+            Notification.Builder(this)
+                .setContentTitle(getString(R.string.screenshot_toolbar_title))
+                .setContentText(text)
+                .setSmallIcon(android.R.drawable.ic_menu_camera)
+                .getNotification()
+        }
+    }
+
     private fun startForegroundService() {
-        val channelId = "simple_screenshot_service"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 channelId, getString(R.string.screenshot_service_channel_name),
@@ -64,22 +88,7 @@ class SimpleScreenshotService : Service() {
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
         }
-
-        val notification = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Notification.Builder(this, channelId)
-                .setContentTitle(getString(R.string.screenshot_toolbar_title))
-                .setContentText(getString(R.string.screenshot_capturing))
-                .setSmallIcon(android.R.drawable.ic_menu_camera)
-                .build()
-        } else {
-            @Suppress("DEPRECATION")
-            Notification.Builder(this)
-                .setContentTitle(getString(R.string.screenshot_toolbar_title))
-                .setContentText(getString(R.string.screenshot_capturing))
-                .setSmallIcon(android.R.drawable.ic_menu_camera)
-                .getNotification()
-        }
-        startForeground(2001, notification)
+        startForeground(2001, buildNotification(getString(R.string.screenshot_capturing)))
     }
 
     private fun setupMediaProjection(resultCode: Int, data: Intent) {
@@ -110,106 +119,49 @@ class SimpleScreenshotService : Service() {
         )
     }
 
-    private fun takeScreenshot() {
+    private fun takeScreenshot(attempt: Int) {
         val image = imageReader?.acquireLatestImage()
-        if (image != null) {
-            try {
-                val plane = image.planes[0]
-                val buffer = plane.buffer
-                val pixelStride = plane.pixelStride
-                val rowStride = plane.rowStride
-                val width = image.width
-                val height = image.height
-                val rowPadding = rowStride - pixelStride * width
-
-                val bitmap = Bitmap.createBitmap(
-                    width + rowPadding / pixelStride,
-                    height, Bitmap.Config.ARGB_8888
-                )
-                bitmap.copyPixelsFromBuffer(buffer)
-
-                val cleanBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height)
-                saveBitmap(cleanBitmap)
-                bitmap.recycle()
-                
-                Toast.makeText(this, getString(R.string.screenshot_saved), Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, getString(R.string.error_generic, e.message), Toast.LENGTH_SHORT).show()
-            } finally {
-                image.close()
+        if (image == null) {
+            // Noch kein Frame: kurz warten und erneut versuchen
+            if (attempt < 3) {
+                handler.postDelayed({ takeScreenshot(attempt + 1) }, 200)
+            } else {
+                Toast.makeText(this, getString(R.string.error_frame_capture), Toast.LENGTH_SHORT).show()
                 stopSelf()
             }
-        } else {
-            // Falls kein Image da ist, kurz warten und nochmal versuchen
-            handler.postDelayed({
-                val secondAttempt = imageReader?.acquireLatestImage()
-                if (secondAttempt != null) {
-                    try {
-                        val plane = secondAttempt.planes[0]
-                        val buffer = plane.buffer
-                        val pixelStride = plane.pixelStride
-                        val rowStride = plane.rowStride
-                        val width = secondAttempt.width
-                        val height = secondAttempt.height
-                        val rowPadding = rowStride - pixelStride * width
-
-                        val bitmap = Bitmap.createBitmap(
-                            width + rowPadding / pixelStride,
-                            height, Bitmap.Config.ARGB_8888
-                        )
-                        bitmap.copyPixelsFromBuffer(buffer)
-                        
-                        val cleanBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height)
-                        saveBitmap(cleanBitmap)
-                        bitmap.recycle()
-                        Toast.makeText(this, getString(R.string.screenshot_saved), Toast.LENGTH_SHORT).show()
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    } finally {
-                        secondAttempt.close()
-                        stopSelf()
-                    }
-                } else {
-                    Toast.makeText(this, getString(R.string.error_frame_capture), Toast.LENGTH_SHORT).show()
-                    stopSelf()
-                }
-            }, 200)
+            return
         }
-    }
-
-    private fun saveBitmap(bitmap: Bitmap) {
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val fileName = "Screenshot_$timeStamp.png"
-        
-        val contentValues = android.content.ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
-            put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + File.separator + "MiriquidiHub")
-                put(MediaStore.MediaColumns.IS_PENDING, 1)
-            }
-        }
-
-        val uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-        
         try {
-            uri?.let {
-                contentResolver.openOutputStream(it)?.use { out ->
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
-                }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    contentValues.clear()
-                    contentValues.put(MediaStore.MediaColumns.IS_PENDING, 0)
-                    contentResolver.update(it, contentValues, null, null)
-                }
+            val plane = image.planes[0]
+            val pixelStride = plane.pixelStride
+            val width = image.width
+            val height = image.height
+            val rowPadding = plane.rowStride - pixelStride * width
+
+            val bitmap = Bitmap.createBitmap(width + rowPadding / pixelStride, height, Bitmap.Config.ARGB_8888)
+            bitmap.copyPixelsFromBuffer(plane.buffer)
+            val clean = Bitmap.createBitmap(bitmap, 0, 0, width, height)
+            val uri = ScreenshotStore.save(this, clean)
+            bitmap.recycle()
+            clean.recycle()
+
+            if (uri != null) {
+                Toast.makeText(this, getString(R.string.screenshot_saved), Toast.LENGTH_SHORT).show()
+                ScreenshotStore.notifyEditable(this, uri)
+            } else {
+                Toast.makeText(this, getString(R.string.error_saving, "MediaStore"), Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
             e.printStackTrace()
+            Toast.makeText(this, getString(R.string.error_generic, e.message), Toast.LENGTH_SHORT).show()
+        } finally {
+            image.close()
+            stopSelf()
         }
     }
 
     override fun onDestroy() {
+        handler.removeCallbacksAndMessages(null)
         virtualDisplay?.release()
         imageReader?.close()
         mediaProjection?.stop()

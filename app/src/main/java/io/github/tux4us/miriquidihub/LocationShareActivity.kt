@@ -11,7 +11,16 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
+import android.app.TimePickerDialog
+import android.text.InputType
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.Switch
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -139,6 +148,10 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
         return when (item.itemId) {
             R.id.action_webdav_settings -> {
                 showWebDavConfigDialog()
+                true
+            }
+            R.id.action_share_settings -> {
+                showShareSettingsDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -375,13 +388,18 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
 
     // ── Markers ───────────────────────────────────────────────────────────
 
-    private fun updateMarkersOnMap(payloads: List<LocationPayload>) {
+    private fun updateMarkersOnMap(payloads: List<LocationPayload>, lockedCount: Int = 0) {
         val now = System.currentTimeMillis()
         val seenIds = mutableSetOf<String>()
         deviceList.clear()
         deviceList.addAll(payloads.sortedByDescending { it.timestamp })
         deviceAdapter.notifyDataSetChanged()
-        binding.tvMapStatus.text = if (payloads.isEmpty()) getString(R.string.no_devices_found) else getString(R.string.devices_found_count, payloads.size)
+        val statusText = if (payloads.isEmpty()) getString(R.string.no_devices_found) else getString(R.string.devices_found_count, payloads.size)
+        binding.tvMapStatus.text = if (lockedCount > 0) {
+            statusText + "\n" + getString(R.string.location_e2e_locked, lockedCount)
+        } else {
+            statusText
+        }
 
         for (payload in payloads) {
             seenIds.add(payload.deviceId)
@@ -604,6 +622,92 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
             .show()
     }
 
+    // ── Freigabe-Einstellungen (Intervall, Zeitfenster, Verschlüsselung) ──
+
+    private fun showShareSettingsDialog() {
+        val settings = LocationShareSettings(this)
+        val density = resources.displayMetrics.density
+        val pad = (20 * density).toInt()
+        val layout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(pad, pad / 2, pad, 0)
+        }
+        fun label(textRes: Int) = TextView(this).apply {
+            setText(textRes)
+            setPadding(0, pad / 2, 0, 0)
+        }
+
+        layout.addView(label(R.string.share_settings_interval))
+        val intervals = LocationShareSettings.INTERVALS_S
+        val intervalSpinner = Spinner(this).apply {
+            adapter = ArrayAdapter(
+                this@LocationShareActivity, android.R.layout.simple_spinner_dropdown_item,
+                intervals.map { getString(R.string.share_settings_interval_value, it) }
+            )
+            setSelection(intervals.indexOf(settings.intervalSeconds).coerceAtLeast(0))
+        }
+        layout.addView(intervalSpinner)
+
+        var startMinute = settings.windowStartMinute
+        var endMinute = settings.windowEndMinute
+        val windowSwitch = Switch(this).apply {
+            setText(R.string.share_settings_window)
+            isChecked = settings.windowEnabled
+            setPadding(0, pad / 2, 0, 0)
+        }
+        layout.addView(windowSwitch)
+        val startButton = Button(this)
+        val endButton = Button(this)
+        fun refreshButtons() {
+            startButton.text = getString(R.string.share_settings_window_from, LocationShareSettings.formatMinute(startMinute))
+            endButton.text = getString(R.string.share_settings_window_to, LocationShareSettings.formatMinute(endMinute))
+            startButton.isEnabled = windowSwitch.isChecked
+            endButton.isEnabled = windowSwitch.isChecked
+        }
+        windowSwitch.setOnCheckedChangeListener { _, _ -> refreshButtons() }
+        startButton.setOnClickListener {
+            TimePickerDialog(this, { _, h, m -> startMinute = h * 60 + m; refreshButtons() }, startMinute / 60, startMinute % 60, true).show()
+        }
+        endButton.setOnClickListener {
+            TimePickerDialog(this, { _, h, m -> endMinute = h * 60 + m; refreshButtons() }, endMinute / 60, endMinute % 60, true).show()
+        }
+        layout.addView(startButton)
+        layout.addView(endButton)
+        refreshButtons()
+
+        layout.addView(label(R.string.share_settings_passphrase))
+        val passphraseInput = EditText(this).apply {
+            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            hint = getString(R.string.share_settings_passphrase_hint)
+            setText(prefs.getE2ePassphrase())
+        }
+        layout.addView(passphraseInput)
+        layout.addView(TextView(this).apply {
+            setText(R.string.share_settings_passphrase_info)
+            textSize = 12f
+        })
+
+        AlertDialog.Builder(this)
+            .setTitle(R.string.share_settings_title)
+            .setView(android.widget.ScrollView(this).apply { addView(layout) })
+            .setPositiveButton(R.string.save) { _, _ ->
+                settings.intervalSeconds = intervals[intervalSpinner.selectedItemPosition]
+                settings.windowEnabled = windowSwitch.isChecked
+                settings.windowStartMinute = startMinute
+                settings.windowEndMinute = endMinute
+                prefs.saveE2ePassphrase(passphraseInput.text?.toString().orEmpty())
+                // Der Dienst liest Intervall und Zeitfenster laufend, GPS-Takt aber nur beim Start.
+                if (LocationShareService.isServiceRunning) {
+                    stopService(Intent(this, LocationShareService::class.java))
+                    binding.root.postDelayed({ startShareService() }, 2500)
+                }
+                Toast.makeText(this, R.string.settings_saved, Toast.LENGTH_SHORT).show()
+                refreshMap()
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+
     // ── Map Refresh ───────────────────────────────────────────────────────
 
     private fun startMapRefreshLoop() {
@@ -635,14 +739,21 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
             
             val files = filesResult.getOrDefault(emptyList()).filter { it != own && it.startsWith("location_") }
             val payloads = mutableListOf<LocationPayload>()
+            var locked = 0
+            val passphrase = prefs.getE2ePassphrase()
             val tempDir  = File(cacheDir, "loc_dl").apply { mkdirs() }
             
             for (f in files) {
                 val file = File(tempDir, f)
                 if (client.downloadFile("${LocationShareService.REMOTE_DIR}/$f", file).isSuccess) {
                     try { 
-                        val text = file.readText()
-                        val payload = gson.fromJson(text, LocationPayload::class.java)
+                        var text: String? = file.readText()
+                        if (text != null && PayloadCrypto.isEnvelope(text)) {
+                            // Verschlüsselt: ohne oder mit falscher Passphrase nicht lesbar
+                            text = PayloadCrypto.decrypt(text, passphrase)
+                            if (text == null) locked++
+                        }
+                        val payload = text?.let { gson.fromJson(it, LocationPayload::class.java) }
                         if (payload != null) payloads.add(payload)
                     } catch (e: Exception) {
                         Log.e(TAG, "Fehler beim Parsen von $f: ${e.message}")
@@ -650,7 +761,7 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
                     file.delete()
                 }
             }
-            withContext(Dispatchers.Main) { updateMarkersOnMap(payloads) }
+            withContext(Dispatchers.Main) { updateMarkersOnMap(payloads, locked) }
         }
     }
 

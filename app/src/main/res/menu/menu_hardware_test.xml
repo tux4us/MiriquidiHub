@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_hw_history"
+        android:title="@string/hw_menu_history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_hw_archive"
+        android:title="@string/hw_menu_archive"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_hw_export_file"
+        android:title="@string/hw_menu_export_file"
+        app:showAsAction="never" />
+</menu>

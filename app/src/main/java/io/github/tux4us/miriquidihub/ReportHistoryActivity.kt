@@ -6,6 +6,13 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +24,44 @@ import java.util.*
 class ReportHistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReportHistoryBinding
     private lateinit var reportStorage: ReportStorage
+
+    private val exportArchive = registerForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri ->
+        if (uri == null) return@registerForActivityResult
+        lifecycleScope.launch {
+            val count = withContext(Dispatchers.IO) {
+                try {
+                    contentResolver.openOutputStream(uri)?.use { ReportArchive.write(reportStorage.getAllReports(), it) } ?: -1
+                } catch (e: Exception) {
+                    -1
+                }
+            }
+            val message = if (count >= 0) getString(R.string.archive_exported, count) else getString(R.string.archive_failed)
+            Toast.makeText(this@ReportHistoryActivity, message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private val importArchive = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        if (uri == null) return@registerForActivityResult
+        lifecycleScope.launch {
+            val added = withContext(Dispatchers.IO) {
+                try {
+                    val imported = contentResolver.openInputStream(uri)?.use {
+                        ReportArchive.read(it, File(filesDir, "report_images"))
+                    } ?: return@withContext -1
+                    val existing = reportStorage.getAllReports().map { r -> r.id }.toSet()
+                    val fresh = imported.filter { r -> r.id !in existing }
+                    // älteste zuerst einfügen, damit die Reihenfolge (neueste oben) erhalten bleibt
+                    fresh.sortedBy { r -> r.timestamp }.forEach { r -> reportStorage.saveReport(r) }
+                    fresh.size
+                } catch (e: Exception) {
+                    -1
+                }
+            }
+            val message = if (added >= 0) getString(R.string.archive_imported, added) else getString(R.string.archive_failed)
+            Toast.makeText(this@ReportHistoryActivity, message, Toast.LENGTH_LONG).show()
+            setupRecyclerView()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +93,8 @@ class ReportHistoryActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        menu.add(0, MENU_EXPORT_ARCHIVE, 100, R.string.archive_export)
+        menu.add(0, MENU_IMPORT_ARCHIVE, 101, R.string.archive_import)
         return true
     }
 
@@ -75,10 +122,23 @@ class ReportHistoryActivity : AppCompatActivity() {
                 AppInfoDialog.show(this)
                 true
             }
+            MENU_EXPORT_ARCHIVE -> {
+                exportArchive.launch("miriquidihub_berichte.zip")
+                true
+            }
+            MENU_IMPORT_ARCHIVE -> {
+                importArchive.launch(arrayOf("application/zip", "application/octet-stream"))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
+
+    companion object {
+        private const val MENU_EXPORT_ARCHIVE = 9001
+        private const val MENU_IMPORT_ARCHIVE = 9002
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         finish()

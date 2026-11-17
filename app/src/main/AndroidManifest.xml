@@ -20,6 +20,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="tiramisu" />
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
@@ -42,6 +53,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
 
         <activity
@@ -76,10 +90,86 @@
             android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
 
         <activity
+            android:name="io.github.tux4us.miriquidihub.ScreenshotEditorActivity"
+            android:exported="false"
+            android:label="@string/editor_mode_redact" />
+
+        <activity
             android:name="io.github.tux4us.miriquidihub.StorageAnalysisActivity"
             android:exported="false"
             android:label="@string/label_storage_analysis"
             android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.ToolsActivity"
+            android:exported="false"
+            android:label="@string/tools_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.BatteryMonitorActivity"
+            android:exported="false"
+            android:label="@string/bm_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.SystemMonitorActivity"
+            android:exported="false"
+            android:label="@string/sm_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.SensorExplorerActivity"
+            android:exported="false"
+            android:label="@string/se_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.SecurityCheckActivity"
+            android:exported="false"
+            android:label="@string/sc_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.PermissionOverviewActivity"
+            android:exported="false"
+            android:label="@string/po_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.AppInventoryActivity"
+            android:exported="false"
+            android:label="@string/ai_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.WifiAnalysisActivity"
+            android:exported="false"
+            android:label="@string/wa_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.BugReportActivity"
+            android:exported="false"
+            android:label="@string/br_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.LogcatExportActivity"
+            android:exported="false"
+            android:label="@string/lc_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.ReportCompareActivity"
+            android:exported="false"
+            android:label="@string/rc_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.ToolsActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.StorageInsightsActivity"
+            android:exported="false"
+            android:parentActivityName="io.github.tux4us.miriquidihub.StorageAnalysisActivity" />
 
         <activity
             android:name="io.github.tux4us.miriquidihub.HardwareTestActivity"
@@ -121,6 +211,51 @@
             android:name="io.github.tux4us.miriquidihub.LocationShareService"
             android:exported="false"
             android:foregroundServiceType="location" />
+
+        <service
+            android:name="io.github.tux4us.miriquidihub.NetworkTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_network"
+            android:label="@string/shortcut_network_short"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="io.github.tux4us.miriquidihub.ScreenshotTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_simple_screenshot"
+            android:label="@string/shortcut_screenshot_short"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="io.github.tux4us.miriquidihub.SecurityTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_report"
+            android:label="@string/shortcut_security_short"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="io.github.tux4us.miriquidihub.StatusWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_status_info" />
+        </receiver>
 
         <!--
           Wird von androidx.appcompat für den Per-App-Sprache-Backport auf

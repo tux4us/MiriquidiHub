@@ -627,6 +627,7 @@ class ScreenshotService : Service() {
                     contentResolver.update(it, contentValues, null, null)
                 }
                 Toast.makeText(this, getString(R.string.screenshot_saved), Toast.LENGTH_SHORT).show()
+                ScreenshotStore.notifyEditable(this, it)
             }
         } catch (e: Exception) {
             e.printStackTrace()

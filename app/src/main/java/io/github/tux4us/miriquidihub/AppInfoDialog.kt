@@ -23,6 +23,7 @@ object AppInfoDialog {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/tux4us/MiriquidiHub"))
             context.startActivity(intent)
         }
+        builder.setNeutralButton(R.string.appinfo_donate) { _, _ -> DonationDialog.show(context) }
         builder.setNegativeButton(R.string.close, null)
         builder.show()
     }

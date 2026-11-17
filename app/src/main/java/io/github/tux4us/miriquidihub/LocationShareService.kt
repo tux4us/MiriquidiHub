@@ -37,7 +37,6 @@ class LocationShareService : Service(), LocationListener {
         const  val LOCATION_FILE_PREFIX      = "location_"
         const  val LOCATION_FILE_SUFFIX      = ".json"
         const  val REMOTE_DIR                = "MiriquidiHub"
-        private const val UPLOAD_INTERVAL_MS = 60_000L
         private const val GPS_MIN_TIME_MS    = 30_000L
         private const val GPS_MIN_DISTANCE_M = 0f
         const  val PREF_LOCATION_LABEL       = "location_share_label"
@@ -63,6 +62,8 @@ class LocationShareService : Service(), LocationListener {
     @Volatile private var lastLocation: Location? = null
     private val gson = Gson()
     private val prefs by lazy { WebDavPreferences(this) }
+    private val settings by lazy { LocationShareSettings(this) }
+    @Volatile private var remoteFilePresent = false
 
     override fun onCreate() {
         super.onCreate()
@@ -110,8 +111,9 @@ class LocationShareService : Service(), LocationListener {
 
     private fun startGpsUpdates() {
         try {
+            val minTime = (settings.intervalSeconds * 1000L / 2).coerceIn(10_000L, GPS_MIN_TIME_MS * 2)
             locationManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER, GPS_MIN_TIME_MS, GPS_MIN_DISTANCE_M, this
+                LocationManager.GPS_PROVIDER, minTime, GPS_MIN_DISTANCE_M, this
             )
         } catch (e: SecurityException) {
             Log.e(TAG, "GPS-Berechtigung entzogen", e)
@@ -133,13 +135,22 @@ class LocationShareService : Service(), LocationListener {
             // Erstes Mal kurz warten, bis GPS evtl. einen Fix hat, dann sofort erster Upload
             delay(5000) 
             while (isActive) {
-                val loc = lastLocation
-                if (loc != null) {
-                    uploadLocation(loc)
+                if (!settings.isSendingAllowedNow()) {
+                    // Außerhalb des Zeitfensters: eigene Standortdatei einmalig entfernen
+                    if (remoteFilePresent) {
+                        deleteOwnLocationFile()
+                        remoteFilePresent = false
+                        updateNotification(getString(R.string.location_outside_window))
+                    }
                 } else {
-                    Log.d(TAG, "Kein Standort zum Hochladen verfügbar")
+                    val loc = lastLocation
+                    if (loc != null) {
+                        uploadLocation(loc)
+                    } else {
+                        Log.d(TAG, "Kein Standort zum Hochladen verfügbar")
+                    }
                 }
-                delay(UPLOAD_INTERVAL_MS)
+                delay(settings.intervalSeconds * 1000L)
             }
         }
     }
@@ -159,7 +170,9 @@ class LocationShareService : Service(), LocationListener {
             batteryLevel = getBatteryLevel()
         )
 
-        val json     = gson.toJson(payload)
+        val plainJson  = gson.toJson(payload)
+        val passphrase = prefs.getE2ePassphrase()
+        val json = if (passphrase.isNotEmpty()) PayloadCrypto.encrypt(plainJson, passphrase) else plainJson
         val tempFile = File(cacheDir, remoteFileName(this))
         tempFile.writeText(json)
 
@@ -170,6 +183,7 @@ class LocationShareService : Service(), LocationListener {
         tempFile.delete()
 
         if (result.isSuccess) {
+            remoteFilePresent = true
             updateNotification(getString(R.string.location_last_sent, formatTime(payload.timestamp)))
         }
     }

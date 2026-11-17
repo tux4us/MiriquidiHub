@@ -200,13 +200,12 @@ class DeviceReportActivity : AppCompatActivity() {
         }
         val level: Int = batteryStatus?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
         val scale: Int = batteryStatus?.getIntExtra(BatteryManager.EXTRA_SCALE, -1) ?: -1
-        val batteryPct = level * 100 / scale.toFloat()
-        val health = when(batteryStatus?.getIntExtra(BatteryManager.EXTRA_HEALTH, -1)) {
-            BatteryManager.BATTERY_HEALTH_GOOD -> getString(R.string.battery_health_good)
-            BatteryManager.BATTERY_HEALTH_OVERHEAT -> getString(R.string.battery_health_overheat)
-            BatteryManager.BATTERY_HEALTH_DEAD -> getString(R.string.battery_health_dead)
-            else -> getString(R.string.battery_health_unknown)
-        }
+        val batteryPct = if (level >= 0 && scale > 0) level * 100 / scale.toFloat() else -1f
+        val health = BatteryHealth.label(
+            this,
+            batteryStatus?.getIntExtra(BatteryManager.EXTRA_HEALTH, BatteryManager.BATTERY_HEALTH_UNKNOWN)
+                ?: BatteryManager.BATTERY_HEALTH_UNKNOWN
+        )
         
         specs.append("\n").append(getString(R.string.report_section_energy)).append("\n")
         specs.append(getString(R.string.report_battery_level, batteryPct.toString())).append("\n")
@@ -256,6 +255,10 @@ class DeviceReportActivity : AppCompatActivity() {
             specs.append(getString(R.string.report_launcher_error)).append("\n")
         }
         
+        // Erweiterte Geräteinformationen (Prozessor, Display, Speicher, Akku, Sicherheit, Software, Sensoren)
+        val extended = DeviceInfo.formatReportBlock(DeviceInfo.collect(this))
+        if (extended.isNotBlank()) specs.append("\n").append(extended).append("\n")
+
         // Ergebnisse des Hardware-Selbsttests (falls vorhanden) als eigener Abschnitt
         HardwareTestStore(this).formatReportBlock(this)?.let { block ->
             specs.append("\n").append(block).append("\n")
@@ -307,6 +310,52 @@ class DeviceReportActivity : AppCompatActivity() {
         }
         startActivity(Intent.createChooser(intent, getString(R.string.report_share_chooser_title)))
     }
+
+    /** Aktueller Bearbeitungsstand als Report-Objekt, ohne zu speichern. */
+    private fun currentReportSnapshot(): DeviceReport = DeviceReport(
+        id = currentReportId ?: UUID.randomUUID().toString(),
+        title = binding.etNoteTitle.text.toString(),
+        note = binding.etNoteContent.text.toString(),
+        specs = binding.tvDeviceSpecs.text.toString(),
+        shelterActive = binding.swShelter.isChecked,
+        securityModeActive = binding.swSecurityMode.isChecked,
+        vpnActive = binding.swVpn.isChecked,
+        imagePaths = selectedImages.mapNotNull { it.path },
+        selectedApps = ArrayList(selectedApps)
+    )
+
+    /** Teilt den Report als Markdown (für Issue-Tracker) oder JSON. Lokale Bildpfade werden nicht exportiert. */
+    private fun shareExport(markdown: Boolean) {
+        val version = try {
+            packageManager.getPackageInfo(packageName, 0).versionName ?: "?"
+        } catch (e: Exception) { "?" }
+        val report = currentReportSnapshot()
+        val text = if (markdown) {
+            ReportExporter.toMarkdown(report, version, exportLabels())
+        } else {
+            ReportExporter.toJson(report, version)
+        }
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.report_share_subject, report.title))
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+        startActivity(Intent.createChooser(intent, getString(R.string.report_share_chooser_title)))
+    }
+
+    private fun exportLabels() = ExportLabels(
+        heading = getString(R.string.export_heading),
+        createdWith = { v -> getString(R.string.export_created_with, v) },
+        note = getString(R.string.export_note),
+        shelter = getString(R.string.export_shelter),
+        securityMode = getString(R.string.export_security_mode),
+        vpn = getString(R.string.export_vpn),
+        yes = getString(R.string.yes),
+        no = getString(R.string.no),
+        affectedApps = getString(R.string.export_affected_apps),
+        imagesAttached = { n -> getString(R.string.export_images_attached, n) },
+        systemData = getString(R.string.export_system_data)
+    )
 
     private fun saveAndStoreReport() {
         val report = saveReportToStorage()
@@ -548,6 +597,7 @@ class DeviceReportActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: android.view.Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_report_export, menu)
         menu.findItem(R.id.action_search)?.isVisible = false
         menu.findItem(R.id.action_refresh)?.isVisible = false
         menu.findItem(R.id.action_report)?.isVisible = false
@@ -569,6 +619,14 @@ class DeviceReportActivity : AppCompatActivity() {
                 val intent = Intent(this, StartActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
                 startActivity(intent)
+                true
+            }
+            R.id.action_export_markdown -> {
+                shareExport(markdown = true)
+                true
+            }
+            R.id.action_export_json -> {
+                shareExport(markdown = false)
                 true
             }
             R.id.action_lang_de -> {

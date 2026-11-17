@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="donate_card_title">Entwickler unterstützen</string>
+    <string name="donate_title">Entwickler unterstützen</string>
+    <string name="donate_message">MiriquidiHub ist freie Software (GPL-3.0), werbefrei und ohne Tracking. Die Entwicklung erfolgt in der Freizeit. Eine freiwillige Spende unterstützt die Weiterentwicklung und Pflege der App.\n\nDie Spende wird über die Webseite von Buy Me a Coffee im Browser abgewickelt. Alle Funktionen der App bleiben unabhängig davon vollständig nutzbar.</string>
+    <string name="donate_open">Spenden</string>
+    <string name="donate_copy_link">Link kopieren</string>
+    <string name="donate_link_copied">Link kopiert</string>
+    <string name="donate_no_browser">Kein Browser gefunden. Link: buymeacoffee.com/tux4us</string>
+    <string name="appinfo_donate">Unterstützen</string>
+</resources>

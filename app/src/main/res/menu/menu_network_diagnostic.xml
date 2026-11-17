@@ -6,4 +6,16 @@
         android:icon="@android:drawable/ic_menu_rotate"
         android:title="@string/menu_refresh"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_net_hosts"
+        android:title="@string/netdiag_menu_hosts"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_net_throughput"
+        android:title="@string/netdiag_menu_throughput"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_net_history"
+        android:title="@string/netdiag_menu_history"
+        app:showAsAction="never" />
 </menu>

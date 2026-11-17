@@ -187,13 +187,7 @@ class HardwareTester(private val ctx: Context) {
         val status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, BatteryManager.BATTERY_STATUS_UNKNOWN)
         val plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0)
 
-        val healthText = when (health) {
-            BatteryManager.BATTERY_HEALTH_GOOD -> ctx.getString(R.string.battery_health_good)
-            BatteryManager.BATTERY_HEALTH_OVERHEAT -> ctx.getString(R.string.battery_health_overheat)
-            BatteryManager.BATTERY_HEALTH_DEAD -> ctx.getString(R.string.battery_health_dead)
-            BatteryManager.BATTERY_HEALTH_UNKNOWN -> ctx.getString(R.string.battery_health_unknown)
-            else -> ctx.getString(R.string.hw_battery_health_other)
-        }
+        val healthText = BatteryHealth.label(ctx, health)
         val statusText = when (status) {
             BatteryManager.BATTERY_STATUS_CHARGING -> ctx.getString(R.string.hw_battery_state_charging)
             BatteryManager.BATTERY_STATUS_DISCHARGING -> ctx.getString(R.string.hw_battery_state_discharging)

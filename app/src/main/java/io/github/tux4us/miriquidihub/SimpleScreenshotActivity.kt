@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class SimpleScreenshotActivity : AppCompatActivity() {
@@ -23,10 +24,31 @@ class SimpleScreenshotActivity : AppCompatActivity() {
         // Kein Layout nötig, da wir nur die Berechtigung anfragen und sofort starten
         projectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
         
-        // Erst kurz warten, damit die Activity sicher im Vordergrund ist, bevor der System-Dialog kommt
-        handler.postDelayed({
-            startMediaProjection()
-        }, 100)
+        showDelayDialog()
+    }
+
+    private var delaySeconds = 0
+
+    /** Auswahl der Verzögerung (zuletzt gewählter Wert vorausgewählt) vor der Systemabfrage. */
+    private fun showDelayDialog() {
+        val settings = ScreenshotSettings(this)
+        val options = ScreenshotSettings.DELAYS_S
+        val labels = options.map {
+            if (it == 0) getString(R.string.screenshot_delay_none) else getString(R.string.screenshot_delay_seconds, it)
+        }.toTypedArray()
+        var selected = options.indexOf(settings.delaySeconds).coerceAtLeast(0)
+        AlertDialog.Builder(this)
+            .setTitle(R.string.screenshot_delay_title)
+            .setSingleChoiceItems(labels, selected) { _, which -> selected = which }
+            .setPositiveButton(R.string.screenshot_start) { _, _ ->
+                delaySeconds = options[selected]
+                settings.delaySeconds = delaySeconds
+                // Erst kurz warten, damit die Activity sicher im Vordergrund ist, bevor der System-Dialog kommt
+                handler.postDelayed({ startMediaProjection() }, 100)
+            }
+            .setNegativeButton(R.string.cancel) { _, _ -> finish() }
+            .setOnCancelListener { finish() }
+            .show()
     }
 
     private val handler = Handler(Looper.getMainLooper())
@@ -46,6 +68,7 @@ class SimpleScreenshotActivity : AppCompatActivity() {
                 val serviceIntent = Intent(this, SimpleScreenshotService::class.java).apply {
                     putExtra("resultCode", resultCode)
                     putExtra("data", data)
+                    putExtra("delaySeconds", delaySeconds)
                 }
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     startForegroundService(serviceIntent)

@@ -1,0 +1,2 @@
+Neu: Werkzeug-Übersicht mit Akku-Monitor, Live-Monitor, Sensor-Explorer, Sicherheitscheck, Berechtigungs- und App-Übersicht, WLAN-Analyse, Fehlerbericht-Assistent, Protokoll-Export und Berichtsvergleich. Schnellkacheln, Widget, Shortcuts.
+Erweitert: Hardwaretest, Netzwerk (IPv6, DNS-Vergleich, Durchsatz, eigene Hosts), Speicher (Duplikate, Papierkorb, Verlauf), verschlüsselte Standortfreigabe, Screenshot-Editor, Berichtsarchiv.

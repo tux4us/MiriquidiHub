@@ -5,7 +5,13 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -84,6 +90,7 @@ class StorageAnalysisActivity : AppCompatActivity() {
 
         showOverallStorageSummary()
         updateOwnCacheSize()
+        purgeExpiredTrash()
     }
 
     override fun onResume() {
@@ -293,8 +300,24 @@ class StorageAnalysisActivity : AppCompatActivity() {
             .setTitle(if (node.isDirectory) R.string.dialog_delete_folder_title else R.string.dialog_delete_file_title)
             .setMessage(message)
             .setNegativeButton(R.string.btn_cancel, null)
-            .setPositiveButton(R.string.btn_confirm_delete) { _, _ -> performDelete(node) }
+            .setNeutralButton(R.string.insights_action_delete) { _, _ -> performDelete(node, toTrash = false) }
+            .setPositiveButton(R.string.insights_action_trash) { _, _ -> performDelete(node, toTrash = true) }
             .show()
+    }
+
+    private fun trashManager() = TrashManager(File(Environment.getExternalStorageDirectory(), TrashManager.FOLDER_NAME))
+
+    private fun purgeExpiredTrash() {
+        if (!hasAllFilesPermission()) return
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
+                try {
+                    trashManager().purgeExpired()
+                } catch (e: Exception) {
+                    // Papierkorb nicht erreichbar – keine Auswirkung auf die Analyse
+                }
+            }
+        }
     }
 
     /**
@@ -307,7 +330,7 @@ class StorageAnalysisActivity : AppCompatActivity() {
         return path.contains("/Android/data") || path.contains("/Android/obb")
     }
 
-    private fun performDelete(node: StorageNode) {
+    private fun performDelete(node: StorageNode, toTrash: Boolean) {
         val parentPath = currentDisplayedNode?.path
         val wasAtRootLevel = navigationStack.isEmpty()
 
@@ -317,7 +340,13 @@ class StorageAnalysisActivity : AppCompatActivity() {
             val success = withContext(Dispatchers.IO) {
                 val file = File(node.path)
                 try {
-                    if (file.isDirectory) file.deleteRecursively() else file.delete()
+                    if (toTrash) {
+                        trashManager().moveToTrash(file) != null
+                    } else if (file.isDirectory) {
+                        file.deleteRecursively()
+                    } else {
+                        file.delete()
+                    }
                 } catch (e: Exception) {
                     false
                 }
@@ -338,7 +367,11 @@ class StorageAnalysisActivity : AppCompatActivity() {
                 binding.scanProgressSpinner.visibility = View.GONE
             }
 
-            val messageRes = if (success) R.string.node_deleted_toast else R.string.node_delete_failed_toast
+            val messageRes = when {
+                !success -> R.string.node_delete_failed_toast
+                toTrash -> R.string.insights_moved_to_trash
+                else -> R.string.node_deleted_toast
+            }
             android.widget.Toast.makeText(
                 this@StorageAnalysisActivity,
                 getString(messageRes, node.name),
@@ -374,6 +407,7 @@ class StorageAnalysisActivity : AppCompatActivity() {
         val percent = (used.toFloat() / total.toFloat() * 100f).toInt()
         binding.tvSummary.text = getString(R.string.storage_usage_summary, formatBytes(used), formatBytes(total), percent.toString(), formatBytes(free))
         binding.progressOverall.progress = percent.coerceIn(0, 100)
+        StorageHistory(this).record(used, total)
     }
 
     private fun startScan() {
@@ -436,6 +470,75 @@ class StorageAnalysisActivity : AppCompatActivity() {
         val relative = node.path.removePrefix(root)
         val rootLabel = getString(R.string.storage_root_label)
         return if (relative.isEmpty()) rootLabel else "$rootLabel${relative.replace("/", " / ")}"
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_storage, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_storage_largest -> openInsights(StorageInsightsActivity.MODE_LARGEST)
+        R.id.action_storage_duplicates -> openInsights(StorageInsightsActivity.MODE_DUPLICATES)
+        R.id.action_storage_filter -> {
+            showFilterDialog()
+            true
+        }
+        R.id.action_storage_trash -> openInsights(StorageInsightsActivity.MODE_TRASH)
+        R.id.action_storage_history -> openInsights(StorageInsightsActivity.MODE_HISTORY)
+        else -> super.onOptionsItemSelected(item)
+    }
+
+    private fun openInsights(mode: String, configure: Intent.() -> Unit = {}): Boolean {
+        startActivity(
+            Intent(this, StorageInsightsActivity::class.java)
+                .putExtra(StorageInsightsActivity.EXTRA_MODE, mode)
+                .apply(configure)
+        )
+        return true
+    }
+
+    /** Auswahl von Dateityp, Mindestgröße und Alter; startet danach die gefilterte Liste. */
+    private fun showFilterDialog() {
+        val categories = listOf<StorageCategory?>(
+            null, StorageCategory.IMAGES, StorageCategory.VIDEOS, StorageCategory.AUDIO,
+            StorageCategory.DOCUMENTS, StorageCategory.APPS
+        )
+        val categoryLabels = categories.map { if (it == null) getString(R.string.insights_filter_all) else getString(it.displayNameRes) }
+        val sizes = listOf(0, 1, 10, 100, 500)
+        val sizeLabels = sizes.map { if (it == 0) getString(R.string.insights_filter_any) else getString(R.string.insights_filter_min_mb, it) }
+        val ages = listOf(0, 90, 180, 365, 730)
+        val ageLabels = ages.map { if (it == 0) getString(R.string.insights_filter_any) else getString(R.string.insights_filter_older_days, it) }
+
+        val pad = (20 * resources.displayMetrics.density).toInt()
+        val layout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(pad, pad / 2, pad, 0)
+        }
+        fun addSpinner(label: Int, items: List<String>): Spinner {
+            layout.addView(TextView(this).apply { setText(label) })
+            val spinner = Spinner(this).apply {
+                adapter = ArrayAdapter(this@StorageAnalysisActivity, android.R.layout.simple_spinner_dropdown_item, items)
+            }
+            layout.addView(spinner)
+            return spinner
+        }
+        val categorySpinner = addSpinner(R.string.insights_filter_type, categoryLabels)
+        val sizeSpinner = addSpinner(R.string.insights_filter_size, sizeLabels)
+        val ageSpinner = addSpinner(R.string.insights_filter_age, ageLabels)
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.insights_title_filter)
+            .setView(layout)
+            .setNegativeButton(R.string.btn_cancel, null)
+            .setPositiveButton(R.string.insights_filter_apply) { _, _ ->
+                openInsights(StorageInsightsActivity.MODE_FILTER) {
+                    putExtra(StorageInsightsActivity.EXTRA_CATEGORY, categories[categorySpinner.selectedItemPosition]?.name ?: "")
+                    putExtra(StorageInsightsActivity.EXTRA_MIN_MB, sizes[sizeSpinner.selectedItemPosition])
+                    putExtra(StorageInsightsActivity.EXTRA_OLDER_DAYS, ages[ageSpinner.selectedItemPosition])
+                }
+            }
+            .show()
     }
 
     override fun onSupportNavigateUp(): Boolean {

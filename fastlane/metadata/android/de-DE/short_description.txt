@@ -1,1 +1,1 @@
-Diagnose-Werkzeuge für Android: Report, Hardwaretest, Netzwerk, Speicher
+Diagnose-Werkzeuge: Report, Hardwaretest, Netzwerk, Speicher, Sicherheit

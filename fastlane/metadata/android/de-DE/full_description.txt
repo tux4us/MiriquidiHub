@@ -1,27 +1,34 @@
 MiriquidiHub bündelt Werkzeuge zur Diagnose und Dokumentation von Android-Geräten. Die App benötigt keine Google-Dienste und enthält keine Tracker.
 
 Funktionen:
-• Geräte-Report: Hersteller, Modell, Hardware, Android-Version und Build-Fingerprint auslesen, Notizen und Fotos ergänzen, als Text teilen oder als PDF exportieren
-• Hardware-Selbsttest: 12 Tests (Touchscreen, Display, Lautsprecher, Mikrofon, Vibration, Sensoren, Akku, Kameras, Ladeanschluss, GPS u. a.), Ergebnisse fließen in den Geräte-Report ein
-• Netzwerk-Diagnose: Verbindungsstatus, Netzwerkkonfiguration, WLAN- und Mobilfunk-Details sowie DNS-, TCP- und HTTPS-Tests mit Hinweisen zur Fehlerursache
-• Screenshots: einfacher Screenshot und Long Screenshot (Scrollaufnahme)
-• Speicherbelegung: Analyse der Speicherbelegung und der App-Caches
-• Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, Kartendarstellung mit OpenStreetMap, optionale Routenberechnung über OpenRouteService (eigener API-Schlüssel erforderlich)
+• Geräte-Report: Hersteller, Modell, Hardware, Android-Version und Build-Fingerprint auslesen, Notizen und Fotos ergänzen, als Text teilen oder als PDF exportieren; gespeicherte Berichte vergleichen sowie als ZIP-Archiv sichern und wiederherstellen
+• Hardware-Selbsttest: Tests für Touchscreen, Display-Muster, Lautsprecher, Mikrofon, Vibration, Sensoren, Akku, Kameras, Ladeanschluss, GPS, Bluetooth und WLAN-Suche; Ergebnisse fließen in den Geräte-Report ein
+• Netzwerk-Diagnose: Verbindungsstatus, IPv4/IPv6, WLAN- und Mobilfunk-Details, DNS-, TCP- und HTTPS-Tests mit Hinweisen zur Fehlerursache, DNS-Server-Vergleich, Durchsatztest, eigene Testhosts und Verlauf
+• Speicher: Belegung und App-Caches, größte Dateien, Duplikate, Papierkorb mit Wiederherstellung und Verlauf
+• Screenshots: einfacher Screenshot mit optionaler Verzögerung, Long Screenshot (Scrollaufnahme) und Editor zum Schwärzen und Zuschneiden
+• Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, optional Ende-zu-Ende-verschlüsselt mit eigener Passphrase, einstellbares Intervall und Zeitfenster, Kartendarstellung mit OpenStreetMap, optionale Routenberechnung über OpenRouteService (eigener API-Schlüssel erforderlich)
+• Werkzeuge: Akku-Monitor, Live-Monitor (Arbeitsspeicher, Netzwerkdurchsatz, Temperatur), Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent und Protokoll-Export
+• Schnellzugriff: Kacheln für die Schnelleinstellungen, Status-Widget und App-Shortcuts
 
 Datenschutz:
 • Ergebnisse werden lokal gespeichert
 • Mikrofonaufnahmen werden nur im Arbeitsspeicher ausgewertet
-• Netzwerktests kontaktieren ausschließlich f-droid.org, github.com, wikipedia.org und mozilla.org
+• Netzwerktests kontaktieren standardmäßig f-droid.org, github.com, wikipedia.org und mozilla.org; die Liste ist in der App änderbar. Der DNS-Vergleich fragt nur die vom System konfigurierten DNS-Server, der Durchsatztest nur eine selbst eingegebene HTTPS-Adresse
 • Die Karte lädt Kacheln von OpenStreetMap; die Routenberechnung sendet Start- und Zielkoordinaten an api.openrouteservice.org, nur wenn ein eigener API-Schlüssel eingetragen ist
-• SSID, BSSID und eigene IP-Adressen werden nicht angezeigt oder geteilt
+• Zugangsdaten und Passphrasen werden mit dem Android Keystore verschlüsselt gespeichert
+• SSID, BSSID und eigene IP-Adressen werden in Berichten nicht geteilt; der Export der WLAN-Analyse enthält nur Kanalstatistik
+• Fehlerberichte und Protokolle werden nicht gesendet, sondern nur kopiert, geteilt oder gespeichert
 
 Berechtigungen und ihr Zweck:
-• Zugriff auf alle Dateien und Nutzungsstatistik: Speicher- und Cache-Analyse
-• Liste installierter Apps: App-Auswahl im Geräte-Report und Cache-Analyse
+• Zugriff auf alle Dateien und Nutzungsstatistik: Speicher- und Cache-Analyse, Duplikatsuche, Papierkorb
+• Liste installierter Apps: App-Auswahl im Geräte-Report, Cache-Analyse, Berechtigungsübersicht, App-Inventar
 • Bedienungshilfen-Dienst: automatisches Scrollen beim Long Screenshot
 • Anzeige über anderen Apps: Schaltfläche für Screenshots
-• Standort: GPS-Test und Ortung
+• Standort: GPS-Test, Ortung, WLAN-Suche
 • Mikrofon: Mikrofontest
+• Bluetooth und Geräte in der Nähe: Bluetooth- und WLAN-Suche im Hardwaretest und in der WLAN-Analyse; es wird kein Standort daraus abgeleitet
+• Biometrie: Test des biometrischen Sensors im Hardwaretest; es werden keine biometrischen Daten gelesen oder gespeichert
+• Benachrichtigungen: Hinweise bei Screenshot-Verzögerung und Standortfreigabe
 • Telefonstatus (optional): Netztyp und Signalstärke in der Netzwerk-Diagnose
 
 Der Quellcode steht unter der GPL-3.0.

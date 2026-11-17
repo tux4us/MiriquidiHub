@@ -43,6 +43,10 @@ class StartActivity : AppCompatActivity() {
         binding.btnNavHardwareTest.setOnClickListener {
             startActivity(Intent(this, HardwareTestActivity::class.java))
         }
+        binding.btnNavTools.setOnClickListener {
+            startActivity(Intent(this, ToolsActivity::class.java))
+        }
+        binding.btnNavDonate.setOnClickListener { DonationDialog.show(this) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

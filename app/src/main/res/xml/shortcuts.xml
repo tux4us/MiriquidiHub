@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="network_diagnostic"
+        android:enabled="true"
+        android:icon="@drawable/ic_network"
+        android:shortcutShortLabel="@string/shortcut_network_short"
+        android:shortcutLongLabel="@string/shortcut_network_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.github.tux4us.miriquidihub.NetworkDiagnosticActivity"
+            android:targetPackage="io.github.tux4us.miriquidihub" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="screenshot"
+        android:enabled="true"
+        android:icon="@drawable/ic_simple_screenshot"
+        android:shortcutShortLabel="@string/shortcut_screenshot_short"
+        android:shortcutLongLabel="@string/shortcut_screenshot_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.github.tux4us.miriquidihub.SimpleScreenshotActivity"
+            android:targetPackage="io.github.tux4us.miriquidihub" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="security_check"
+        android:enabled="true"
+        android:icon="@drawable/ic_report"
+        android:shortcutShortLabel="@string/shortcut_security_short"
+        android:shortcutLongLabel="@string/shortcut_security_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.github.tux4us.miriquidihub.SecurityCheckActivity"
+            android:targetPackage="io.github.tux4us.miriquidihub" />
+    </shortcut>
+</shortcuts>

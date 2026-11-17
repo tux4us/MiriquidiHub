@@ -1,27 +1,34 @@
 MiriquidiHub bundles tools for diagnosing and documenting Android devices. The app requires no Google services and contains no trackers.
 
 Features:
-• Device report: read manufacturer, model, hardware, Android version and build fingerprint, add notes and photos, share as text or export as PDF
-• Hardware self-test: 12 tests (touchscreen, display, speaker, microphone, vibration, sensors, battery, cameras, charging port, GPS and more); results are included in the device report
-• Network diagnostics: connection status, network configuration, Wi-Fi and mobile details, plus DNS, TCP and HTTPS tests with hints on the likely cause of a failure
-• Screenshots: simple screenshot and long screenshot (scrolling capture)
-• Storage usage: analysis of storage usage and app caches
-• Location sharing: share your position via your own WebDAV storage, map display with OpenStreetMap, optional route calculation via OpenRouteService (own API key required)
+• Device report: read manufacturer, model, hardware, Android version and build fingerprint, add notes and photos, share as text or export as PDF; compare saved reports and back them up or restore them as a ZIP archive
+• Hardware self-test: tests for touchscreen, display patterns, speaker, microphone, vibration, sensors, battery, cameras, charging port, GPS, Bluetooth and Wi-Fi scan; results are included in the device report
+• Network diagnostics: connection status, IPv4/IPv6, Wi-Fi and mobile details, DNS, TCP and HTTPS tests with hints on the likely cause of a failure, DNS server comparison, throughput test, custom test hosts and history
+• Storage: usage and app caches, largest files, duplicates, trash with restore and history
+• Screenshots: simple screenshot with optional delay, long screenshot (scrolling capture) and an editor for redacting and cropping
+• Location sharing: share your position via your own WebDAV storage, optionally end-to-end encrypted with your own passphrase, adjustable interval and time window, map display with OpenStreetMap, optional route calculation via OpenRouteService (own API key required)
+• Tools: battery monitor, live monitor (RAM, network throughput, temperature), sensor explorer, security check, permission overview, app inventory, Wi-Fi analysis, bug report assistant and log export
+• Quick access: quick settings tiles, status widget and app shortcuts
 
 Privacy:
 • Results are stored locally
 • Microphone input is evaluated in memory only
-• Network tests contact only f-droid.org, github.com, wikipedia.org and mozilla.org
+• By default, network tests contact f-droid.org, github.com, wikipedia.org and mozilla.org; the list can be changed in the app. The DNS comparison queries only the DNS servers configured in the system, the throughput test only an HTTPS address you enter yourself
 • The map loads tiles from OpenStreetMap; route calculation sends start and destination coordinates to api.openrouteservice.org, only if you have entered your own API key
-• SSID, BSSID and your own IP addresses are neither displayed nor shared
+• Credentials and passphrases are stored encrypted with the Android Keystore
+• SSID, BSSID and your own IP addresses are not shared in reports; the Wi-Fi analysis export contains channel statistics only
+• Bug reports and logs are not sent; they are only copied, shared or saved
 
 Permissions and their purpose:
-• Access to all files and usage statistics: storage and cache analysis
-• List of installed apps: app selection in the device report and cache analysis
+• Access to all files and usage statistics: storage and cache analysis, duplicate search, trash
+• List of installed apps: app selection in the device report, cache analysis, permission overview, app inventory
 • Accessibility service: automatic scrolling for the long screenshot
 • Display over other apps: screenshot button
-• Location: GPS test and location sharing
+• Location: GPS test, location sharing, Wi-Fi scan
 • Microphone: microphone test
+• Bluetooth and nearby devices: Bluetooth and Wi-Fi scan in the hardware test and Wi-Fi analysis; no location is derived from it
+• Biometrics: test of the biometric sensor in the hardware test; no biometric data is read or stored
+• Notifications: hints for screenshot delay and location sharing
 • Phone state (optional): network type and signal strength in network diagnostics
 
 The source code is licensed under the GPL-3.0.

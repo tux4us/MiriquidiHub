@@ -6,4 +6,8 @@
         android:icon="@android:drawable/ic_menu_manage"
         android:title="WebDAV Einstellungen"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_share_settings"
+        android:title="@string/share_settings_title"
+        app:showAsAction="never" />
 </menu>

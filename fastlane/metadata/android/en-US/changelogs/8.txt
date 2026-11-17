@@ -1,0 +1,2 @@
+New: tools overview with battery monitor, live monitor, sensor explorer, security check, permission and app overview, Wi-Fi analysis, bug report assistant, log export and report comparison. Quick tiles, widget and shortcuts.
+Extended: hardware test (Bluetooth, Wi-Fi scan, display patterns), network (IPv6, DNS comparison, throughput, custom hosts, history), storage (duplicates, trash, history), encrypted location sharing with time window, screenshot editor with delay, report archive.

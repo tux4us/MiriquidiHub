@@ -21,6 +21,8 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.withTimeoutOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import java.net.DatagramPacket
+import java.net.DatagramSocket
 import java.net.Inet4Address
 import java.net.Inet6Address
 import java.net.InetAddress
@@ -38,7 +40,9 @@ enum class DiagStatus { OK, WARN, ERROR, INFO }
 data class DiagRow(
     val label: String,
     val value: String,
-    val status: DiagStatus = DiagStatus.INFO
+    val status: DiagStatus = DiagStatus.INFO,
+    /** Optional: macht die Zeile antippbar (z. B. Verschieben in den Papierkorb, Details). */
+    val onClick: (() -> Unit)? = null
 )
 
 data class DiagSection(
@@ -50,7 +54,8 @@ data class DiagSection(
  * Netzwerk-Diagnose für Support-Fälle (Empfang, DNS, TLS, Erreichbarkeit).
  *
  * Datenschutz / FOSS:
- *  - Es werden ausschließlich die Hosts in [TEST_HOSTS] kontaktiert.
+ *  - Es werden ausschließlich die übergebenen Hosts (Standard: [TEST_HOSTS], vom Nutzer
+ *    änderbar) sowie die im Netzwerk konfigurierten DNS-Server kontaktiert.
  *  - Keine Google-Dienste, keine Drittanbieter-Bibliotheken außer dem bereits
  *    eingebundenen OkHttp.
  *  - SSID, BSSID, eigene IP-Adressen, IMEI und Rufnummer werden weder gelesen
@@ -67,10 +72,13 @@ data class DiagSection(
  * (suspend, parallel je Host). Die Texte stammen aus dem übergebenen Context,
  * damit die per-App-Sprache gilt. Nach Gebrauch [close] aufrufen.
  */
-class NetworkDiagnostics(private val ctx: Context) {
+class NetworkDiagnostics(
+    private val ctx: Context,
+    private val hosts: List<String> = TEST_HOSTS
+) {
 
     companion object {
-        val TEST_HOSTS = listOf("f-droid.org", "github.com", "wikipedia.org", "mozilla.org")
+        val TEST_HOSTS: List<String> = NetworkHostPrefs.DEFAULT_HOSTS
 
         private const val DNS_TIMEOUT_MS = 6_000L
         private const val TCP_TIMEOUT_MS = 3_000
@@ -78,6 +86,9 @@ class NetworkDiagnostics(private val ctx: Context) {
         private const val TCP_SAMPLES = 3
         private const val SLOW_DNS_MS = 500L
         private const val SLOW_TCP_MS = 300L
+        private const val DNS_SERVER_TIMEOUT_MS = 2_000
+        private const val DNS_SERVER_SAMPLES = 3
+        private const val DNS_SERVER_MAX = 4
         private const val INVALID_RSSI = -127
     }
 
@@ -105,6 +116,13 @@ class NetworkDiagnostics(private val ctx: Context) {
     }
 
     private var state = StaticState()
+    private var dnsServers: List<InetAddress> = emptyList()
+
+    /** Mittelwerte des letzten Laufs in ms; -1, wenn keine Messung erfolgreich war. */
+    var lastAvgDnsMs: Long = -1
+        private set
+    var lastAvgTcpMs: Long = -1
+        private set
 
     private sealed class DnsOutcome {
         data class Ok(val addrs: List<InetAddress>, val ms: Long) : DnsOutcome()
@@ -144,6 +162,7 @@ class NetworkDiagnostics(private val ctx: Context) {
         val caps = active?.let { cm.getNetworkCapabilities(it) }
         val lp = active?.let { cm.getLinkProperties(it) }
         st.hasNetwork = caps != null
+        dnsServers = lp?.dnsServers?.take(DNS_SERVER_MAX).orEmpty()
 
         val sections = mutableListOf<DiagSection>()
         sections += buildConnectionSection(st, caps)
@@ -496,12 +515,103 @@ class NetworkDiagnostics(private val ctx: Context) {
 
     /** Führt DNS-, TCP- und HTTPS-Test je Host parallel aus. Erfordert vorheriges [collectStatic]. */
     suspend fun runTests(): List<DiagSection> {
-        val jobs = TEST_HOSTS.map { host -> ioScope.async { probeHost(host) } }
+        val jobs = hosts.map { host -> ioScope.async { probeHost(host) } }
+        val dnsCompareJob = ioScope.async { compareDnsServers(hosts.firstOrNull()) }
         val probes = jobs.map { it.await() }
 
-        val sections = probes.map { buildHostSection(it) }.toMutableList()
+        val dnsTimes = probes.mapNotNull { (it.dns as? DnsOutcome.Ok)?.ms }
+        val tcpTimes = probes.flatMap { it.tcp.orEmpty() }.filterNotNull()
+        lastAvgDnsMs = if (dnsTimes.isEmpty()) -1 else dnsTimes.average().toLong()
+        lastAvgTcpMs = if (tcpTimes.isEmpty()) -1 else tcpTimes.average().toLong()
+
+        val sections = mutableListOf<DiagSection>()
+        buildIpv6Section(probes)?.let { sections += it }
+        sections += probes.map { buildHostSection(it) }
+        dnsCompareJob.await()?.let { sections += it }
         buildHints(probes)?.let { sections += it }
         return sections
+    }
+
+    // ------------------------------------------------------------------
+    // IPv6 und DNS-Server-Vergleich
+    // ------------------------------------------------------------------
+
+    /**
+     * Prüft, ob mindestens ein Testhost per IPv6 auflösbar ist und ob ein TCP-Aufbau über IPv6
+     * gelingt. Fehlt eine IPv6-Adresse am Netzwerk, ist das kein Fehler (Hinweis statt Warnung).
+     */
+    private fun buildIpv6Section(probes: List<HostProbe>): DiagSection? {
+        val label = ctx.getString(R.string.netdiag_ipv6_reach)
+        val v6Target = probes.asSequence()
+            .mapNotNull { (it.dns as? DnsOutcome.Ok)?.addrs?.firstOrNull { a -> a is Inet6Address } }
+            .firstOrNull()
+        val row = if (v6Target == null) {
+            DiagRow(label, ctx.getString(R.string.netdiag_ipv6_no_aaaa), DiagStatus.INFO)
+        } else {
+            val ms = tcpConnectMillis(v6Target)
+            if (ms != null) {
+                DiagRow(label, ctx.getString(R.string.netdiag_ipv6_ok, ms), DiagStatus.OK)
+            } else {
+                DiagRow(label, ctx.getString(R.string.netdiag_ipv6_fail), DiagStatus.WARN)
+            }
+        }
+        return DiagSection(ctx.getString(R.string.netdiag_section_ipv6), listOf(row))
+    }
+
+    /**
+     * Fragt jeden vom Netzwerk gemeldeten DNS-Server direkt per UDP (Port 53) nach dem ersten
+     * Testhost und vergleicht die Antwortzeiten. Bei aktivem Private DNS (DoT) sind die
+     * Systemauflösungen davon unabhängig; der Vergleich betrifft nur die klassischen Server.
+     */
+    private fun compareDnsServers(host: String?): DiagSection? {
+        if (host == null || dnsServers.isEmpty()) return null
+        val rows = dnsServers.map { server ->
+            val label = server.hostAddress ?: "?"
+            val times = (1..DNS_SERVER_SAMPLES).map { queryDnsServer(server, host, it) }
+            val ok = times.filter { it.second != null }
+            when {
+                ok.isEmpty() -> DiagRow(
+                    label,
+                    ctx.getString(R.string.netdiag_dnscmp_fail, times.firstOrNull()?.first ?: "timeout"),
+                    DiagStatus.ERROR
+                )
+                else -> {
+                    val values = ok.mapNotNull { it.second }
+                    val avg = values.average().toLong()
+                    DiagRow(
+                        label,
+                        ctx.getString(R.string.netdiag_dnscmp_ok, values.minOrNull() ?: 0L, avg, values.maxOrNull() ?: 0L, ok.size, times.size),
+                        if (ok.size < times.size || avg > SLOW_DNS_MS) DiagStatus.WARN else DiagStatus.OK
+                    )
+                }
+            }
+        }
+        return DiagSection(ctx.getString(R.string.netdiag_section_dnscmp, host), rows)
+    }
+
+    /** Liefert (Statusbezeichnung, Dauer in ms); Dauer ist null bei Fehler/Timeout/Fehlercode. */
+    private fun queryDnsServer(server: InetAddress, host: String, seq: Int): Pair<String, Long?> = try {
+        val id = (System.nanoTime().toInt() xor (seq * 0x9E37)) and 0xFFFF
+        val query = DnsPacket.buildQuery(host, id)
+        DatagramSocket().use { socket ->
+            socket.soTimeout = DNS_SERVER_TIMEOUT_MS
+            val t0 = System.nanoTime()
+            socket.send(DatagramPacket(query, query.size, server, 53))
+            val buf = ByteArray(512)
+            val packet = DatagramPacket(buf, buf.size)
+            socket.receive(packet)
+            val ms = (System.nanoTime() - t0) / 1_000_000
+            val response = DnsPacket.parseResponse(buf, packet.length)
+            when {
+                response == null || response.id != id -> "invalid" to null
+                response.rcode != 0 -> response.rcodeName to null
+                else -> "NOERROR" to ms
+            }
+        }
+    } catch (e: java.net.SocketTimeoutException) {
+        "timeout" to null
+    } catch (e: Exception) {
+        describe(e) to null
     }
 
     private suspend fun probeHost(host: String): HostProbe {

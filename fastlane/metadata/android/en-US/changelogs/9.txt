@@ -1,0 +1,1 @@
+New: app log. Export the logcat of a selected app for a chosen time window, e.g. for bug reports. Requires extended access via ADB (READ_LOGS) or Shizuku, see the README. Without it, only MiriquidiHub's own entries are read.

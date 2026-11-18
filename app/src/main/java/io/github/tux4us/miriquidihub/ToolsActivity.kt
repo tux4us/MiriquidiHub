@@ -24,6 +24,7 @@ class ToolsActivity : ToolActivity() {
     )
     private val support = listOf(
         Tool(R.string.br_title, R.string.tools_br_desc, BugReportActivity::class.java),
+        Tool(R.string.al_title, R.string.tools_al_desc, AppLogActivity::class.java),
         Tool(R.string.lc_title, R.string.tools_lc_desc, LogcatExportActivity::class.java),
         Tool(R.string.rc_title, R.string.tools_rc_desc, ReportCompareActivity::class.java)
     )

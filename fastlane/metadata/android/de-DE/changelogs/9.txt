@@ -1,0 +1,1 @@
+Neu: App-Protokoll. Logcat einer ausgewählten App für ein wählbares Zeitfenster exportieren, z. B. für Fehlerberichte. Erweiterter Zugriff per ADB (READ_LOGS) oder Shizuku nötig, Anleitung im README. Ohne erweiterten Zugriff werden nur die Einträge von MiriquidiHub selbst gelesen.

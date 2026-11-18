@@ -23,8 +23,8 @@ android {
         applicationId = "io.github.tux4us.miriquidihub"
         minSdk = 24
         targetSdk = 36
-        versionCode = 8
-        versionName = "0.2.0"
+        versionCode = 9
+        versionName = "0.2.1"
     }
 
     signingConfigs {
@@ -76,7 +76,6 @@ kotlin {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
@@ -84,6 +83,8 @@ dependencies {
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.osmdroid.android)
     implementation(libs.gson)
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
 
     testImplementation(libs.junit)
 

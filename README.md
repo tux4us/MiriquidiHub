@@ -171,7 +171,44 @@ Die Karte „Werkzeuge“ auf der Startseite öffnet eine Übersicht aller folge
 - **WLAN-Analyse:** Kanalbelegung im 2,4- und 5-GHz-Band mit Kanalempfehlung und Liste der sichtbaren Netze. Kopierter oder geteilter Text enthält nur die Kanalstatistik, keine SSIDs oder BSSIDs. Android begrenzt die Häufigkeit von WLAN-Suchen.
 - **Fehlerbericht-Assistent:** Erzeugt einen Markdown-Fehlerbericht (Beschreibung, Schritte, erwartetes und tatsächliches Verhalten, optional Geräte-, Hardware- und Sicherheitsangaben) für GitHub oder GitLab. Es wird nichts gesendet.
 - **Protokoll-Export:** Ohne Root gibt Android Apps nur die eigenen Protokolleinträge frei. Filter nach Pegel, Export als Datei, Kopieren und Teilen.
+- **App-Protokoll:** Logcat einer gewählten App für ein wählbares Zeitfenster (erweiterter Zugriff per ADB oder Shizuku nötig, siehe Anleitung unten).
 - **Berichtsvergleich:** Vergleicht zwei gespeicherte Geräteberichte und zeigt geänderte, neue und entfernte Werte. Veränderliche Werte wie Akkustand oder Laufzeit weichen immer ab.
+
+### App-Protokoll: Logcat einer ausgewählten App
+Das Werkzeug „App-Protokoll“ (Startseite → Werkzeuge → Support und Berichte) exportiert die Logcat-Einträge **einer frei gewählten App** für ein **wählbares Zeitfenster**, z. B. als Anhang für einen Fehlerbericht. Für fremde Apps gibt Android diese Einträge nur frei, wenn MiriquidiHub einen erweiterten Zugriff erhalten hat. Dafür gibt es zwei Wege; es genügt einer davon. Ohne erweiterten Zugriff liefert das Werkzeug nur die Einträge von MiriquidiHub selbst.
+
+**Weg A: Berechtigung `READ_LOGS` per ADB erteilen**
+1. Auf dem Gerät die Entwickleroptionen aktivieren (Einstellungen → Über das Telefon → mehrfach auf die Build-Nummer tippen) und **USB-Debugging** einschalten.
+2. Das Gerät per USB mit einem Rechner verbinden, auf dem die [Android Platform-Tools](https://developer.android.com/tools/releases/platform-tools) (`adb`) installiert sind, und die Debugging-Anfrage am Gerät bestätigen.
+3. Einmalig diesen Befehl ausführen:
+   ```bash
+   adb shell pm grant io.github.tux4us.miriquidihub android.permission.READ_LOGS
+   ```
+4. MiriquidiHub öffnen. Im App-Protokoll wird der Zugriff nun als „Berechtigung erteilt“ angezeigt. Der Befehl lässt sich dort auch kopieren.
+5. USB-Debugging kann danach wieder ausgeschaltet werden. Die Berechtigung bleibt bis zur Deinstallation der App bestehen und muss nach einer Neuinstallation erneut erteilt werden. Je nach Android-Version oder Hersteller kann das System den Zugriff zusätzlich bei der Nutzung bestätigen lassen.
+
+**Weg B: Shizuku (ohne Rechner dauerhaft nutzbar)**
+1. [Shizuku](https://shizuku.rikka.app/) installieren (über F-Droid oder GitHub) und starten. Ab Android 11 funktioniert das direkt auf dem Gerät über „Kabelloses Debugging“; bei älteren Versionen einmalig per ADB-Befehl nach jedem Neustart. Die Schritte beschreibt die Shizuku-Anleitung.
+2. In MiriquidiHub das App-Protokoll öffnen und „Shizuku verwenden“ wählen. Die Shizuku-Anfrage bestätigen.
+3. Nach einem Neustart des Geräts muss Shizuku (je nach Startart) erneut gestartet werden.
+
+**Bedienung**
+1. **App wählen:** Die installierte App aus der Liste auswählen (System-Apps lassen sich einblenden).
+2. **Zeitfenster wählen:** Die letzten 5, 15 oder 60 Minuten, die letzten 6 Stunden oder eine eigene Startzeit.
+3. Das Protokoll wird geladen und gefiltert. Optional lässt sich der Mindest-Pegel (V bis E) festlegen.
+4. **Exportieren:** Als Datei speichern, in die Zwischenablage kopieren oder teilen. Für Kopieren und Teilen werden die letzten 500 Zeilen verwendet, die Datei enthält alle gefilterten Zeilen.
+
+**Empfohlener Ablauf für einen Fehlerbericht**
+1. Den Fehler in der betroffenen App reproduzieren.
+2. Möglichst sofort danach das App-Protokoll mit einem kurzen Zeitfenster (z. B. 5 oder 15 Minuten) exportieren.
+3. Den Auszug vor dem Weitergeben prüfen (siehe Hinweise) und dem Fehlerbericht als Datei beifügen.
+
+**Hinweise und Grenzen**
+- Das Android-Protokoll ist ein Ringpuffer mit begrenzter Größe. Ältere Einträge sind oft bereits überschrieben; Zeitfenster von mehreren Stunden sind daher häufig nicht vollständig verfügbar, besonders auf Geräten mit vielen Protokollmeldungen.
+- Die Einträge werden nach der Benutzerkennung (UID) der App gefiltert. Zusätzlich werden Einträge übernommen, die zu den Prozessen der App gehören (z. B. Absturzmeldungen `FATAL EXCEPTION` mit `Process: <Paketname>`). Meldungen von Systemdiensten über die App, die ohne Paketnamen protokolliert werden, können fehlen.
+- Das Protokoll kann persönliche Daten enthalten (z. B. Adressen, Kennungen, Inhalte aus der App). Die Vorschau vor dem Teilen ersetzt keine Prüfung des gesamten Auszugs.
+- Die Auswertung findet lokal statt. Es wird nichts automatisch gesendet; Speichern, Kopieren und Teilen geschehen nur auf Nutzeraktion.
+- Mit `READ_LOGS` oder Shizuku kann MiriquidiHub das gesamte Geräteprotokoll lesen. Wer das nicht möchte, erteilt keinen erweiterten Zugriff; die Berechtigung lässt sich mit `adb shell pm revoke io.github.tux4us.miriquidihub android.permission.READ_LOGS` wieder entziehen, Shizuku-Zugriff in der Shizuku-App.
 
 ### Schnellzugriff
 - **Kacheln** für die Schnelleinstellungen: Netzwerk-Diagnose, Screenshot, Sicherheitscheck.
@@ -197,6 +234,7 @@ Die Karte „Werkzeuge“ auf der Startseite öffnet eine Übersicht aller folge
 | `FOREGROUND_SERVICE` (`LOCATION`, `MEDIA_PROJECTION`) | Standortfreigabe, Screenshot |
 | `SYSTEM_ALERT_WINDOW` | Schaltfläche für Screenshots |
 | Bedienungshilfen-Dienst | Scrollen beim Long Screenshot |
+| `READ_LOGS` (nur per ADB oder Shizuku erteilbar) | Logcat einer ausgewählten App im App-Protokoll |
 | `QUERY_ALL_PACKAGES` | App-Auswahl, Cache-Analyse, Berechtigungsübersicht, App-Inventar |
 | `MANAGE_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE` (bis Android 9), Nutzungsstatistik | Speicher- und Cache-Analyse, Duplikate, Papierkorb |
 

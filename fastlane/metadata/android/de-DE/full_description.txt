@@ -7,7 +7,7 @@ Funktionen:
 • Speicher: Belegung und App-Caches, größte Dateien, Duplikate, Papierkorb mit Wiederherstellung und Verlauf
 • Screenshots: einfacher Screenshot mit optionaler Verzögerung, Long Screenshot (Scrollaufnahme) und Editor zum Schwärzen und Zuschneiden
 • Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, optional Ende-zu-Ende-verschlüsselt mit eigener Passphrase, einstellbares Intervall und Zeitfenster, Kartendarstellung mit OpenStreetMap, optionale Routenberechnung über OpenRouteService (eigener API-Schlüssel erforderlich)
-• Werkzeuge: Akku-Monitor, Live-Monitor (Arbeitsspeicher, Netzwerkdurchsatz, Temperatur), Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent und Protokoll-Export
+• Werkzeuge: Akku-Monitor, Live-Monitor (Arbeitsspeicher, Netzwerkdurchsatz, Temperatur), Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent, Protokoll-Export und App-Protokoll (Logcat einer gewählten App für ein Zeitfenster)
 • Schnellzugriff: Kacheln für die Schnelleinstellungen, Status-Widget und App-Shortcuts
 
 Datenschutz:
@@ -29,6 +29,7 @@ Berechtigungen und ihr Zweck:
 • Bluetooth und Geräte in der Nähe: Bluetooth- und WLAN-Suche im Hardwaretest und in der WLAN-Analyse; es wird kein Standort daraus abgeleitet
 • Biometrie: Test des biometrischen Sensors im Hardwaretest; es werden keine biometrischen Daten gelesen oder gespeichert
 • Benachrichtigungen: Hinweise bei Screenshot-Verzögerung und Standortfreigabe
+• Protokollzugriff (optional): READ_LOGS, nur per ADB oder Shizuku erteilbar, für das App-Protokoll fremder Apps; ohne diesen Zugriff werden nur eigene Einträge gelesen
 • Telefonstatus (optional): Netztyp und Signalstärke in der Netzwerk-Diagnose
 
 Der Quellcode steht unter der GPL-3.0.

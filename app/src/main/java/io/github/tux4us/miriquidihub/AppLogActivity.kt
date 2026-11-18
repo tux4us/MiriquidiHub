@@ -83,7 +83,7 @@ class AppLogActivity : ToolActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (::binding.isInitialized) refreshAccess()
+        if (isBindingInitialized) refreshAccess()
     }
 
     override fun onDestroy() {

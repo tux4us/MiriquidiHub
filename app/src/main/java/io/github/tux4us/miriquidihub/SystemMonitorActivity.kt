@@ -37,7 +37,7 @@ class SystemMonitorActivity : ToolActivity() {
         ramChart = addChart(R.string.sm_chart_ram)
         netChart = addChart(R.string.sm_chart_net)
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 var prevRx = TrafficStats.getTotalRxBytes()
                 var prevTx = TrafficStats.getTotalTxBytes()
                 var prevTime = SystemClock.elapsedRealtime()

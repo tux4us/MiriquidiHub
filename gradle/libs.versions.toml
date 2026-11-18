@@ -15,12 +15,14 @@ swiperefreshlayout = "1.2.0"
 osmdroidAndroid = "6.1.20"
 gson = "2.13.1"
 shizuku = "13.1.5"
+lifecycle = "2.8.7"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 androidx-core = { module = "androidx.test:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-rules = { module = "androidx.test:rules", version.ref = "core" }
 androidx-runner = { module = "androidx.test:runner", version.ref = "core" }

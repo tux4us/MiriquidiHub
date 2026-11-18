@@ -26,6 +26,8 @@ import io.github.tux4us.miriquidihub.databinding.ActivityToolBinding
 abstract class ToolActivity : AppCompatActivity() {
 
     protected lateinit var binding: ActivityToolBinding
+    protected val isBindingInitialized: Boolean
+        get() = ::binding.isInitialized
 
     /** Zuletzt angezeigte Abschnitte; Grundlage für Kopieren und Teilen. */
     protected var sections: List<DiagSection> = emptyList()

@@ -179,28 +179,36 @@ Das Werkzeug „App-Protokoll“ (Startseite → Werkzeuge → Support und Beric
 
 **Weg A: Berechtigung `READ_LOGS` per ADB erteilen**
 1. Auf dem Gerät die Entwickleroptionen aktivieren (Einstellungen → Über das Telefon → mehrfach auf die Build-Nummer tippen) und **USB-Debugging** einschalten.
+
 2. Das Gerät per USB mit einem Rechner verbinden, auf dem die [Android Platform-Tools](https://developer.android.com/tools/releases/platform-tools) (`adb`) installiert sind, und die Debugging-Anfrage am Gerät bestätigen.
-3. Einmalig diesen Befehl ausführen:
-   ```bash
-   adb shell pm grant io.github.tux4us.miriquidihub android.permission.READ_LOGS
-   ```
+
+3. Einmalig diesen Befehl ausführen:   ```adb shell pm grant io.github.tux4us.miriquidihub android.permission.READ_LOGS```
+
 4. MiriquidiHub öffnen. Im App-Protokoll wird der Zugriff nun als „Berechtigung erteilt“ angezeigt. Der Befehl lässt sich dort auch kopieren.
+
 5. USB-Debugging kann danach wieder ausgeschaltet werden. Die Berechtigung bleibt bis zur Deinstallation der App bestehen und muss nach einer Neuinstallation erneut erteilt werden. Je nach Android-Version oder Hersteller kann das System den Zugriff zusätzlich bei der Nutzung bestätigen lassen.
 
 **Weg B: Shizuku (ohne Rechner dauerhaft nutzbar)**
 1. [Shizuku](https://shizuku.rikka.app/) installieren (über F-Droid oder GitHub) und starten. Ab Android 11 funktioniert das direkt auf dem Gerät über „Kabelloses Debugging“; bei älteren Versionen einmalig per ADB-Befehl nach jedem Neustart. Die Schritte beschreibt die Shizuku-Anleitung.
+
 2. In MiriquidiHub das App-Protokoll öffnen und „Shizuku verwenden“ wählen. Die Shizuku-Anfrage bestätigen.
+
 3. Nach einem Neustart des Geräts muss Shizuku (je nach Startart) erneut gestartet werden.
 
 **Bedienung**
 1. **App wählen:** Die installierte App aus der Liste auswählen (System-Apps lassen sich einblenden).
+
 2. **Zeitfenster wählen:** Die letzten 5, 15 oder 60 Minuten, die letzten 6 Stunden oder eine eigene Startzeit.
+
 3. Das Protokoll wird geladen und gefiltert. Optional lässt sich der Mindest-Pegel (V bis E) festlegen.
+
 4. **Exportieren:** Als Datei speichern, in die Zwischenablage kopieren oder teilen. Für Kopieren und Teilen werden die letzten 500 Zeilen verwendet, die Datei enthält alle gefilterten Zeilen.
 
 **Empfohlener Ablauf für einen Fehlerbericht**
 1. Den Fehler in der betroffenen App reproduzieren.
+
 2. Möglichst sofort danach das App-Protokoll mit einem kurzen Zeitfenster (z. B. 5 oder 15 Minuten) exportieren.
+
 3. Den Auszug vor dem Weitergeben prüfen (siehe Hinweise) und dem Fehlerbericht als Datei beifügen.
 
 **Hinweise und Grenzen**

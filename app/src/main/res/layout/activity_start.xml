@@ -363,6 +363,69 @@
                 </LinearLayout>
             </io.github.tux4us.miriquidihub.GlassCardView>
 
+            <!-- 5b. File Manager -->
+            <io.github.tux4us.miriquidihub.GlassCardView
+                android:id="@+id/btnNavFileManager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:minHeight="58dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:rippleColor="@color/gl_ripple"
+                app:strokeColor="@color/rd_group5_stroke"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <FrameLayout
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/bg_icon_badge_glass"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_fm_folder"
+                            android:importantForAccessibility="no"
+                            app:tint="@color/rd_group5_accent" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/fm_title"
+                        android:textColor="@color/rd_text_primary"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_chevron_right"
+                        android:importantForAccessibility="no"
+                        app:tint="#D0FFFFFF" />
+                </LinearLayout>
+            </io.github.tux4us.miriquidihub.GlassCardView>
+
             <!-- 6. Network Diagnostic -->
             <io.github.tux4us.miriquidihub.GlassCardView
                 android:id="@+id/btnNavNetworkDiagnostic"

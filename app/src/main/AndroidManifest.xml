@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
@@ -191,6 +192,18 @@
             android:label="@string/btn_network_diagnostic"
             android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
 
+        <activity
+            android:name="io.github.tux4us.miriquidihub.FileManagerActivity"
+            android:exported="false"
+            android:label="@string/fm_title"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
+
+        <service
+            android:name="io.github.tux4us.miriquidihub.files.TransferService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
         <service
             android:name="io.github.tux4us.miriquidihub.ScreenshotService"
             android:exported="false"
@@ -280,6 +293,17 @@
                 android:name="autoStoreLocales"
                 android:value="true" />
         </service>
+        <!-- Dateimanager: Öffnen/Teilen von Dateien über content://-URIs (nur Cache und per Grant). -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
             android:authorities="${applicationId}.shizuku"

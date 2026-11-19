@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_fm_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/action_fm_view"
+        android:icon="@drawable/ic_fm_view_grid"
+        android:title="@string/fm_view_grid"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_fm_split"
+        android:icon="@drawable/ic_fm_split"
+        android:title="@string/fm_split_view"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_fm_refresh"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:title="@string/menu_refresh"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_fm_new_folder"
+        android:title="@string/fm_new_folder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fm_new_file"
+        android:title="@string/fm_new_file"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fm_upload"
+        android:title="@string/fm_upload"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_fm_sort"
+        android:title="@string/fm_sort"
+        app:showAsAction="never">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/sort_name" android:title="@string/fm_sort_name" />
+                <item android:id="@+id/sort_size" android:title="@string/fm_sort_size" />
+                <item android:id="@+id/sort_date" android:title="@string/fm_sort_date" />
+                <item android:id="@+id/sort_type" android:title="@string/fm_sort_type" />
+            </group>
+            <item
+                android:id="@+id/sort_descending"
+                android:checkable="true"
+                android:title="@string/fm_sort_descending" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_fm_hidden"
+        android:checkable="true"
+        android:title="@string/fm_show_hidden"
+        app:showAsAction="never" />
+</menu>

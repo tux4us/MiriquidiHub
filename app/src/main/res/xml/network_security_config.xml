@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Klartext-HTTP ist auf Plattformebene erlaubt, weil Android keine IP-Bereiche
+  freigeben kann (Heimnetz-Adressen sind nicht per Domain beschreibbar).
+  Die Einschränkung erfolgt in der App: HttpPolicy erlaubt http ohne Rückfrage
+  nur für private/lokale Adressen, für alle anderen Hosts nur nach Warnung und
+  ausdrücklicher Bestätigung (Dateimanager) bzw. gar nicht (WebDavClient).
+-->
 <network-security-config>
-    <base-config cleartextTrafficPermitted="false">
+    <base-config cleartextTrafficPermitted="true">
         <trust-anchors>
             <certificates src="system" />
         </trust-anchors>

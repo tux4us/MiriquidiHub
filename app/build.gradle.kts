@@ -23,8 +23,8 @@ android {
         applicationId = "io.github.tux4us.miriquidihub"
         minSdk = 24
         targetSdk = 36
-        versionCode = 10
-        versionName = "0.2.2"
+        versionCode = 11
+        versionName = "0.3.0"
     }
 
     signingConfigs {
@@ -61,6 +61,15 @@ android {
         viewBinding = true
     }
 
+    packaging {
+        resources {
+            // smbj bringt BouncyCastle (Multi-Release-JAR) mit; doppelte Metadaten sind für die App unnötig.
+            excludes += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+            excludes += "META-INF/DEPENDENCIES"
+            excludes += "META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
@@ -81,6 +90,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
     implementation(libs.okhttp)
+    implementation(libs.smbj)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.osmdroid.android)
     implementation(libs.gson)

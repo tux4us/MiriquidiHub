@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dateimanager: Allgemein -->
+    <string name="fm_title">Dateimanager</string>
+    <string name="fm_channel_name">Dateiübertragungen</string>
+    <string name="fm_channel_desc">Fortschritt von Kopier-, Verschiebe-, Upload- und Download-Vorgängen</string>
+    <string name="fm_transfer_running">Dateiübertragung läuft</string>
+    <string name="fm_internal_storage">Interner Speicher</string>
+    <string name="fm_removable_storage">Wechselspeicher (%s)</string>
+    <string name="fm_busy">Es läuft bereits eine Übertragung.</string>
+    <string name="fm_empty_folder">Dieser Ordner ist leer.</string>
+    <string name="fm_no_results">Keine Treffer.</string>
+    <string name="fm_search_hint">Name filtern, Enter für Suche in Unterordnern</string>
+
+    <!-- Verbindungen -->
+    <string name="fm_conn_add_chip">Verbindung</string>
+    <string name="fm_conn_add">Verbindung hinzufügen</string>
+    <string name="fm_conn_edit">Verbindung bearbeiten</string>
+    <string name="fm_conn_remove">Verbindung entfernen</string>
+    <string name="fm_conn_remove_msg">Die Verbindung „%s“ und das gespeicherte Passwort werden entfernt. Dateien auf dem Server bleiben unverändert.</string>
+    <string name="fm_type_webdav">WebDAV</string>
+    <string name="fm_type_nextcloud">Nextcloud</string>
+    <string name="fm_type_hint_webdav">Beliebiger WebDAV-Server, z. B. NAS, Router oder Apache/nginx mit DAV.</string>
+    <string name="fm_type_hint_nextcloud">Nextcloud-Server. Anmeldung per Benutzername und App-Passwort oder über den Browser.</string>
+    <string name="fm_name_hint">Name der Verbindung</string>
+    <string name="fm_url_hint">https://nas.local/dav/</string>
+    <string name="fm_url_hint_nextcloud">https://cloud.example.org</string>
+    <string name="fm_cleartext_warning">Unverschlüsselte Verbindung (http): Zugangsdaten und Dateien werden im Klartext übertragen. Nur im vertrauenswürdigen Heimnetz verwenden.</string>
+    <string name="fm_browser_login">Im Browser anmelden</string>
+    <string name="fm_pinned_cert">Zertifikat fest hinterlegt (SHA-256 %s)</string>
+    <string name="fm_http_confirm_title">Unverschlüsselte Verbindung</string>
+    <string name="fm_http_confirm_msg">%s ist keine Adresse im privaten Netz. Bei http werden Passwort und Dateien im Klartext über das Internet übertragen und können mitgelesen werden. Trotzdem fortfahren?</string>
+    <string name="fm_http_confirm_ok">Trotzdem verwenden</string>
+    <string name="fm_cert_title">Zertifikat nicht vertrauenswürdig</string>
+    <string name="fm_cert_message">Das Serverzertifikat ist nicht von einer bekannten Zertifizierungsstelle signiert.\n\nAusgestellt für: %1$s\nAusgestellt von: %2$s\nGültig von: %3$s\nGültig bis: %4$s\n\nSHA-256-Fingerabdruck:\n%5$s\n\nVergleichen Sie den Fingerabdruck mit dem auf dem Server, bevor Sie vertrauen. Dieses Zertifikat wird für diese Verbindung fest hinterlegt.</string>
+    <string name="fm_cert_trust">Zertifikat vertrauen</string>
+    <string name="fm_login_waiting_title">Anmeldung im Browser</string>
+    <string name="fm_login_waiting_msg">Bitte die Anmeldung im Browser bestätigen und danach zur App zurückkehren. Es wird auf die Bestätigung gewartet.</string>
+    <string name="fm_login_done">Anmeldung erfolgreich.</string>
+    <string name="fm_login_timeout">Zeitüberschreitung: Die Anmeldung wurde nicht bestätigt.</string>
+
+    <!-- Berechtigung -->
+    <string name="fm_permission_desc">Für die Verwaltung aller Dateien auf dem Gerät ist der Zugriff auf alle Dateien erforderlich.</string>
+    <string name="fm_permission_hint">Netzwerkverbindungen funktionieren auch ohne diese Berechtigung.</string>
+
+    <!-- Menüs und Aktionen -->
+    <string name="fm_paste">Einfügen</string>
+    <string name="fm_new_folder">Neuer Ordner</string>
+    <string name="fm_new_file">Neue Datei</string>
+    <string name="fm_upload">Hochladen</string>
+    <string name="fm_sort">Sortieren</string>
+    <string name="fm_sort_name">Name</string>
+    <string name="fm_sort_size">Größe</string>
+    <string name="fm_sort_date">Datum</string>
+    <string name="fm_sort_type">Typ</string>
+    <string name="fm_sort_descending">Absteigend</string>
+    <string name="fm_show_hidden">Versteckte Dateien anzeigen</string>
+    <string name="fm_copy">Kopieren</string>
+    <string name="fm_cut">Ausschneiden</string>
+    <string name="fm_rename">Umbenennen</string>
+    <string name="fm_share">Teilen</string>
+    <string name="fm_download">Herunterladen</string>
+    <string name="fm_zip">Als ZIP packen</string>
+    <string name="fm_unzip">Entpacken</string>
+    <string name="fm_properties">Eigenschaften</string>
+    <string name="fm_select_all">Alle auswählen</string>
+    <string name="fm_selected_count">%d ausgewählt</string>
+    <string name="fm_clip_copy">%d Element(e) zum Kopieren vorgemerkt</string>
+    <string name="fm_clip_move">%d Element(e) zum Verschieben vorgemerkt</string>
+    <string name="fm_name_label">Name</string>
+
+    <!-- Vorgänge -->
+    <string name="fm_moving">Verschieben …</string>
+    <string name="fm_copying">Kopieren …</string>
+    <string name="fm_deleting">Löschen …</string>
+    <string name="fm_uploading">Hochladen …</string>
+    <string name="fm_downloading">Herunterladen …</string>
+    <string name="fm_zipping">Packen …</string>
+    <string name="fm_unzipping">Entpacken …</string>
+    <string name="fm_download_target">Download gestartet. Ziel: Ordner „Download“.</string>
+    <string name="fm_downloads">Download</string>
+    <string name="fm_archive_default">Archiv</string>
+
+    <!-- Konflikte, Löschen -->
+    <string name="fm_conflict_title">Namenskonflikt</string>
+    <string name="fm_conflict_msg">Im Ziel existieren bereits %d Element(e) mit gleichem Namen.</string>
+    <string name="fm_conflict_overwrite">Überschreiben</string>
+    <string name="fm_conflict_keep_both">Beide behalten</string>
+    <string name="fm_conflict_skip">Überspringen</string>
+    <string name="fm_delete_one">„%s“ löschen?</string>
+    <string name="fm_delete_many">%d Elemente löschen?</string>
+    <string name="fm_delete_local_hint">Lokale Elemente können in den Papierkorb der App verschoben werden.</string>
+    <string name="fm_delete_remote_hint">Elemente auf dem Server werden endgültig gelöscht.</string>
+    <string name="fm_to_trash">In Papierkorb</string>
+    <string name="fm_delete_permanent">Endgültig löschen</string>
+
+    <!-- Eigenschaften, Ergebnis -->
+    <string name="fm_prop_name">Name</string>
+    <string name="fm_prop_path">Pfad</string>
+    <string name="fm_prop_type">Typ</string>
+    <string name="fm_prop_modified">Geändert</string>
+    <string name="fm_prop_size">Größe</string>
+    <string name="fm_prop_content">Inhalt: %1$d Dateien, %2$s</string>
+    <string name="fm_type_folder">Ordner</string>
+    <string name="fm_done">%d Element(e) verarbeitet.</string>
+    <string name="fm_result_summary">%1$d verarbeitet, %2$d übersprungen, %3$d fehlgeschlagen.</string>
+
+    <!-- Fehler -->
+    <string name="fm_err_exists">Ein Element mit diesem Namen existiert bereits.</string>
+    <string name="fm_err_cancelled">Vorgang abgebrochen.</string>
+    <string name="fm_err_auth">Anmeldung fehlgeschlagen (401). Benutzername oder Passwort prüfen.</string>
+    <string name="fm_err_forbidden">Zugriff verweigert (403).</string>
+    <string name="fm_err_not_found">Nicht gefunden (404). Adresse oder Pfad prüfen.</string>
+    <string name="fm_err_locked">Das Element ist auf dem Server gesperrt (423).</string>
+    <string name="fm_err_full">Kein Speicherplatz auf dem Server (507).</string>
+    <string name="fm_err_redirect">Der Server leitet um. Die Adresse (http/https, Pfad) muss direkt angegeben werden.</string>
+    <string name="fm_err_http">Serverfehler (HTTP %d).</string>
+    <string name="fm_err_host">Server nicht gefunden. Hostname prüfen.</string>
+    <string name="fm_err_tls">Sichere Verbindung fehlgeschlagen (TLS/Zertifikat).</string>
+    <string name="fm_err_timeout">Zeitüberschreitung bei der Verbindung.</string>
+    <string name="fm_err_connect">Verbindung zum Server nicht möglich.</string>
+    <string name="fm_err_invalid_url">Ungültige Adresse.</string>
+    <string name="fm_err_user_required">Benutzername erforderlich.</string>
+    <string name="fm_err_cert_changed">Das Zertifikat des Servers hat sich geändert. Verbindung aus Sicherheitsgründen abgelehnt.</string>
+    <string name="fm_err_cert_fetch">Das Zertifikat des Servers konnte nicht abgerufen werden.</string>
+    <string name="fm_err_no_browser">Kein Browser zum Öffnen der Anmeldeseite gefunden.</string>
+    <string name="fm_err_no_app">Keine App zum Öffnen dieses Dateityps gefunden.</string>
+    <string name="fm_err_invalid_name">Ungültiger Name.</string>
+    <string name="fm_type_smb">SMB</string>
+    <string name="fm_type_hint_smb">Windows-Freigabe, NAS oder Samba (SMB 2/3, nur im lokalen Netz). Anmeldung mit Benutzername und Passwort, optional Domäne.</string>
+    <string name="fm_url_hint_smb">nas.local oder 192.168.1.10</string>
+    <string name="fm_share_hint">Freigabe (z. B. Dokumente)</string>
+    <string name="fm_domain_hint">Domäne oder Arbeitsgruppe (optional)</string>
+    <string name="fm_err_smb_private">SMB ist nur für Adressen im lokalen Netz erlaubt.</string>
+    <string name="fm_err_smb_share">Freigabename fehlt oder ist ungültig.</string>
+
+    <!-- Ansicht, geteilte Ansicht, Drag and Drop -->
+    <string name="fm_view_grid">Rasteransicht</string>
+    <string name="fm_view_list">Listenansicht</string>
+    <string name="fm_split_view">Geteilte Ansicht</string>
+    <string name="fm_copy_other">In anderen Bereich kopieren</string>
+    <string name="fm_move_other">In anderen Bereich verschieben</string>
+    <string name="fm_move">Verschieben</string>
+    <string name="fm_drag_count">%d Elemente</string>
+    <string name="fm_drop_title">%1$d Element(e) nach „%2$s“</string>
+    <string name="fm_err_into_itself">Ein Ordner kann nicht in sich selbst oder einen seiner Unterordner kopiert oder verschoben werden.</string>
+</resources>

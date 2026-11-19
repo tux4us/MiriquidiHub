@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Freigaben für den Dateimanager (FileProvider, nicht exportiert; Zugriff nur per Intent-Berechtigung):
+  - fm_open: Zwischenspeicher für heruntergeladene Dateien von Servern
+  - root: lokale Dateien, die der Nutzer öffnet oder teilt
+-->
+<paths>
+    <cache-path name="fm_open" path="fm_open/" />
+    <root-path name="root" path="/" />
+</paths>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- File manager: general -->
+    <string name="fm_title">File manager</string>
+    <string name="fm_channel_name">File transfers</string>
+    <string name="fm_channel_desc">Progress of copy, move, upload and download operations</string>
+    <string name="fm_transfer_running">File transfer in progress</string>
+    <string name="fm_internal_storage">Internal storage</string>
+    <string name="fm_removable_storage">Removable storage (%s)</string>
+    <string name="fm_busy">A transfer is already running.</string>
+    <string name="fm_empty_folder">This folder is empty.</string>
+    <string name="fm_no_results">No results.</string>
+    <string name="fm_search_hint">Filter by name, Enter to search subfolders</string>
+
+    <!-- Connections -->
+    <string name="fm_conn_add_chip">Connection</string>
+    <string name="fm_conn_add">Add connection</string>
+    <string name="fm_conn_edit">Edit connection</string>
+    <string name="fm_conn_remove">Remove connection</string>
+    <string name="fm_conn_remove_msg">The connection “%s” and its stored password will be removed. Files on the server remain unchanged.</string>
+    <string name="fm_type_webdav">WebDAV</string>
+    <string name="fm_type_nextcloud">Nextcloud</string>
+    <string name="fm_type_hint_webdav">Any WebDAV server, e.g. NAS, router or Apache/nginx with DAV.</string>
+    <string name="fm_type_hint_nextcloud">Nextcloud server. Sign in with username and app password or via the browser.</string>
+    <string name="fm_name_hint">Connection name</string>
+    <string name="fm_url_hint">https://nas.local/dav/</string>
+    <string name="fm_url_hint_nextcloud">https://cloud.example.org</string>
+    <string name="fm_cleartext_warning">Unencrypted connection (http): credentials and files are transmitted in plain text. Use only in a trusted home network.</string>
+    <string name="fm_browser_login">Sign in via browser</string>
+    <string name="fm_pinned_cert">Certificate pinned (SHA-256 %s)</string>
+    <string name="fm_http_confirm_title">Unencrypted connection</string>
+    <string name="fm_http_confirm_msg">%s is not a private-network address. With http, the password and files are sent in plain text over the internet and can be intercepted. Continue anyway?</string>
+    <string name="fm_http_confirm_ok">Use anyway</string>
+    <string name="fm_cert_title">Certificate not trusted</string>
+    <string name="fm_cert_message">The server certificate is not signed by a known certificate authority.\n\nIssued to: %1$s\nIssued by: %2$s\nValid from: %3$s\nValid until: %4$s\n\nSHA-256 fingerprint:\n%5$s\n\nCompare the fingerprint with the one on the server before trusting it. This certificate will be pinned for this connection.</string>
+    <string name="fm_cert_trust">Trust certificate</string>
+    <string name="fm_login_waiting_title">Browser sign-in</string>
+    <string name="fm_login_waiting_msg">Please confirm the sign-in in the browser and then return to the app. Waiting for confirmation.</string>
+    <string name="fm_login_done">Sign-in successful.</string>
+    <string name="fm_login_timeout">Timeout: the sign-in was not confirmed.</string>
+
+    <!-- Permission -->
+    <string name="fm_permission_desc">Managing all files on the device requires access to all files.</string>
+    <string name="fm_permission_hint">Network connections also work without this permission.</string>
+
+    <!-- Menus and actions -->
+    <string name="fm_paste">Paste</string>
+    <string name="fm_new_folder">New folder</string>
+    <string name="fm_new_file">New file</string>
+    <string name="fm_upload">Upload</string>
+    <string name="fm_sort">Sort</string>
+    <string name="fm_sort_name">Name</string>
+    <string name="fm_sort_size">Size</string>
+    <string name="fm_sort_date">Date</string>
+    <string name="fm_sort_type">Type</string>
+    <string name="fm_sort_descending">Descending</string>
+    <string name="fm_show_hidden">Show hidden files</string>
+    <string name="fm_copy">Copy</string>
+    <string name="fm_cut">Cut</string>
+    <string name="fm_rename">Rename</string>
+    <string name="fm_share">Share</string>
+    <string name="fm_download">Download</string>
+    <string name="fm_zip">Compress as ZIP</string>
+    <string name="fm_unzip">Extract</string>
+    <string name="fm_properties">Properties</string>
+    <string name="fm_select_all">Select all</string>
+    <string name="fm_selected_count">%d selected</string>
+    <string name="fm_clip_copy">%d item(s) marked for copying</string>
+    <string name="fm_clip_move">%d item(s) marked for moving</string>
+    <string name="fm_name_label">Name</string>
+
+    <!-- Operations -->
+    <string name="fm_moving">Moving …</string>
+    <string name="fm_copying">Copying …</string>
+    <string name="fm_deleting">Deleting …</string>
+    <string name="fm_uploading">Uploading …</string>
+    <string name="fm_downloading">Downloading …</string>
+    <string name="fm_zipping">Compressing …</string>
+    <string name="fm_unzipping">Extracting …</string>
+    <string name="fm_download_target">Download started. Target: “Download” folder.</string>
+    <string name="fm_downloads">Download</string>
+    <string name="fm_archive_default">Archive</string>
+
+    <!-- Conflicts, delete -->
+    <string name="fm_conflict_title">Name conflict</string>
+    <string name="fm_conflict_msg">%d item(s) with the same name already exist in the destination.</string>
+    <string name="fm_conflict_overwrite">Overwrite</string>
+    <string name="fm_conflict_keep_both">Keep both</string>
+    <string name="fm_conflict_skip">Skip</string>
+    <string name="fm_delete_one">Delete “%s”?</string>
+    <string name="fm_delete_many">Delete %d items?</string>
+    <string name="fm_delete_local_hint">Local items can be moved to the app trash.</string>
+    <string name="fm_delete_remote_hint">Items on the server are deleted permanently.</string>
+    <string name="fm_to_trash">Move to trash</string>
+    <string name="fm_delete_permanent">Delete permanently</string>
+
+    <!-- Properties, result -->
+    <string name="fm_prop_name">Name</string>
+    <string name="fm_prop_path">Path</string>
+    <string name="fm_prop_type">Type</string>
+    <string name="fm_prop_modified">Modified</string>
+    <string name="fm_prop_size">Size</string>
+    <string name="fm_prop_content">Contents: %1$d files, %2$s</string>
+    <string name="fm_type_folder">Folder</string>
+    <string name="fm_done">%d item(s) processed.</string>
+    <string name="fm_result_summary">%1$d processed, %2$d skipped, %3$d failed.</string>
+
+    <!-- Errors -->
+    <string name="fm_err_exists">An item with this name already exists.</string>
+    <string name="fm_err_cancelled">Operation cancelled.</string>
+    <string name="fm_err_auth">Sign-in failed (401). Check username and password.</string>
+    <string name="fm_err_forbidden">Access denied (403).</string>
+    <string name="fm_err_not_found">Not found (404). Check the address or path.</string>
+    <string name="fm_err_locked">The item is locked on the server (423).</string>
+    <string name="fm_err_full">No storage space left on the server (507).</string>
+    <string name="fm_err_redirect">The server redirects. Enter the address (http/https, path) exactly.</string>
+    <string name="fm_err_http">Server error (HTTP %d).</string>
+    <string name="fm_err_host">Server not found. Check the host name.</string>
+    <string name="fm_err_tls">Secure connection failed (TLS/certificate).</string>
+    <string name="fm_err_timeout">Connection timed out.</string>
+    <string name="fm_err_connect">Cannot connect to the server.</string>
+    <string name="fm_err_invalid_url">Invalid address.</string>
+    <string name="fm_err_user_required">Username required.</string>
+    <string name="fm_err_cert_changed">The server certificate has changed. Connection refused for security reasons.</string>
+    <string name="fm_err_cert_fetch">The server certificate could not be retrieved.</string>
+    <string name="fm_err_no_browser">No browser found to open the sign-in page.</string>
+    <string name="fm_err_no_app">No app found to open this file type.</string>
+    <string name="fm_err_invalid_name">Invalid name.</string>
+    <string name="fm_type_smb">SMB</string>
+    <string name="fm_type_hint_smb">Windows share, NAS or Samba (SMB 2/3, local network only). Sign in with username and password, optionally a domain.</string>
+    <string name="fm_url_hint_smb">nas.local or 192.168.1.10</string>
+    <string name="fm_share_hint">Share (e.g. Documents)</string>
+    <string name="fm_domain_hint">Domain or workgroup (optional)</string>
+    <string name="fm_err_smb_private">SMB is only allowed for local-network addresses.</string>
+    <string name="fm_err_smb_share">Share name is missing or invalid.</string>
+
+    <!-- View mode, split view, drag and drop -->
+    <string name="fm_view_grid">Grid view</string>
+    <string name="fm_view_list">List view</string>
+    <string name="fm_split_view">Split view</string>
+    <string name="fm_copy_other">Copy to other pane</string>
+    <string name="fm_move_other">Move to other pane</string>
+    <string name="fm_move">Move</string>
+    <string name="fm_drag_count">%d items</string>
+    <string name="fm_drop_title">%1$d item(s) to “%2$s”</string>
+    <string name="fm_err_into_itself">A folder cannot be copied or moved into itself or one of its subfolders.</string>
+</resources>

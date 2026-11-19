@@ -37,6 +37,9 @@ class StartActivity : AppCompatActivity() {
         binding.btnNavStorageAnalysis.setOnClickListener {
             startActivity(Intent(this, StorageAnalysisActivity::class.java))
         }
+        binding.btnNavFileManager.setOnClickListener {
+            startActivity(Intent(this, FileManagerActivity::class.java))
+        }
         binding.btnNavNetworkDiagnostic.setOnClickListener {
             startActivity(Intent(this, NetworkDiagnosticActivity::class.java))
         }

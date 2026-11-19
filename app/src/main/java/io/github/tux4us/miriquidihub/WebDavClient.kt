@@ -153,6 +153,8 @@ class WebDavClient(
     }
 
     private fun buildUrl(path: String): String {
+        // Klartext-HTTP ist plattformweit erlaubt (network_security_config); hier bleibt es auf lokale Adressen beschränkt.
+        io.github.tux4us.miriquidihub.files.HttpPolicy.requireSecureOrLan(serverUrl)
         val base = serverUrl.trimEnd('/')
         val p = path.trimStart('/')
         return "$base/$p"

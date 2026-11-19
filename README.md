@@ -16,6 +16,7 @@ MiriquidiHub bündelt Werkzeuge zur Diagnose und Dokumentation von Android-Gerä
 - 📶 **Netzwerk-Diagnose** - Verbindung, DNS und Erreichbarkeit öffentlicher Testhosts prüfen
 - 📸 **Screenshots** - Einfacher Screenshot und Long Screenshot (Scrollaufnahme)
 - 💾 **Speicherbelegung** - Analysetool für die Speicherbelegung und App-Caches
+- 🗄️ **Dateimanager** - Lokale Dateien verwalten sowie Netzwerkspeicher per WebDAV, Nextcloud und SMB (auch über http im Heimnetz)
 - 📍 **Ortung** - Standortfreigabe über einen eigenen WebDAV-Speicher, optional Ende-zu-Ende-verschlüsselt
 - 🧰 **Werkzeuge** - Akku-Monitor, Live-Monitor, Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent, Protokoll-Export, Berichtsvergleich
 - ⚡ **Schnellzugriff** - Kacheln für die Schnelleinstellungen, Status-Widget, App-Shortcuts
@@ -71,6 +72,8 @@ app/src/main/
 │   ├── TouchGridView.kt         # Vollbild-Raster für den Touchscreen-Test
 │   ├── NetworkDiagnosticActivity.kt # Netzwerk-Diagnose (Oberfläche)
 │   ├── NetworkDiagnostics.kt    # Netzwerk-Diagnose (Verbindung, DNS, TCP, HTTPS)
+│   ├── FileManagerActivity.kt   # Dateimanager (Oberfläche, Bereiche)
+│   ├── files/                   # Dateimanager: FileSource (lokal, WebDAV, SMB), TransferEngine, Verbindungen
 │   └── ...                      # weitere Activities, Services und Adapter
 ├── res/
 │   ├── layout/                  # Material 3 XML-Layouts
@@ -147,6 +150,18 @@ Die Diagnose zeigt Verbindungsstatus und Konfiguration und prüft die Erreichbar
 - **Papierkorb:** Gelöschte Dateien werden zunächst in den Ordner `.MiriquidiTrash` im gemeinsamen Speicher verschoben (ohne Kopieren, mit `.nomedia`) und können wiederhergestellt werden; endgültig gelöscht wird erst beim Leeren.
 - **Verlauf:** Lokal gespeicherte Belegung über die Zeit.
 - Erfordert `MANAGE_EXTERNAL_STORAGE` und `PACKAGE_USAGE_STATS`; beide werden über die Systemeinstellungen erteilt.
+
+### Dateimanager
+- **Lokal:** Interner Speicher und Wechselspeicher durchsuchen, sortieren, suchen (Schnellfilter und rekursiv), Mehrfachauswahl, Kopieren, Ausschneiden, Einfügen, Umbenennen, neue Ordner und Dateien, ZIP packen und entpacken (mit Schutz vor Pfad-Traversal), Öffnen und Teilen. Löschen verschiebt wahlweise in den Papierkorb `.MiriquidiTrash` oder löscht endgültig. Erfordert `MANAGE_EXTERNAL_STORAGE`.
+- **Netzwerk:** WebDAV und Nextcloud (PROPFIND, MKCOL, MOVE, COPY, PUT, DELETE). Kopieren und Verschieben funktionieren auch zwischen lokalem Speicher und Servern; Übertragungen laufen in einem Vordergrunddienst und sind abbrechbar.
+- **Nextcloud:** Anmeldung mit Benutzername und App-Passwort oder über den Browser (Login Flow v2). Chunked Upload ist nicht implementiert.
+- **Sicherheit:** http ist ohne Rückfrage nur für private Adressen (RFC 1918, Loopback, Link-Local, CGNAT 100.64.0.0/10, IPv6 lokal, `localhost`, `fritz.box`, Namen ohne Punkt sowie `.local`, `.lan`, `.home.arpa`, `.internal` u. ä.) erlaubt; für andere Hosts erscheint eine Warnung mit Bestätigung. Selbstsignierte Zertifikate lassen sich über den SHA-256-Fingerabdruck pro Verbindung fest hinterlegen. Passwörter werden mit dem Android Keystore verschlüsselt und sind vom Backup ausgenommen.
+- Plattformseitig ist Klartext-HTTP erlaubt, weil Android keine IP-Bereiche freigeben kann; die Beschränkung erfolgt in der App (`HttpPolicy`), auch für die Standortfreigabe über WebDAV.
+- **SMB:** Freigaben per SMB 2/3 über [smbj](https://github.com/hierynomus/smbj) (SMB 1 wird nicht unterstützt). Eingabe von Host (optional mit Port), Freigabename, Benutzername, Passwort und optional Domäne; Gastzugriff ist nicht vorgesehen. Auf Android authentifiziert smbj ausschließlich per NTLM (kein Kerberos). Verbindungen sind nur zu Adressen im lokalen Netz zulässig, weil SMB nicht für das Internet gedacht ist. Verschieben innerhalb einer Freigabe ist serverseitig; Kopieren überträgt die Daten über das Gerät. Freigaben werden nicht automatisch gesucht, der Freigabename muss angegeben werden.
+- **Ansicht:** Umschaltbar zwischen Liste und Raster (Symbol in der Toolbar, Einstellung wird gespeichert). Im Raster zeigen lokale Bilder und Videos Vorschaubilder, die asynchron geladen und im Arbeitsspeicher zwischengespeichert werden; Dateien auf Servern zeigen Symbole, damit keine Daten nur für Vorschauen übertragen werden.
+- **Kopieren und Verschieben:** Langer Druck startet die Mehrfachauswahl. In der Aktionsleiste stehen Kopieren und Ausschneiden direkt zur Verfügung; anschließend im Zielordner „Einfügen“ in der Leiste unten wählen. Bei bestehenden Zielnamen wird zwischen Überschreiben, Beide behalten und Überspringen gefragt.
+- **Geteilte Ansicht:** Zwei Bereiche mit je eigenem Speicherort, Pfad, Auswahl und Suche (Symbol in der Toolbar). Im Querformat stehen die Bereiche nebeneinander, im Hochformat übereinander. Die Speicherort-Chips gelten für den zuletzt berührten (hervorgehobenen) Bereich. Bei geteilter Ansicht erscheinen in der Auswahl die Aktionen „In anderen Bereich kopieren“ und „In anderen Bereich verschieben“.
+- **Drag and Drop:** Ein ausgewählter Eintrag wird nach langem Druck weitergezogen; die gesamte Auswahl wird mitgenommen. Ablegen ist auf einem Ordner, auf einem Abschnitt der Pfadleiste oder auf freier Fläche eines Bereichs (aktueller Ordner) möglich, auch zwischen Bereichen mit verschiedenen Speicherorten. Danach fragt ein Dialog, ob kopiert oder verschoben wird. Das Ablegen in sich selbst oder in den bisherigen Ordner wird erkannt und abgewiesen bzw. ignoriert. Am oberen und unteren Rand scrollt die Liste beim Ziehen automatisch.
 
 ### Screenshots
 - Einfacher Screenshot mit optionaler Verzögerung (Countdown); die Aufnahme startet erst nach Ablauf der Verzögerung.

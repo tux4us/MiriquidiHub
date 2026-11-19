@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_sel_copy"
+        android:icon="@drawable/ic_copy"
+        android:title="@string/fm_copy"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sel_cut"
+        android:icon="@drawable/ic_fm_move"
+        android:title="@string/fm_cut"
+        app:showAsAction="ifRoom" />
+    <!-- Nur in der geteilten Ansicht: direkt in den anderen Bereich -->
+    <item
+        android:id="@+id/action_sel_copy_other"
+        android:icon="@drawable/ic_fm_copy_to"
+        android:title="@string/fm_copy_other"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sel_move_other"
+        android:icon="@drawable/ic_fm_move"
+        android:title="@string/fm_move_other"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_sel_rename"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/fm_rename"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/fm_share"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_download"
+        android:title="@string/fm_download"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_zip"
+        android:title="@string/fm_zip"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_unzip"
+        android:title="@string/fm_unzip"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_properties"
+        android:title="@string/fm_properties"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sel_all"
+        android:title="@string/fm_select_all"
+        app:showAsAction="never" />
+</menu>

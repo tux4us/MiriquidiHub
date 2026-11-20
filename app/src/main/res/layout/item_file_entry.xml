@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="1dp"
     android:background="@drawable/bg_fm_row"
-    android:foreground="?attr/selectableItemBackground"
+    android:foreground="@drawable/bg_fm_row_ripple"
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"

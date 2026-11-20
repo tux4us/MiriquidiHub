@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Ablageziel während eines Drag-and-Drop-Vorgangs -->
-    <item android:state_selected="true">
+    <item android:state_hovered="true">
         <shape android:shape="rectangle">
             <stroke android:width="3dp" android:color="@color/rd_group5_accent" />
             <solid android:color="#22FFFFFF" />
@@ -9,7 +9,7 @@
         </shape>
     </item>
     <!-- Aktiver Bereich -->
-    <item android:state_activated="true">
+    <item android:state_selected="true">
         <shape android:shape="rectangle">
             <stroke android:width="2dp" android:color="@color/rd_overlay_accent" />
             <corners android:radius="12dp" />

@@ -148,6 +148,7 @@ class FileEntryAdapter(
     private fun bindCommon(root: View, check: MaterialCheckBox, e: FileEntry) {
         val isSelected = e.path in selected
         root.isActivated = isSelected
+        root.isSelected = false
         check.visibility = if (selectionMode) View.VISIBLE else View.GONE
         check.isChecked = isSelected
         root.setOnClickListener { onClick(e) }
@@ -162,20 +163,19 @@ class FileEntryAdapter(
     /** Ordner als Ablageziel. Positionsereignisse gibt er weiter, damit der Bereich am Rand scrollen kann. */
     private fun folderDrag(v: View, ev: DragEvent, folder: FileEntry): Boolean {
         val payload = ev.localState as? DragPayload ?: return false
-        val restore = { v.isActivated = folder.path in selected }
         return when (ev.action) {
             DragEvent.ACTION_DRAG_STARTED -> true
             DragEvent.ACTION_DRAG_ENTERED -> {
-                v.isActivated = true
+                v.isSelected = true
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION -> false
             DragEvent.ACTION_DRAG_EXITED, DragEvent.ACTION_DRAG_ENDED -> {
-                restore()
+                v.isSelected = false
                 true
             }
             DragEvent.ACTION_DROP -> {
-                restore()
+                v.isSelected = false
                 onFolderDrop(folder, payload)
                 true
             }

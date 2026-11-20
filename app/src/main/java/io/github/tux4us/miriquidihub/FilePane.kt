@@ -115,8 +115,14 @@ class FilePane(
         binding.root.setOnDragListener { _, ev -> onPaneDrag(ev) }
     }
 
+    var isActivePane = false
+        private set
+
     fun setActive(active: Boolean) {
-        binding.root.isActivated = active
+        isActivePane = active
+        binding.root.setBackgroundResource(
+            if (active) R.drawable.bg_fm_pane_active else R.drawable.bg_fm_pane_inactive
+        )
     }
 
     fun setRefreshing(on: Boolean) {
@@ -329,16 +335,16 @@ class FilePane(
         return when (ev.action) {
             DragEvent.ACTION_DRAG_STARTED -> true
             DragEvent.ACTION_DRAG_ENTERED -> {
-                v.isActivated = true
+                v.isSelected = true
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION -> false
             DragEvent.ACTION_DRAG_EXITED, DragEvent.ACTION_DRAG_ENDED -> {
-                v.isActivated = false
+                v.isSelected = false
                 true
             }
             DragEvent.ACTION_DROP -> {
-                v.isActivated = false
+                v.isSelected = false
                 host.onDrop(this, payload, DropTarget(target, true))
                 true
             }
@@ -353,7 +359,7 @@ class FilePane(
         return when (ev.action) {
             DragEvent.ACTION_DRAG_STARTED -> true
             DragEvent.ACTION_DRAG_ENTERED -> {
-                binding.root.isSelected = foreign
+                if (foreign) binding.root.setBackgroundResource(R.drawable.bg_fm_pane_drop)
                 true
             }
             DragEvent.ACTION_DRAG_LOCATION -> {
@@ -361,11 +367,15 @@ class FilePane(
                 true
             }
             DragEvent.ACTION_DRAG_EXITED, DragEvent.ACTION_DRAG_ENDED -> {
-                binding.root.isSelected = false
+                binding.root.setBackgroundResource(
+                    if (isActivePane) R.drawable.bg_fm_pane_active else R.drawable.bg_fm_pane_inactive
+                )
                 true
             }
             DragEvent.ACTION_DROP -> {
-                binding.root.isSelected = false
+                binding.root.setBackgroundResource(
+                    if (isActivePane) R.drawable.bg_fm_pane_active else R.drawable.bg_fm_pane_inactive
+                )
                 // Ablage auf freier Fläche im selben Bereich ist keine Aktion (gleicher Ordner).
                 if (foreign) host.onDrop(this, payload, DropTarget(path, false))
                 true

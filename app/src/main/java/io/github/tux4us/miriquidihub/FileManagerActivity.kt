@@ -507,15 +507,18 @@ class FileManagerActivity : AppCompatActivity(), FilePane.Host {
         }
     }
 
-    /** Langer Druck wählt den Eintrag aus und beginnt das Ziehen der Auswahl. */
+    /** Langer Druck wählt den Eintrag aus. Ein weiterer langer Druck auf Auswahl startet das Ziehen. */
     override fun onEntryLongClick(pane: FilePane, entry: FileEntry, view: View) {
         setActive(pane.index)
-        if (actionMode == null) {
+        val isNewSelectionMode = actionMode == null
+        if (isNewSelectionMode) {
             actionMode = startSupportActionMode(actionCallback)
             pane.setSelectionMode(true)
         }
         if (entry.path !in pane.selection) pane.toggleSelect(entry)
-        startDrag(pane, view)
+        if (!isNewSelectionMode) {
+            startDrag(pane, view)
+        }
     }
 
     override fun onSelectionChanged(pane: FilePane) {
@@ -1108,16 +1111,12 @@ class FileManagerActivity : AppCompatActivity(), FilePane.Host {
         actionMode?.finish()
         val flags = DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_TIME or DateUtils.FORMAT_NUMERIC_DATE or DateUtils.FORMAT_SHOW_YEAR
         val lines = ArrayList<String>()
-        lines.add(getString(R.string.fm_prop_name, e.name))
-        lines.add(getString(R.string.fm_prop_path, e.path))
-        lines.add(
-            getString(
-                R.string.fm_prop_type,
-                if (e.isDirectory) getString(R.string.fm_type_folder) else (e.mime ?: FileTypes.mimeOf(e.name))
-            )
-        )
-        if (e.modified > 0) lines.add(getString(R.string.fm_prop_modified, DateUtils.formatDateTime(this, e.modified, flags)))
-        if (!e.isDirectory && e.size >= 0) lines.add(getString(R.string.fm_prop_size, "${formatBytes(e.size)} (${e.size} B)"))
+        lines.add("${getString(R.string.fm_prop_name)}: ${e.name}")
+        lines.add("${getString(R.string.fm_prop_path)}: ${e.path}")
+        val typeStr = if (e.isDirectory) getString(R.string.fm_type_folder) else (e.mime ?: FileTypes.mimeOf(e.name))
+        lines.add("${getString(R.string.fm_prop_type)}: $typeStr")
+        if (e.modified > 0) lines.add("${getString(R.string.fm_prop_modified)}: ${DateUtils.formatDateTime(this, e.modified, flags)}")
+        if (!e.isDirectory && e.size >= 0) lines.add("${getString(R.string.fm_prop_size)}: ${formatBytes(e.size)} (${e.size} B)")
         val base = lines.joinToString("\n")
         val dialog = MaterialAlertDialogBuilder(this)
             .setTitle(R.string.fm_properties)

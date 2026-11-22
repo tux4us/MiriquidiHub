@@ -422,7 +422,9 @@
     <string name="wa_scanning">WLAN-Suche läuft …</string>
     <string name="wa_wifi_off">WLAN ist ausgeschaltet</string>
     <string name="wa_none">Keine Netzwerke gefunden</string>
-    <string name="wa_permission_denied">Ohne die Berechtigung ist keine WLAN-Suche möglich</string>
+    <string name="wa_permission_denied">Ohne die Standortberechtigung ist keine WLAN-Suche möglich. Android verlangt sie dafür; der Standort selbst wird nicht gelesen.</string>
+    <string name="wa_location_off">Die Standortdienste sind ausgeschaltet. Android liefert WLAN-Suchergebnisse nur bei eingeschaltetem Standort; der Standort selbst wird nicht gelesen.</string>
+    <string name="wa_open_location_settings">Standort-Einstellungen</string>
     <string name="wa_section_band">Kanalbelegung %1$s</string>
     <string name="wa_section_networks">Sichtbare Netze (%1$d)</string>
     <string name="wa_channel">Kanal %1$d</string>

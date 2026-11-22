@@ -1,6 +1,9 @@
 package io.github.tux4us.miriquidihub
 
+import android.content.Intent
 import android.net.wifi.ScanResult
+import android.provider.Settings
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
@@ -17,9 +20,14 @@ class WifiAnalysisActivity : ToolActivity() {
 
     private var exportSections: List<DiagSection> = emptyList()
 
-    private val permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        if (granted) scan() else setSummary(DiagStatus.ERROR, getString(R.string.wa_permission_denied))
-    }
+    /** True, solange die Suche wegen ausgeschalteter Standortdienste wartet; nach der Rückkehr wird neu gesucht. */
+    private var waitingForLocation = false
+
+    private val permissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
+            if (results[WifiScanHelper.requiredPermission()] == true) scan()
+            else setSummary(DiagStatus.ERROR, getString(R.string.wa_permission_denied))
+        }
 
     override fun onToolCreated() {
         setPrimaryAction(R.string.wa_scan) { startScan() }
@@ -30,12 +38,20 @@ class WifiAnalysisActivity : ToolActivity() {
         startScan()
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (waitingForLocation && WifiScanHelper.isLocationEnabled(this)) {
+            waitingForLocation = false
+            startScan()
+        }
+    }
+
     override fun exportText(): String =
         DiagRenderer.toPlainText(getString(R.string.wa_title) + " – MiriquidiHub", exportSections)
 
     private fun startScan() {
         if (!WifiScanHelper.hasPermission(this)) {
-            permissionLauncher.launch(WifiScanHelper.requiredPermission())
+            permissionLauncher.launch(WifiScanHelper.requiredPermissions())
             return
         }
         scan()
@@ -47,6 +63,18 @@ class WifiAnalysisActivity : ToolActivity() {
             setSummary(DiagStatus.WARN, getString(R.string.wa_wifi_off))
             return
         }
+        if (!WifiScanHelper.isLocationEnabled(this)) {
+            showSections(emptyList())
+            setSummary(DiagStatus.WARN, getString(R.string.wa_location_off))
+            setSecondaryAction(R.string.wa_open_location_settings) {
+                waitingForLocation = true
+                startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+            }
+            waitingForLocation = true
+            return
+        }
+        waitingForLocation = false
+        binding.btnSecondary.visibility = View.GONE
         setBusy(true)
         setSummary(null, getString(R.string.wa_scanning))
         lifecycleScope.launch {

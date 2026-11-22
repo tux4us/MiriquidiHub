@@ -168,10 +168,10 @@ class NetworkDiagnostics(
         sections += buildConnectionSection(st, caps)
         if (lp != null) sections += buildConfigSection(lp)
 
-        val physical = findPhysicalNetworkCaps()
-        if (physical != null && physical.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+        val wifi = findWifiNetworkCaps()
+        if (wifi != null) {
             st.wifiConnected = true
-            buildWifiSection(physical)?.let { sections += it }
+            buildWifiSection(wifi)?.let { sections += it }
         }
         if (hasTelephony()) sections += buildMobileSection(st)
         return sections
@@ -317,19 +317,20 @@ class NetworkDiagnostics(
     private fun isUniqueLocal(a: Inet6Address): Boolean = (a.address[0].toInt() and 0xFE) == 0xFC
 
     /**
-     * Bevorzugt das validierte, nicht-VPN-Netzwerk mit Internet-Fähigkeit. Bei aktivem
-     * VPN ist das aktive Netzwerk der Tunnel; WLAN-/Mobilfunkdetails stehen am
-     * darunterliegenden physischen Netzwerk.
+     * Sucht das verbundene WLAN unabhängig davon, ob es gerade das aktive Netzwerk ist (VPN-Tunnel
+     * oder vorrangiger Mobilfunk). `allNetworks` ist nicht nach Priorität sortiert: Ein erstes
+     * validiertes Netzwerk kann Mobilfunk sein, obwohl WLAN verbunden ist. VPN-Netze werden
+     * übergangen, weil sie die Transporte des darunterliegenden Netzes mitführen, aber keine WLAN-Details.
      */
     @Suppress("DEPRECATION")
-    private fun findPhysicalNetworkCaps(): NetworkCapabilities? {
-        val candidates = cm.allNetworks.mapNotNull { n: Network -> cm.getNetworkCapabilities(n) }
+    private fun findWifiNetworkCaps(): NetworkCapabilities? {
+        val wifi = cm.allNetworks.mapNotNull { n: Network -> cm.getNetworkCapabilities(n) }
             .filter {
-                it.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
+                it.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) &&
                     !it.hasTransport(NetworkCapabilities.TRANSPORT_VPN)
             }
-        return candidates.firstOrNull { it.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) }
-            ?: candidates.firstOrNull()
+        return wifi.firstOrNull { it.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) }
+            ?: wifi.firstOrNull()
     }
 
     @Suppress("DEPRECATION")

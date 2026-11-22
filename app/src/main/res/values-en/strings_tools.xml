@@ -422,7 +422,9 @@
     <string name="wa_scanning">Scanning for Wi-Fi networks …</string>
     <string name="wa_wifi_off">Wi-Fi is turned off</string>
     <string name="wa_none">No networks found</string>
-    <string name="wa_permission_denied">Wi-Fi scanning is not possible without the permission</string>
+    <string name="wa_permission_denied">Wi-Fi scanning is not possible without the location permission. Android requires it for this; the location itself is not read.</string>
+    <string name="wa_location_off">Location services are turned off. Android only returns Wi-Fi scan results while location is on; the location itself is not read.</string>
+    <string name="wa_open_location_settings">Location settings</string>
     <string name="wa_section_band">Channel usage %1$s</string>
     <string name="wa_section_networks">Visible networks (%1$d)</string>
     <string name="wa_channel">Channel %1$d</string>

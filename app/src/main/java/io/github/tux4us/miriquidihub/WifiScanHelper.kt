@@ -8,22 +8,33 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiManager
-import android.os.Build
+import android.location.LocationManager
 import androidx.core.content.ContextCompat
+import androidx.core.location.LocationManagerCompat
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.coroutines.resume
 
 /**
  * Gemeinsame WLAN-Suche für den Hardware-Selbsttest und die WLAN-Analyse.
- * Ab Android 13 genügt `NEARBY_WIFI_DEVICES` (mit `neverForLocation`), davor wird der
- * Standortzugriff vom System verlangt. Es werden keine BSSIDs weitergegeben.
+ * `startScan()` und `getScanResults()` verlangen laut Android-Dokumentation auch ab Android 13 die
+ * Berechtigung `ACCESS_FINE_LOCATION`; `NEARBY_WIFI_DEVICES` genügt dafür nicht. Zusätzlich müssen die
+ * Standortdienste eingeschaltet sein, sonst liefert Android eine leere Liste bzw. wirft eine
+ * SecurityException. Der Standort selbst wird nicht gelesen, es werden keine BSSIDs weitergegeben.
  */
 object WifiScanHelper {
 
-    fun requiredPermission(): String =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) Manifest.permission.NEARBY_WIFI_DEVICES
-        else Manifest.permission.ACCESS_FINE_LOCATION
+    fun requiredPermission(): String = Manifest.permission.ACCESS_FINE_LOCATION
+
+    /** Für den Berechtigungsdialog: ab Android 12 muss ACCESS_COARSE_LOCATION mit angefragt werden. */
+    fun requiredPermissions(): Array<String> =
+        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+
+    /** Standortdienste (Schalter „Standort“ in den Systemeinstellungen) sind Voraussetzung für Suchergebnisse. */
+    fun isLocationEnabled(ctx: Context): Boolean {
+        val lm = ctx.applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return LocationManagerCompat.isLocationEnabled(lm)
+    }
 
     fun hasPermission(ctx: Context): Boolean =
         ContextCompat.checkSelfPermission(ctx, requiredPermission()) == PackageManager.PERMISSION_GRANTED

@@ -9,7 +9,7 @@
     <string name="donate_no_browser">Kein Browser gefunden. Link: buymeacoffee.com/tux4us</string>
     <string name="appinfo_donate">Unterstützen</string>
     <string name="update_title">☕ MiriquidiHub ist aktualisiert</string>
-    <string name="update_message">Version %1$s ist installiert.\n\nWerbefrei, ohne Tracking, frei unter GPL-3.0 und in der Freizeit entwickelt. Wenn Du mich in der Entwicklung von MiriquidiHub unterstützen möchtest und meine Arbeit wertschätzt, freue ich mich über eine Unterstützung in Höhe Deiner Wahl.\n\nDie App ist natürlich auch ohne Unterstützung vollständig nutzbar.</string>
+    <string name="update_message">Version %1$s ist installiert.\n\nWerbefrei, ohne Tracking, frei unter GPL-3.0 und in der Freizeit entwickelt. Wenn Du mich in der Entwicklung von MiriquidiHub unterstützen möchtest und meine Arbeit wertschätzt, freue ich mich über eine Unterstützung in Höhe Deiner Wahl über buymeacoffee.com.\n\nDie App ist natürlich auch ohne Unterstützung vollständig nutzbar.</string>
     <string name="update_donate">Kaffee spendieren</string>
     <string name="update_later">Später</string>
 </resources>

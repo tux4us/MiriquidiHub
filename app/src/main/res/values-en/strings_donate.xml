@@ -9,7 +9,7 @@
     <string name="donate_no_browser">No browser found. Link: buymeacoffee.com/tux4us</string>
     <string name="appinfo_donate">Support</string>
     <string name="update_title">☕ MiriquidiHub has been updated</string>
-    <string name="update_message">Version %1$s is installed.\n\nAd-free, no tracking, free under GPL-3.0 and developed in spare time. If you’d like to support me in the development of MiriquidiHub and value my work, I’d be delighted to receive a donation of your choice.\n\nThe app is, of course, fully usable even without a donation.</string>
+    <string name="update_message">Version %1$s is installed.\n\nAd-free, no tracking, free under GPL-3.0 and developed in spare time. If you’d like to support me in the development of MiriquidiHub and value my work, I’d be delighted to receive a donation of your choice via buymeacoffee.com.\n\nThe app is, of course, fully usable even without a donation.</string>
     <string name="update_donate">Buy a coffee</string>
     <string name="update_later">Later</string>
 </resources>

@@ -43,6 +43,7 @@ class StartActivity : AppCompatActivity() {
         supportActionBar?.title = "MiriquidiHub"
 
         setupTiles()
+        UpdateNotice.showIfUpgraded(this)
     }
 
     private fun setupTiles() {

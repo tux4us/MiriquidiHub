@@ -10,9 +10,10 @@ import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
- * Freiwillige Unterstützung des Entwicklers. Der Dialog wird ausschließlich auf Nutzeraktion
- * geöffnet (Startseite oder Appinfo), nie automatisch. Die Spende läuft über die Webseite von
- * Buy Me a Coffee im externen Browser; die App enthält dafür weder SDK noch Tracking.
+ * Freiwillige Unterstützung des Entwicklers. Dieser Dialog wird auf Nutzeraktion geöffnet
+ * (Startseite oder Appinfo); einen einmaligen Hinweis nach einem Update zeigt [UpdateNotice].
+ * Die Spende läuft über die Webseite von Buy Me a Coffee im externen Browser; die App enthält
+ * dafür weder SDK noch Tracking.
  */
 object DonationDialog {
     const val DONATION_URL = "https://buymeacoffee.com/tux4us"
@@ -27,7 +28,7 @@ object DonationDialog {
             .show()
     }
 
-    private fun openDonationPage(context: Context) {
+    internal fun openDonationPage(context: Context) {
         try {
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(DONATION_URL)))
         } catch (e: ActivityNotFoundException) {

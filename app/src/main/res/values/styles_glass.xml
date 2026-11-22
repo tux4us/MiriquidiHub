@@ -147,6 +147,35 @@
         <item name="cardCornerRadius">12dp</item>
     </style>
 
+    <!-- Startseiten-Kachel: neutrales Glas, weißer Randverlauf (GlassPainter), kein Schatten -->
+    <style name="Widget.App.Card.Tile">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="strokeColor">@color/gl_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Schrift der Startseite: Regular statt Bold, Größe in sp (skaliert mit Systemeinstellung) -->
+    <style name="TextAppearance.App.TileTitle" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/rd_text_primary</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.App.TileDescription" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/rd_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.App.SectionLabel" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/rd_text_secondary</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
     <!-- Leiste: Glas-Leiste über die volle Breite inklusive Statusleiste -->
     <style name="Widget.App.AppBarLayout" parent="Widget.Material3.AppBarLayout">
         <item name="android:background">@color/gl_bar</item>

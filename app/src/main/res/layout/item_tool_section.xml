@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gruppe der Werkzeug-Übersicht: Überschrift und Grid mit Werkzeug-Schaltflächen (item_tool_button).
+     Das Grid reicht 6 dp über den Seitenrand hinaus und gleicht damit den Kachelabstand aus. -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvSectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:textAppearance="@style/TextAppearance.App.SectionLabel" />
+
+    <GridLayout
+        android:id="@+id/toolGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-6dp"
+        android:layout_marginEnd="-6dp"
+        android:columnCount="1" />
+</LinearLayout>

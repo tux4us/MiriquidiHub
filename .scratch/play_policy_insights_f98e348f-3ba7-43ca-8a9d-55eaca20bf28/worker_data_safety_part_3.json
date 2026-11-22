@@ -1,0 +1,43 @@
+{
+  "domain": "Data Safety and Privacy",
+  "findings": [
+    {
+      "psl_constant": "DEVICE_ID",
+      "policy_id": "data_safety_section",
+      "issue_summary": "Manual Sharing",
+      "severity": "SUGGESTION",
+      "files_involved": [
+        "app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt",
+        "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt",
+        "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt"
+      ],
+      "evidence": "Device information and build specifications are gathered by DeviceInfo.kt and displayed in BugReportActivity.kt and DeviceReportActivity.kt. Transfer to external applications only occurs when explicitly initiated by the user via Intent.ACTION_SEND (Android Share Sheet).",
+      "recommendation": "No action required under prominent disclosure policy as user-initiated manual sharing to third-party apps via Share Sheet is exempt. Ensure accurate declaration in the Play Store Data Safety form if required.",
+      "is_transferred": true,
+      "user_initiated": true,
+      "is_third_party": true,
+      "prominent_disclosure_status": "EXEMPT",
+      "purpose": "App functionality",
+      "linked_to_user": false
+    },
+    {
+      "psl_constant": "AUDIO",
+      "policy_id": "data_safety_section",
+      "issue_summary": "Data Safety Compliant (Local-Only)",
+      "severity": "SUGGESTION",
+      "files_involved": [
+        "app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt",
+        "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt",
+        "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt"
+      ],
+      "evidence": "Audio recording in HardwareTester.kt (recordMic) is used only during the hardware test to calculate peak and RMS levels in RAM, and the audio buffer is immediately discarded without being saved or transmitted off-device. BatteryMonitorActivity.kt does not record audio.",
+      "recommendation": "No action required. Audio data is processed locally in RAM for hardware diagnostic purposes only and is neither stored nor transmitted.",
+      "is_transferred": false,
+      "user_initiated": false,
+      "is_third_party": false,
+      "prominent_disclosure_status": "EXEMPT",
+      "purpose": "Local functionality only",
+      "linked_to_user": false
+    }
+  ]
+}

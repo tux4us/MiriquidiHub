@@ -1,0 +1,2162 @@
+{
+    "codebase_map": {
+        "all_files": [
+            [
+                ".gitignore",
+                "/home/tuxus/Android/MiriquidiHub/.gitignore",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "GLASS_DESIGN.md",
+                "/home/tuxus/Android/MiriquidiHub/GLASS_DESIGN.md",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "LICENSE",
+                "/home/tuxus/Android/MiriquidiHub/LICENSE",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "README.md",
+                "/home/tuxus/Android/MiriquidiHub/README.md",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "build.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub/build.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "gradle.properties",
+                "/home/tuxus/Android/MiriquidiHub/gradle.properties",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "gradlew",
+                "/home/tuxus/Android/MiriquidiHub/gradlew",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "gradlew.bat",
+                "/home/tuxus/Android/MiriquidiHub/gradlew.bat",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "local.properties",
+                "/home/tuxus/Android/MiriquidiHub/local.properties",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                "settings.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub/settings.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub"
+            ],
+            [
+                ".gitignore",
+                "/home/tuxus/Android/MiriquidiHub/app/.gitignore",
+                "/home/tuxus/Android/MiriquidiHub/app"
+            ],
+            [
+                "build.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub/app/build.gradle.kts",
+                "/home/tuxus/Android/MiriquidiHub/app"
+            ],
+            [
+                "proguard-rules.pro",
+                "/home/tuxus/Android/MiriquidiHub/app/proguard-rules.pro",
+                "/home/tuxus/Android/MiriquidiHub/app"
+            ],
+            [
+                "app-release.aab",
+                "/home/tuxus/Android/MiriquidiHub/app/release/app-release.aab",
+                "/home/tuxus/Android/MiriquidiHub/app/release"
+            ],
+            [
+                "app-release.apk",
+                "/home/tuxus/Android/MiriquidiHub/app/release/app-release.apk",
+                "/home/tuxus/Android/MiriquidiHub/app/release"
+            ],
+            [
+                "output-metadata.json",
+                "/home/tuxus/Android/MiriquidiHub/app/release/output-metadata.json",
+                "/home/tuxus/Android/MiriquidiHub/app/release"
+            ],
+            [
+                "AndroidManifest.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/AndroidManifest.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main"
+            ],
+            [
+                "ic_launcher-playstore.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/ic_launcher-playstore.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main"
+            ],
+            [
+                "AppCacheAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppCacheInfo.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheInfo.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppCacheScanner.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheScanner.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppInfoDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppInfoDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppInventoryActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppInventoryActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppLogAccess.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogAccess.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppLogActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppLogFilter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogFilter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppSelectionAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "AppSelectionDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "BatteryHealth.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryHealth.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "BatteryModel.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryModel.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "BatteryMonitorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "BugReportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "BugReportBuilder.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BugReportBuilder.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DeviceInfo.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DeviceReport.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceReport.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DeviceReportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DiagRenderer.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DiagRenderer.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DisplayPatternView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DisplayPatternView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DnsPacket.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DnsPacket.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "DonationDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DonationDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "EditGeometry.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/EditGeometry.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FileConnectionDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileConnectionDialog.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FileEntryAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileEntryAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FileErrors.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileErrors.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FileManagerActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FilePane.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FilePane.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "FileTypes.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileTypes.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "GlassButton.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassButton.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "GlassCardView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassCardView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "GlassPainter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassPainter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "HardwareTestActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "HardwareTestModel.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestModel.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "HardwareTester.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "HardwareTesterExtra.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTesterExtra.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LanguageHelper.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LanguageHelper.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LineChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LineChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LocationShareActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LocationShareService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LocationShareSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "LogcatExportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "MiriquidiHubApp.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/MiriquidiHubApp.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "NetworkDiagnosticActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnosticActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "NetworkDiagnostics.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "NetworkSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "NetworkTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "PayloadCrypto.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/PayloadCrypto.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "PermissionOverviewActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "QuickTiles.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/QuickTiles.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "RamChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/RamChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ReportArchive.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportArchive.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ReportCompareActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportCompareActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ReportExporter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportExporter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ReportHistoryActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportHistoryActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotEditView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotEditorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotSettings.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScreenshotTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ScrollingScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScrollingScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SecureStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecureStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SecurityCheck.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheck.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SecurityCheckActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheckActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SecurityTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityTileService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SelectedAppAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SelectedAppAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SelectedImageAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SelectedImageAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SensorExplorerActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SensorExplorerActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SimpleScreenshotActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SimpleScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SpecParser.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SpecParser.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StartActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StartActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StatusWidgetProvider.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StatusWidgetProvider.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageAnalysisActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageHistory.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageHistory.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageInsights.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageInsights.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageInsightsActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageInsightsActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageNode.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageNode.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageNodeAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageNodeAdapter.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "StorageScanner.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SunburstChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SunburstChartView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "SystemMonitorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SystemMonitorActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ThroughputTest.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ThroughputTest.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ThumbnailLoader.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ThumbnailLoader.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ToolActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ToolLogic.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolLogic.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ToolSupport.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolSupport.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "ToolsActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolsActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "TouchGridView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/TouchGridView.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "TrashManager.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/TrashManager.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "WebDavClient.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WebDavClient.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "WebDavPreferences.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WebDavPreferences.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "WifiAnalysisActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WifiAnalysisActivity.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "WifiScanHelper.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WifiScanHelper.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub"
+            ],
+            [
+                "CertTools.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/CertTools.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "Connection.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/Connection.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "ConnectionStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/ConnectionStore.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "DropRules.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/DropRules.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "FileEntry.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/FileEntry.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "FileSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/FileSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "HttpPolicy.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/HttpPolicy.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "LocalArchive.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/LocalArchive.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "LocalSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/LocalSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "NextcloudApi.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/NextcloudApi.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "PathUtil.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/PathUtil.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "RemoteClients.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteClients.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "RemoteException.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteException.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "SmbSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "SmbStatus.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbStatus.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "SmbTarget.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbTarget.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "SourceFactory.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SourceFactory.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "ThumbMath.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/ThumbMath.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "TransferEngine.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferEngine.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "TransferManager.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferManager.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "TransferService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferService.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "WebDavParser.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavParser.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "WebDavSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavSource.kt",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files"
+            ],
+            [
+                "glass_press.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/animator/glass_press.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/animator"
+            ],
+            [
+                "checkbox_tint.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/checkbox_tint.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_fill_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_fill_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_neutral_strong.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_neutral_strong.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_stroke_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_stroke_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_danger.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_neutral.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_on_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_on_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_primary.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_success.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "gl_btn_text_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/gl_btn_text_warning.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "radio_button_tint.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/radio_button_tint.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "text_input_stroke_color.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color/text_input_stroke_color.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/color"
+            ],
+            [
+                "bg_app_gradient.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_app_gradient.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_floating_button.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_floating_button.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_drag_shadow.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_drag_shadow.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_pane.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_pane.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_pane_active.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_pane_active.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_pane_drop.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_pane_drop.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_pane_inactive.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_pane_inactive.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_row.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_row.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_fm_row_ripple.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_fm_row_ripple.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_glass_dialog.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_glass_dialog.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_icon_badge_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_icon_badge_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_screenshot_frame_border.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_screenshot_frame_border.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "bg_widget.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/bg_widget.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "circle.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/circle.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_chevron_right.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_chevron_right.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_copy.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_copy.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_archive.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_archive.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_audio.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_audio.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_cloud.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_cloud.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_copy_to.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_copy_to.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_file.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_file.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_folder.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_folder.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_image.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_image.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_move.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_move.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_phone.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_phone.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_sd.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_sd.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_split.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_split.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_text.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_text.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_video.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_video.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_view_grid.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_view_grid.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_fm_view_list.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_fm_view_list.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_hardware.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_hardware.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_home.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_home.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_launcher_background.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_launcher_background.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_location.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_location.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_long_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_long_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_network.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_network.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_report.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_report.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_simple_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_simple_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_storage.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_storage.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/ic_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "pop_background.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/pop_background.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "text_cursor.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable/text_cursor.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable"
+            ],
+            [
+                "ic_launcher_foreground.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-nodpi"
+            ],
+            [
+                "ic_launcher_monochrome.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-nodpi/ic_launcher_monochrome.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-nodpi"
+            ],
+            [
+                "bg_glass_dialog.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-v31/bg_glass_dialog.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/drawable-v31"
+            ],
+            [
+                "activity_device_report.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_device_report.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_file_manager.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_file_manager.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_hardware_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_hardware_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_location_share.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_location_share.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_network_diagnostic.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_network_diagnostic.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_report_history.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_report_history.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_screenshot_editor.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_screenshot_editor.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_start.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_start.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_storage_analysis.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_storage_analysis.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "activity_tool.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_tool.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "dialog_app_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_app_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "dialog_fm_connection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_connection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "dialog_fm_input.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_input.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "dialog_fm_progress.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_progress.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "dialog_webdav_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_webdav_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_app_cache.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_app_cache.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_app_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_app_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_diag_row.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_diag_row.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_diag_section.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_diag_section.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_file_entry.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_file_entry.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_file_grid.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_file_grid.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_hw_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_hw_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_location_device.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_location_device.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_report_history.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_report_history.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_selected_app.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_selected_app.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_selected_image.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_selected_image.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "item_storage_node.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_storage_node.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "layout_floating_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/layout_floating_screenshot.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "pane_file_list.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/pane_file_list.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "view_bug_report_form.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/view_bug_report_form.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "widget_status.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/widget_status.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout"
+            ],
+            [
+                "menu_file_manager.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_file_manager.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_file_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_file_selection.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_hardware_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_hardware_test.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_location_share.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_location_share.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_main.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_main.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_network_diagnostic.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_network_diagnostic.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_report_export.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_report_export.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_storage.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_storage.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "menu_tool.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu/menu_tool.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/menu"
+            ],
+            [
+                "ic_launcher.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-anydpi-v26"
+            ],
+            [
+                "ic_launcher_round.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-anydpi-v26"
+            ],
+            [
+                "ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-hdpi"
+            ],
+            [
+                "ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-hdpi"
+            ],
+            [
+                "ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-mdpi"
+            ],
+            [
+                "ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-mdpi"
+            ],
+            [
+                "ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xhdpi"
+            ],
+            [
+                "ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xhdpi"
+            ],
+            [
+                "ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxhdpi"
+            ],
+            [
+                "ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxhdpi"
+            ],
+            [
+                "ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxxhdpi"
+            ],
+            [
+                "ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/mipmap-xxxhdpi"
+            ],
+            [
+                "arrays_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/arrays_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "colors.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/colors.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "colors_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/colors_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "strings.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "strings_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "strings_files.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_files.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "strings_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "styles_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/styles_glass.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "themes.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/themes.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values"
+            ],
+            [
+                "arrays_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/arrays_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en"
+            ],
+            [
+                "strings.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en"
+            ],
+            [
+                "strings_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_donate.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en"
+            ],
+            [
+                "strings_files.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_files.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en"
+            ],
+            [
+                "strings_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_tools.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en"
+            ],
+            [
+                "themes.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-v31/themes.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-v31"
+            ],
+            [
+                "accessibility_service_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/accessibility_service_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "backup_rules.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/backup_rules.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "data_extraction_rules.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/data_extraction_rules.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "file_paths.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/file_paths.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "network_security_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/network_security_config.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "shortcuts.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/shortcuts.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "widget_status_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/widget_status_info.xml",
+                "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml"
+            ],
+            [
+                "registry.bin",
+                "/home/tuxus/Android/MiriquidiHub/daemon/9.6.0/registry.bin",
+                "/home/tuxus/Android/MiriquidiHub/daemon/9.6.0"
+            ],
+            [
+                "registry.bin.lock",
+                "/home/tuxus/Android/MiriquidiHub/daemon/9.6.0/registry.bin.lock",
+                "/home/tuxus/Android/MiriquidiHub/daemon/9.6.0"
+            ],
+            [
+                "full_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/full_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE"
+            ],
+            [
+                "short_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/short_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE"
+            ],
+            [
+                "title.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/title.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE"
+            ],
+            [
+                "4.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs/4.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs"
+            ],
+            [
+                "6.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs/6.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs"
+            ],
+            [
+                "7.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs/7.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs"
+            ],
+            [
+                "8.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs/8.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs"
+            ],
+            [
+                "9.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs/9.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/changelogs"
+            ],
+            [
+                "icon.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/icon.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images"
+            ],
+            [
+                "Screenshot_20261105-230921_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots/Screenshot_20261105-230921_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots"
+            ],
+            [
+                "Screenshot_20261105-230950_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots/Screenshot_20261105-230950_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots"
+            ],
+            [
+                "Screenshot_20261105-231052_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots/Screenshot_20261105-231052_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/de-DE/images/phoneScreenshots"
+            ],
+            [
+                "full_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/full_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US"
+            ],
+            [
+                "short_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/short_description.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US"
+            ],
+            [
+                "title.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/title.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US"
+            ],
+            [
+                "4.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs/4.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs"
+            ],
+            [
+                "6.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs/6.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs"
+            ],
+            [
+                "7.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs/7.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs"
+            ],
+            [
+                "8.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs/8.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs"
+            ],
+            [
+                "9.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs/9.txt",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/changelogs"
+            ],
+            [
+                "icon.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images/icon.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images"
+            ],
+            [
+                "Screenshot_20261105-231124_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20261105-231124_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images/phoneScreenshots"
+            ],
+            [
+                "Screenshot_20261105-231204_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20261105-231204_MiriquidiHub.png",
+                "/home/tuxus/Android/MiriquidiHub/fastlane/metadata/android/en-US/images/phoneScreenshots"
+            ],
+            [
+                "libs.versions.toml",
+                "/home/tuxus/Android/MiriquidiHub/gradle/libs.versions.toml",
+                "/home/tuxus/Android/MiriquidiHub/gradle"
+            ],
+            [
+                "gradle-wrapper.jar",
+                "/home/tuxus/Android/MiriquidiHub/gradle/wrapper/gradle-wrapper.jar",
+                "/home/tuxus/Android/MiriquidiHub/gradle/wrapper"
+            ],
+            [
+                "gradle-wrapper.properties",
+                "/home/tuxus/Android/MiriquidiHub/gradle/wrapper/gradle-wrapper.properties",
+                "/home/tuxus/Android/MiriquidiHub/gradle/wrapper"
+            ]
+        ],
+        "gradles": [
+            "/home/tuxus/Android/MiriquidiHub/build.gradle.kts",
+            "/home/tuxus/Android/MiriquidiHub/settings.gradle.kts",
+            "/home/tuxus/Android/MiriquidiHub/app/build.gradle.kts"
+        ],
+        "manifests": [
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/AndroidManifest.xml"
+        ],
+        "source_code": [
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheInfo.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppCacheScanner.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppInfoDialog.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppInventoryActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogAccess.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppLogFilter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionDialog.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryHealth.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryModel.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/BugReportBuilder.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceReport.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DiagRenderer.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DisplayPatternView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DnsPacket.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/DonationDialog.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/EditGeometry.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileConnectionDialog.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileEntryAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileErrors.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FilePane.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/FileTypes.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassButton.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassCardView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/GlassPainter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestModel.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/HardwareTesterExtra.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LanguageHelper.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LineChartView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LocationShareSettings.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/MiriquidiHubApp.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnosticActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkSettings.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/NetworkTileService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/PayloadCrypto.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/QuickTiles.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/RamChartView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportArchive.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportCompareActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportExporter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ReportHistoryActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditorActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotSettings.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotStore.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotTileService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ScrollingScreenshotService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecureStore.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheck.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheckActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SecurityTileService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SelectedAppAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SelectedImageAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SensorExplorerActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SpecParser.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StartActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StatusWidgetProvider.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageHistory.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageInsights.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageInsightsActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageNode.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageNodeAdapter.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SunburstChartView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/SystemMonitorActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ThroughputTest.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ThumbnailLoader.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolLogic.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolSupport.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/ToolsActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/TouchGridView.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/TrashManager.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WebDavClient.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WebDavPreferences.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WifiAnalysisActivity.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/WifiScanHelper.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/CertTools.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/Connection.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/ConnectionStore.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/DropRules.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/FileEntry.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/FileSource.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/HttpPolicy.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/LocalArchive.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/LocalSource.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/NextcloudApi.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/PathUtil.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteClients.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteException.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbSource.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbStatus.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SmbTarget.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/SourceFactory.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/ThumbMath.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferEngine.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferManager.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/TransferService.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavParser.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavSource.kt",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_device_report.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_file_manager.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_hardware_test.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_location_share.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_network_diagnostic.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_report_history.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_screenshot.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_screenshot_editor.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_start.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_storage_analysis.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/activity_tool.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_app_selection.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_connection.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_input.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_fm_progress.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/dialog_webdav_config.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_app_cache.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_app_selection.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_diag_row.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_diag_section.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_file_entry.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_file_grid.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_hw_test.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_location_device.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_report_history.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_selected_app.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_selected_image.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/item_storage_node.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/layout_floating_screenshot.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/pane_file_list.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/view_bug_report_form.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/layout/widget_status.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/arrays_tools.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/colors.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/colors_glass.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_donate.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_files.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/strings_tools.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/styles_glass.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values/themes.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/arrays_tools.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_donate.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_files.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-en/strings_tools.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/values-v31/themes.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/accessibility_service_config.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/backup_rules.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/data_extraction_rules.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/file_paths.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/network_security_config.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/shortcuts.xml",
+            "/home/tuxus/Android/MiriquidiHub/app/src/main/res/xml/widget_status_info.xml"
+        ]
+    },
+    "data_safety_scan": {
+        "accessibility": {
+            "-": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt (Pattern: AccessibilityService)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScrollingScreenshotService.kt (Pattern: AccessibilityService)"
+            ]
+        },
+        "data_sources": {
+            "APPROX_LOCATION": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: LocationManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: ACCESS_COARSE_LOCATION)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: LocationManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: ACCESS_BACKGROUND_LOCATION)"
+            ],
+            "APPS_ON_DEVICE": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppInfoDialog.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogAccess.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionDialog.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt (Pattern: getPackageInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolSupport.kt (Pattern: getInstalledPackages)"
+            ],
+            "APP_INTERACTIONS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt (Pattern: onItemClick)"
+            ],
+            "AUDIO": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt (Pattern: record)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: RECORD_AUDIO)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: AudioRecord)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: RECORD_AUDIO)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt (Pattern: record)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageHistory.kt (Pattern: record)",
+                "app/src/main/res/values-en/strings.xml (Pattern: record)",
+                "app/src/main/res/values-en/strings_tools.xml (Pattern: record)",
+                "app/src/main/res/values/strings.xml (Pattern: record)"
+            ],
+            "CALENDAR": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_CALENDAR)"
+            ],
+            "CONTACTS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_CONTACTS)"
+            ],
+            "CREDIT_DEBIT_BANK_ACCOUNT_NUMBER": [
+                "app/src/main/res/values-en/strings.xml (Pattern: stripe)",
+                "app/src/main/res/values-en/strings_tools.xml (Pattern: stripe)"
+            ],
+            "DEVICE_ID": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt (Pattern: DeviceInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: DeviceInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: DeviceInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTesterExtra.kt (Pattern: DeviceInfo)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: getDeviceId)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt (Pattern: TelephonyManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheck.kt (Pattern: DeviceInfo)"
+            ],
+            "FILES_AND_DOCS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt (Pattern: WRITE_EXTERNAL_STORAGE)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnosticActivity.kt (Pattern: text/plain)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_EXTERNAL_STORAGE)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt (Pattern: getExternalStorageDirectory)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageInsightsActivity.kt (Pattern: getExternalStorageDirectory)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt (Pattern: getExternalStorageDirectory)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolActivity.kt (Pattern: text/plain)"
+            ],
+            "HEALTH": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: SensorManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: SensorManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: SensorManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: BODY_SENSORS)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SensorExplorerActivity.kt (Pattern: SensorManager)"
+            ],
+            "MEDIA": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: image/*)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_MEDIA_IMAGES)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt (Pattern: MediaStore)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotStore.kt (Pattern: MediaStore)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt (Pattern: MediaStore)"
+            ],
+            "MUSIC": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: track)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: AudioTrack)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageInsights.kt (Pattern: mp3)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt (Pattern: music)",
+                "app/src/main/res/layout/activity_file_manager.xml (Pattern: track)",
+                "app/src/main/res/layout/activity_storage_analysis.xml (Pattern: track)",
+                "app/src/main/res/layout/dialog_fm_progress.xml (Pattern: track)",
+                "app/src/main/res/layout/item_storage_node.xml (Pattern: track)",
+                "app/src/main/res/values-en/strings_donate.xml (Pattern: track)",
+                "app/src/main/res/values/strings_tools.xml (Pattern: flac)"
+            ],
+            "NAME": [
+                "app/src/main/res/layout/activity_location_share.xml (Pattern: textPersonName)",
+                "app/src/main/res/values-en/strings.xml (Pattern: display_name)",
+                "app/src/main/res/values/strings.xml (Pattern: display_name)"
+            ],
+            "OTHER_AUDIO": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt (Pattern: ringtone)"
+            ],
+            "PERFORMANCE_DIAGNOSTICS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt (Pattern: Debug)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryHealth.kt (Pattern: BatteryManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt (Pattern: BatteryManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: BatteryManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: ActivityManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: BatteryManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: BatteryManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt (Pattern: Debug)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StatusWidgetProvider.kt (Pattern: ActivityManager)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SystemMonitorActivity.kt (Pattern: ActivityManager)",
+                "app/src/main/res/values/strings_tools.xml (Pattern: Debug)"
+            ],
+            "PHOTOS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: image/*)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: TakePicture)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestModel.kt (Pattern: CAMERA)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: CAMERA)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_MEDIA_IMAGES)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt (Pattern: MediaStore.Images)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotStore.kt (Pattern: MediaStore.Images)"
+            ],
+            "PRECISE_LOCATION": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: ACCESS_FINE_LOCATION)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: ACCESS_FINE_LOCATION)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: ACCESS_FINE_LOCATION)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: ACCESS_FINE_LOCATION)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WifiScanHelper.kt (Pattern: ACCESS_FINE_LOCATION)"
+            ],
+            "RACE_ETHNICITY": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: race)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt (Pattern: race)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt (Pattern: race)"
+            ],
+            "SMS_CALL_LOG": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: READ_SMS)"
+            ],
+            "USER_ACCOUNT": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppCacheAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppCacheInfo.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppCacheScanner.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppInfoDialog.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppInventoryActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogAccess.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogFilter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionDialog.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryHealth.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryModel.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BugReportBuilder.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReport.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DiagRenderer.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DisplayPatternView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DnsPacket.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DonationDialog.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/EditGeometry.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileConnectionDialog.kt (Pattern: login)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileEntryAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileErrors.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FilePane.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileTypes.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/GlassButton.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/GlassCardView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/GlassPainter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestModel.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTesterExtra.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LanguageHelper.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LineChartView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: credentials)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareSettings.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/MiriquidiHubApp.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnosticActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkSettings.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkTileService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PayloadCrypto.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/QuickTiles.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/RamChartView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportArchive.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportCompareActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportExporter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportHistoryActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditorActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotSettings.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotStore.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotTileService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScrollingScreenshotService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecureStore.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheck.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheckActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityTileService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SelectedAppAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SelectedImageAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SensorExplorerActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SpecParser.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StartActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StatusWidgetProvider.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageHistory.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageInsights.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageInsightsActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageNode.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageNodeAdapter.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageScanner.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SunburstChartView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SystemMonitorActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ThroughputTest.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ThumbnailLoader.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolLogic.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolSupport.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolsActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/TouchGridView.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/TrashManager.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WebDavClient.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WebDavPreferences.kt (Pattern: credentials)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WifiAnalysisActivity.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WifiScanHelper.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/CertTools.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/Connection.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/ConnectionStore.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/DropRules.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/FileEntry.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/FileSource.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/HttpPolicy.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/LocalArchive.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/LocalSource.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/NextcloudApi.kt (Pattern: login)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/PathUtil.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteClients.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteException.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SmbSource.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SmbStatus.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SmbTarget.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SourceFactory.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/ThumbMath.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferEngine.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferManager.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferService.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavParser.kt (Pattern: uid)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavSource.kt (Pattern: uid)",
+                "app/src/main/res/layout/activity_device_report.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_file_manager.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_hardware_test.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_location_share.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_network_diagnostic.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_screenshot.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_screenshot_editor.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_start.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_storage_analysis.xml (Pattern: uid)",
+                "app/src/main/res/layout/activity_tool.xml (Pattern: uid)",
+                "app/src/main/res/layout/dialog_fm_connection.xml (Pattern: login)",
+                "app/src/main/res/layout/dialog_webdav_config.xml (Pattern: credentials)",
+                "app/src/main/res/layout/item_app_cache.xml (Pattern: uid)",
+                "app/src/main/res/layout/item_diag_section.xml (Pattern: uid)",
+                "app/src/main/res/layout/item_hw_test.xml (Pattern: uid)",
+                "app/src/main/res/layout/item_location_device.xml (Pattern: uid)",
+                "app/src/main/res/layout/item_report_history.xml (Pattern: uid)",
+                "app/src/main/res/layout/item_storage_node.xml (Pattern: uid)",
+                "app/src/main/res/layout/pane_file_list.xml (Pattern: uid)",
+                "app/src/main/res/values-en/strings.xml (Pattern: credentials)",
+                "app/src/main/res/values-en/strings_donate.xml (Pattern: uid)",
+                "app/src/main/res/values-en/strings_files.xml (Pattern: login)",
+                "app/src/main/res/values-en/strings_tools.xml (Pattern: uid)",
+                "app/src/main/res/values/strings.xml (Pattern: credentials)",
+                "app/src/main/res/values/strings_donate.xml (Pattern: uid)",
+                "app/src/main/res/values/strings_files.xml (Pattern: login)",
+                "app/src/main/res/values/strings_tools.xml (Pattern: uid)",
+                "app/src/main/res/values/themes.xml (Pattern: uid)",
+                "app/src/main/res/xml/backup_rules.xml (Pattern: credentials)",
+                "app/src/main/res/xml/data_extraction_rules.xml (Pattern: credentials)",
+                "app/src/main/res/xml/shortcuts.xml (Pattern: uid)"
+            ],
+            "USER_GENERATED_CONTENT": [
+                "app/src/main/res/layout/activity_device_report.xml (Pattern: textMultiLine)",
+                "app/src/main/res/layout/view_bug_report_form.xml (Pattern: textMultiLine)"
+            ],
+            "VIDEOS": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTester.kt (Pattern: MediaRecorder)"
+            ],
+            "WEB_BROWSING_HISTORY": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: WebView)",
+                "app/src/main/res/values-en/strings_tools.xml (Pattern: WebView)",
+                "app/src/main/res/values/strings_tools.xml (Pattern: WebView)"
+            ]
+        },
+        "disclosure": {
+            "-": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppInfoDialog.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppInventoryActivity.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppLogActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/AppSelectionDialog.kt (Pattern: Dialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BatteryMonitorActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/BugReportActivity.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceInfo.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DeviceReportActivity.kt (Pattern: Dialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/DonationDialog.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileConnectionDialog.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileManagerActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/HardwareTestActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareSettings.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LogcatExportActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnosticActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/PermissionOverviewActivity.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportCompareActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ReportHistoryActivity.kt (Pattern: Dialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotEditorActivity.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheck.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SecurityCheckActivity.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SensorExplorerActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StartActivity.kt (Pattern: Dialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageAnalysisActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/StorageInsightsActivity.kt (Pattern: AlertDialog)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ToolActivity.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/CertTools.kt (Pattern: Accept)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/Connection.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SmbSource.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SmbTarget.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/SourceFactory.kt (Pattern: share)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferService.kt (Pattern: collect)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavParser.kt (Pattern: collect)",
+                "app/src/main/res/layout/activity_device_report.xml (Pattern: share)",
+                "app/src/main/res/layout/activity_hardware_test.xml (Pattern: share)",
+                "app/src/main/res/layout/activity_location_share.xml (Pattern: share)",
+                "app/src/main/res/layout/activity_network_diagnostic.xml (Pattern: share)",
+                "app/src/main/res/layout/activity_screenshot_editor.xml (Pattern: share)",
+                "app/src/main/res/layout/activity_tool.xml (Pattern: share)",
+                "app/src/main/res/layout/dialog_fm_connection.xml (Pattern: share)",
+                "app/src/main/res/layout/item_location_device.xml (Pattern: share)",
+                "app/src/main/res/values-en/strings.xml (Pattern: share)",
+                "app/src/main/res/values-en/strings_files.xml (Pattern: share)",
+                "app/src/main/res/values-en/strings_tools.xml (Pattern: share)",
+                "app/src/main/res/values-v31/themes.xml (Pattern: AlertDialog)",
+                "app/src/main/res/values/strings.xml (Pattern: share)",
+                "app/src/main/res/values/strings_files.xml (Pattern: share)",
+                "app/src/main/res/values/strings_tools.xml (Pattern: share)",
+                "app/src/main/res/values/themes.xml (Pattern: AlertDialog)",
+                "app/src/main/res/xml/backup_rules.xml (Pattern: share)",
+                "app/src/main/res/xml/data_extraction_rules.xml (Pattern: share)"
+            ]
+        },
+        "foreground_service": {
+            "-": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: startForeground)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareService.kt (Pattern: FOREGROUND_SERVICE)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotActivity.kt (Pattern: startForeground)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ScreenshotService.kt (Pattern: FOREGROUND_SERVICE)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotActivity.kt (Pattern: startForeground)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/SimpleScreenshotService.kt (Pattern: startForeground)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferManager.kt (Pattern: startForeground)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/TransferService.kt (Pattern: FOREGROUND_SERVICE)"
+            ]
+        },
+        "network_transmission": {
+            "-": [
+                "app/src/main/java/io/github/tux4us/miriquidihub/FileConnectionDialog.kt (Pattern: fetch)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/LocationShareActivity.kt (Pattern: fetch)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/NetworkDiagnostics.kt (Pattern: HttpClient)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/ThroughputTest.kt (Pattern: HttpClient)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/WebDavClient.kt (Pattern: HttpClient)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/CertTools.kt (Pattern: fetch)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/NextcloudApi.kt (Pattern: HttpClient)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/RemoteClients.kt (Pattern: HttpClient)",
+                "app/src/main/java/io/github/tux4us/miriquidihub/files/WebDavSource.kt (Pattern: HttpClient)",
+                "app/src/main/res/values-en/strings.xml (Pattern: fetch)",
+                "app/src/main/res/values-en/strings_files.xml (Pattern: fetch)",
+                "app/src/main/res/values/strings.xml (Pattern: fetch)",
+                "app/src/main/res/values/strings_files.xml (Pattern: fetch)"
+            ]
+        }
+    },
+    "found_urls": [],
+    "semantic_files": {
+        "CONFIG": [
+            "dialog_webdav_config.xml",
+            "accessibility_service_config.xml",
+            "network_security_config.xml"
+        ],
+        "PHOTOS": [
+            "SelectedImageAdapter.kt",
+            "ic_fm_image.xml",
+            "item_selected_image.xml"
+        ],
+        "SUPPORT": [
+            "LanguageHelper.kt",
+            "ToolSupport.kt",
+            "WifiScanHelper.kt"
+        ],
+        "VIDEOS": [
+            "ic_fm_video.xml"
+        ]
+    }
+}

@@ -11,7 +11,6 @@ local.properties
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-/.scratch/
 .DS_Store
 /captures
 .externalNativeBuild
@@ -35,3 +34,6 @@ local.properties
 *.p12
 keystore.properties
 /app/release
+
+# Lokale Arbeitsdateien von Android-Studio-Werkzeugen
+/.scratch/

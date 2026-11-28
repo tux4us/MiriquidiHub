@@ -1,0 +1,1 @@
+New: SMS locate without internet. Paired devices request each other’s location by encrypted SMS and open it in a navigation app. Pair via QR code or typed code. Setup: Location sharing → SMS locate, fix all checklist items and send a test request. SMS charges apply.

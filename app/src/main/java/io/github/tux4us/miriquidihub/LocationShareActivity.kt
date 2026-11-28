@@ -196,6 +196,9 @@ class LocationShareActivity : AppCompatActivity(), LocationListener {
     }
 
     private fun setupListeners() {
+        binding.btnSmsLocation.setOnClickListener {
+            startActivity(Intent(this, io.github.tux4us.miriquidihub.sms.SmsLocationActivity::class.java))
+        }
         binding.btnWebDavSettings.setOnClickListener { showWebDavConfigDialog() }
         binding.switchLocationShare.setOnClickListener {
             if (binding.switchLocationShare.isChecked) onShareEnabled() else onShareDisabled()

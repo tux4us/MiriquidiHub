@@ -2,4 +2,5 @@
 <full-backup-content>
     <exclude domain="sharedpref" path="webdav_credentials.xml" />
     <exclude domain="sharedpref" path="fm_connections.xml" />
+    <exclude domain="sharedpref" path="sms_location.xml" />
 </full-backup-content>

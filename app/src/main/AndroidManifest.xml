@@ -11,6 +11,20 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- SMS-Ortung: verschlüsselte Standortanfragen und -antworten ohne Internet. READ_SMS wird nicht benötigt. -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!-- SMS-Ortung: Antwort, während die App nicht bedient wird. -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" tools:ignore="BatteryLife" />
+    <!-- QR-Kopplung (Scanner) und Kameratest im Hardware-Selbsttest; wird erst auf Nutzeraktion angefragt. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Geräte ohne Telefonie oder Kamera sollen die App weiterhin installieren können. -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -77,6 +91,27 @@
             android:exported="false"
             android:label="@string/location_sharing"
             android:parentActivityName="io.github.tux4us.miriquidihub.StartActivity" />
+
+        <activity
+            android:name="io.github.tux4us.miriquidihub.sms.SmsLocationActivity"
+            android:exported="false"
+            android:label="@string/smsloc_title"
+            android:parentActivityName="io.github.tux4us.miriquidihub.LocationShareActivity" />
+
+        <!-- Nur das System (BROADCAST_SMS) darf diesen Empfänger ansprechen. -->
+        <receiver
+            android:name="io.github.tux4us.miriquidihub.sms.SmsLocationReceiver"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="io.github.tux4us.miriquidihub.sms.SmsLocationService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
 
         <activity
             android:name="io.github.tux4us.miriquidihub.ScreenshotActivity"

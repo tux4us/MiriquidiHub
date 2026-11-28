@@ -1,0 +1,1 @@
+Neu: SMS-Ortung ohne Internet. Gekoppelte Geräte fragen den Standort gegenseitig per verschlüsselter SMS ab und öffnen ihn in einer Navigations-App. Kopplung per QR-Code oder Code. Einrichtung: Ortung → SMS-Ortung, alle Prüfpunkte beheben und eine Testanfrage senden. Es fallen SMS-Kosten an.

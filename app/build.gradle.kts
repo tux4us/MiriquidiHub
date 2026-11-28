@@ -23,8 +23,8 @@ android {
         applicationId = "io.github.tux4us.miriquidihub"
         minSdk = 24
         targetSdk = 36
-        versionCode = 14
-        versionName = "0.3.3"
+        versionCode = 15
+        versionName = "0.4.0"
     }
 
     signingConfigs {
@@ -94,6 +94,8 @@ dependencies {
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.osmdroid.android)
     implementation(libs.gson)
+    // QR-Kopplung der SMS-Ortung (Apache 2.0, bringt com.google.zxing:core mit)
+    implementation(libs.zxing.android.embedded)
     implementation(libs.shizuku.api)
     implementation(libs.shizuku.provider)
 

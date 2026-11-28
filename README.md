@@ -18,6 +18,7 @@ MiriquidiHub bündelt Werkzeuge zur Diagnose und Dokumentation von Android-Gerä
 - 💾 **Speicherbelegung** - Analysetool für die Speicherbelegung und App-Caches
 - 🗄️ **Dateimanager** - Lokale Dateien verwalten sowie Netzwerkspeicher per WebDAV, Nextcloud und SMB (auch über http im Heimnetz)
 - 📍 **Ortung** - Standortfreigabe über einen eigenen WebDAV-Speicher, optional Ende-zu-Ende-verschlüsselt
+- 📨 **SMS-Ortung** - Standortabfrage zwischen gekoppelten Geräten per verschlüsselter SMS, ohne Internet
 - 🧰 **Werkzeuge** - Akku-Monitor, Live-Monitor, Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent, Protokoll-Export, Berichtsvergleich
 - ⚡ **Schnellzugriff** - Kacheln für die Schnelleinstellungen, Status-Widget, App-Shortcuts
 
@@ -174,6 +175,27 @@ Die Diagnose zeigt Verbindungsstatus und Konfiguration und prüft die Erreichbar
 - **Verschlüsselung (optional):** AES-256-GCM, Schlüssel per PBKDF2-HMAC-SHA256 (100.000 Iterationen) aus einer Passphrase. Ohne dieselbe Passphrase auf dem Empfängergerät werden Positionen nicht lesbar angezeigt.
 - WebDAV-Zugangsdaten und Passphrase werden mit dem Android Keystore verschlüsselt gespeichert.
 
+### SMS-Ortung (ohne Internet)
+Zwei Geräte mit MiriquidiHub fragen ihren Standort gegenseitig per SMS ab. Internet, Cloud und Konto sind nicht nötig, Mobilfunkempfang schon.
+
+**Einrichtung (auf beiden Geräten)**
+1. Ortung → „SMS-Ortung (ohne Internet)“ öffnen und alle offenen Prüfpunkte antippen: SMS, genauer Standort, Standort „Immer zulassen“, Standortermittlung ein, keine Akku-Optimierung, Berechtigungen bei Nichtnutzung behalten (ab Android 11), Benachrichtigungen.
+2. Gerät A: „Neue Kopplung“, Rufnummern beider Geräte eintragen. Gerät B: QR-Code scannen oder Code und Rufnummer von A eingeben.
+3. In beide Richtungen eine Testanfrage senden, am besten bei gesperrtem Bildschirm des angefragten Geräts. Nach Android-Updates wiederholen.
+
+Sind SMS- oder Standortrechte ausgegraut: App-Info → Menü (⋮) → „Eingeschränkte Einstellungen zulassen“.
+
+**Ablauf:** Ist der letzte Standort höchstens 2 Minuten alt und auf 50 m genau, wird eine SMS gesendet. Sonst folgt auf den letzten bekannten Standort eine zweite SMS mit frischem Fix (Wartezeit höchstens 5 Minuten). Übertragen werden Position, Messzeitpunkt, Genauigkeit und Akkustand. Nicht angenommene Antworten werden erneut gesendet. Der Standort lässt sich in einer Navigations-App öffnen oder teilen; ohne Internet braucht diese Offline-Karten.
+
+**Sicherheit**
+- AES-256-GCM, Schlüssel je Kopplung und Senderichtung, abgeleitet per HMAC-SHA256 aus einem zufälligen 128-Bit-Geheimnis. Der Netzbetreiber sieht weiterhin Rufnummern, Zeitpunkte und Zellinformationen.
+- Antworten gehen nur an die gespeicherte Rufnummer. Beantwortete Anfragen werden nicht erneut beantwortet; Anfragen sind 24 Stunden gültig; höchstens eine Antwort pro Minute und 6 pro Stunde je Kopplung.
+- Jede Anfrage eines freigegebenen Geräts wird ohne Rückfrage beantwortet. Das georte Gerät zeigt eine Benachrichtigung (sofern erlaubt) und führt ein Protokoll. Die Freigabe ist je Kopplung abschaltbar.
+- Wer den Kopplungscode kennt, besitzt den Schlüssel der Kopplung. Bei Verdacht auf beiden Geräten löschen und neu koppeln.
+- Die Kopplungsdaten sind vom Backup ausgenommen. Nach Gerätewechsel oder Neuinstallation muss neu gekoppelt werden.
+
+**Grenzen:** Das gesuchte Gerät braucht Strom, Mobilfunkempfang, eine SMS-fähige SIM und eingeschaltete Standortermittlung. Nach einem Neustart antwortet es erst, nachdem es einmal entsperrt wurde. Nach „Beenden erzwingen“ muss die App einmal geöffnet werden. GPS kann im Wald oder in Gebäuden lange dauern oder ausfallen. Energiesparfunktionen einzelner Hersteller können die Antwort verzögern oder verhindern. SMS-Zustellung ist nicht garantiert. Die Funktion ersetzt keinen Notruf (112).
+
 ### Werkzeuge
 Die Karte „Werkzeuge“ auf der Startseite öffnet eine Übersicht aller folgenden Funktionen.
 
@@ -250,6 +272,10 @@ Das Werkzeug „App-Protokoll“ (Startseite → Werkzeuge → Support und Beric
 | `READ_PHONE_STATE` (optional) | Netztyp und Signalstärke |
 | `ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION` | GPS-Test, Ortung, WLAN-Suche |
 | `NEARBY_WIFI_DEVICES` (`neverForLocation`), `BLUETOOTH_SCAN` (`neverForLocation`), `BLUETOOTH`/`BLUETOOTH_ADMIN` (bis Android 11) | WLAN- und Bluetooth-Suche |
+| `SEND_SMS`, `RECEIVE_SMS` | SMS-Ortung; ausgewertet werden nur Nachrichten gekoppelter Geräte mit Kennung `MH1:` |
+| `ACCESS_BACKGROUND_LOCATION` | SMS-Ortung: Antwort, während die App nicht bedient wird |
+| `WAKE_LOCK`, `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | SMS-Ortung: Antwort ohne Verzögerung durch Energiesparen |
+| `CAMERA` | QR-Kopplung, Kameratest |
 | `RECORD_AUDIO` | Mikrofontest (Auswertung nur im Arbeitsspeicher) |
 | `USE_BIOMETRIC` | Test des biometrischen Sensors |
 | `VIBRATE` | Vibrationstest |

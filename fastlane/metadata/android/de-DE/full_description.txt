@@ -7,6 +7,7 @@ Funktionen:
 • Speicher: Belegung und App-Caches, größte Dateien, Duplikate, Papierkorb mit Wiederherstellung und Verlauf
 • Screenshots: einfacher Screenshot mit optionaler Verzögerung, Long Screenshot (Scrollaufnahme) und Editor zum Schwärzen und Zuschneiden
 • Ortung: Standortfreigabe über einen eigenen WebDAV-Speicher, optional Ende-zu-Ende-verschlüsselt mit eigener Passphrase, einstellbares Intervall und Zeitfenster, Kartendarstellung mit OpenStreetMap, optionale Routenberechnung über OpenRouteService (eigener API-Schlüssel erforderlich)
+• SMS-Ortung ohne Internet zwischen gekoppelten Geräten, verschlüsselt (SMS-Kosten, kein Notruf-Ersatz)
 • Werkzeuge: Akku-Monitor, Live-Monitor (Arbeitsspeicher, Netzwerkdurchsatz, Temperatur), Sensor-Explorer, Sicherheitscheck, Berechtigungsübersicht, App-Inventar, WLAN-Analyse, Fehlerbericht-Assistent, Protokoll-Export und App-Protokoll (Logcat einer gewählten App für ein Zeitfenster)
 • Schnellzugriff: Kacheln für die Schnelleinstellungen, Status-Widget und App-Shortcuts
 
@@ -25,6 +26,8 @@ Berechtigungen und ihr Zweck:
 • Bedienungshilfen-Dienst: automatisches Scrollen beim Long Screenshot
 • Anzeige über anderen Apps: Schaltfläche für Screenshots
 • Standort: GPS-Test, Ortung, WLAN-Suche
+• SMS, Standort im Hintergrund: SMS-Ortung
+• Kamera: QR-Kopplung, Kameratest
 • Mikrofon: Mikrofontest
 • Bluetooth und Geräte in der Nähe: Bluetooth- und WLAN-Suche im Hardwaretest und in der WLAN-Analyse; es wird kein Standort daraus abgeleitet
 • Biometrie: Test des biometrischen Sensors im Hardwaretest; es werden keine biometrischen Daten gelesen oder gespeichert

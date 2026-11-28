@@ -88,13 +88,13 @@ class HardwareTestActivity : AppCompatActivity() {
             pendingPermission = null
         }
 
-    // Die System-Kamera-App wird per Intent gestartet. Dafür ist keine CAMERA-Berechtigung
-    // nötig, solange sie nicht im Manifest deklariert ist.
     private val exportDocument =
         registerForActivityResult(ActivityResultContracts.CreateDocument("text/markdown")) { uri ->
             if (uri != null) writeExportDocument(uri)
         }
 
+    // Die System-Kamera-App wird per Intent gestartet. Weil CAMERA im Manifest steht (QR-Kopplung
+    // der SMS-Ortung), verlangt Android dafür die erteilte Berechtigung.
     private val photoLauncher =
         registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
             pendingPhoto?.takeIf { it.isActive }?.resume(bitmap)
@@ -530,6 +530,9 @@ class HardwareTestActivity : AppCompatActivity() {
 
     private suspend fun runCameraTest(): HwResult {
         val cameras = tester.describeCameras()
+        if (!requestPermission(Manifest.permission.CAMERA)) {
+            return HwResult(HwStatus.SKIPPED, getString(R.string.hw_permission_denied) + "\n" + cameras)
+        }
         val bitmap = try {
             takePhoto()
         } catch (e: ActivityNotFoundException) {

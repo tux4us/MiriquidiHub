@@ -7,6 +7,7 @@ Features:
 • Storage: usage and app caches, largest files, duplicates, trash with restore and history
 • Screenshots: simple screenshot with optional delay, long screenshot (scrolling capture) and an editor for redacting and cropping
 • Location sharing: share your position via your own WebDAV storage, optionally end-to-end encrypted with your own passphrase, adjustable interval and time window, map display with OpenStreetMap, optional route calculation via OpenRouteService (own API key required)
+• SMS locate without internet: paired devices (QR code or typed code) request each other’s location by encrypted SMS; automatic reply with notification and log, can be disabled per device; hand-off to navigation apps. SMS charges apply. Not a replacement for an emergency call
 • Tools: battery monitor, live monitor (RAM, network throughput, temperature), sensor explorer, security check, permission overview, app inventory, Wi-Fi analysis, bug report assistant, log export and app log (logcat of a selected app for a time window)
 • Quick access: quick settings tiles, status widget and app shortcuts
 
@@ -25,6 +26,8 @@ Permissions and their purpose:
 • Accessibility service: automatic scrolling for the long screenshot
 • Display over other apps: screenshot button
 • Location: GPS test, location sharing, Wi-Fi scan
+• Send and receive SMS, background location, battery optimisation: SMS locate; only messages from paired devices are processed
+• Camera: QR pairing, camera test
 • Microphone: microphone test
 • Bluetooth and nearby devices: Bluetooth and Wi-Fi scan in the hardware test and Wi-Fi analysis; no location is derived from it
 • Biometrics: test of the biometric sensor in the hardware test; no biometric data is read or stored

@@ -3,9 +3,11 @@
     <cloud-backup>
         <exclude domain="sharedpref" path="webdav_credentials.xml" />
         <exclude domain="sharedpref" path="fm_connections.xml" />
+        <exclude domain="sharedpref" path="sms_location.xml" />
     </cloud-backup>
     <device-transfer>
         <exclude domain="sharedpref" path="webdav_credentials.xml" />
         <exclude domain="sharedpref" path="fm_connections.xml" />
+        <exclude domain="sharedpref" path="sms_location.xml" />
     </device-transfer>
 </data-extraction-rules>
